@@ -7,24 +7,25 @@ menu:
 description: TAGに貢献する方法
 ---
 
-Here are a few suggestions on how to get started with the CNCF Technical Advisory Group (TAG) App Delivery. While you may find it useful to approach each in order, there is no requirement to do so. Find what makes sense to you and jump in!
+CNCF技術諮問グループ（Techical Advisory Group: TAG）App Deliveryへの参加方法について、いくつかの提案をご紹介します。順を追って取り組むのも有用かもしれませんが、必ずしもその必要はありません。ご自身に合った方法を見つけて、ぜひ参加してください！
 
-**Research a bit on what topics interest you the most.**
+**ご自身の興味を引くトピックを少し調べてみましょう**
 
-The TAG has a lot of topics to cover under App Delivery. Some of the larger topics have become Working Groups (WGs) but there is still a lot more to discuss at the top TAG level. Titles of WGs and projects may be self-explanatory, but sometimes not. Continue on to learn more about how to find the right project for you.
+TAGではApp Deliveryに関して多くのトピックを扱っています。大規模なトピックの一部はワーキンググループ（WG）として独立していますが、TAGレベルで議論すべき課題は依然として数多く残されています。WGやプロジェクトの名称は自明の場合もありますが、そうでないこともあります。ご自身に適したプロジェクトを見つける方法については、下記を参考にしてください。
 
-**Join Slack**
+**Slackに参加する**
 
-Luckily, the CNCF slack isn’t a quiet place, it’s very active and provides a lot of great value. A great thing to start with is by simply introducing yourself in a WG channel and saying what you’re interested in. The leaders of the WG will point you in the right direction along with others that have contributed.
+幸いなことに、CNCFのSlackは静かな場所ではなく、非常に活発で多くの価値を提供しています。始めるのに最適な方法は、WGチャンネルで自己紹介をし、興味のある分野を伝えることです。WGリーダーや貢献者たちが適切な方向を示してくれるでしょう。
 
-**See what issues are available on GitHub**
+**GitHubで公開中の課題を確認する**
 
-There’s everything from code-specific issues to documentation issues and everything in-between. Feel free to leave a comment or a suggestion. You can find them under the CNCF GitHub org for each TAG. For example, here’s the link to the App Delivery Tag: https://github.com/Cloud-Native-Platform-Engineering/cnpe-community
+コード固有の課題からドキュメント関連課題まで、あらゆる種類の課題が存在します。コメントや提案を気軽に投稿してください。各TAGの課題はCNCF GitHub組織内で確認できます。例：App Delivery Tagのリンクはこちら https://github.com/Cloud-Native-Platform-Engineering/cnpe-community
 
-**Join a meeting**
+**ミーティングへの参加**
 
-This may seem scary at first, especially if you’re new, but it’s a great way to dive in and see friendly faces after chatting with folks on Slack when you’re more comfortable. The meetings are structured with talking points in a shared google doc. You may be given time to introduce yourself (if you want!) and you are welcome to bring a topic to the meeting.
+特に初めての方は最初は不安に感じるかもしれませんが、Slackで交流を深めた後、実際に顔を合わせて親しみやすい雰囲気を体験する絶好の機会です。ミーティングは共有Googleドキュメントに議事項目を明記した構造で進行します。自己紹介の時間（希望者のみ）が設けられる場合もあり、議題を持ち込むことも歓迎されます。
 
-**In conclusion, get started your way**
+**まとめ：ご自身の方法で始めましょう**
 
-TAG and WG members come in all styles. Some have never been to a call, others rarely engage on GitHub. The real power in the community is the coming together of different experiences and ideas to generate useful content for the wider cloud native community. You and your experiences are a big part of that, so come join us today!
+TAGやWGのメンバーは様々なスタイルで参加しています。会議に参加したことのない方もいれば、GitHubでほとんど活動しない方もいます。コミュニティの真の力は、多様な経験やアイデアが集まり、クラウドネイティブコミュニティ全体に役立つコンテンツを生み出すことにあります。あなたとあなたの経験もその大きな一部です。ぜひ今日からご参加ください！
+

@@ -7,7 +7,7 @@ url: initiatives/platform-as-a-product
 
 ## 概要
 
-** Platform as a Product（PaaP）イニシアチブ**は、プラットフォームエンジニアリングにおけるプロダクト思考の推進に専念しています。私たちの使命は、プラットフォームチームが内部プラットフォームを製品として扱い、ユーザーを顧客として捉えることを支援し、プラットフォームが真の価値を提供しユーザーのニーズを満たすことを保証することです。
+**Platform as a Product（PaaP）イニシアチブ**は、プラットフォームエンジニアリングにおけるプロダクト思考の推進に専念しています。私たちの使命は、プラットフォームチームが内部プラットフォームを製品として扱い、ユーザーを顧客として捉えることを支援し、プラットフォームが真の価値を提供しユーザーのニーズを満たすことを保証することです。
 
 これを実現するために：
 
@@ -31,10 +31,10 @@ url: initiatives/platform-as-a-product
 
 ### 注目ブログ記事
 
-- [プラットフォームのためのプロダクト思考](../../blog/product-thinking-for-platforms.md)
-- [Platform as a Product: ペルソナの理解](../../blog/2025-01-paap-personas/)
-- [Platform as a Product: ユーザーストーリーでマインドセットを構築する](../../blog/2024-10-30-paap-mindset-user-stories/)
-- [2024年のプラットフォームエンジニアリング: 業界動向と新たな焦点](../../blog/2024-06-20-platform-engineering-pp/)
+- [プラットフォームのためのプロダクト思考](/ja/blog/product-thinking-for-platforms.md)
+- [Platform as a Product: ペルソナの理解](/ja/blog/2025-01-paap-personas/)
+- [Platform as a Product: ユーザーストーリーでマインドセットを構築する](/ja/blog/2024-10-30-paap-mindset-user-stories/)
+- [2024年のプラットフォームエンジニアリング: 業界動向と新たな焦点](/ja/blog/2024-06-20-platform-engineering-pp/)
 
 ### Platform as a Product研究
 
@@ -45,5 +45,5 @@ url: initiatives/platform-as-a-product
 
 [Platform as a Product Researchの詳細はこちら](https://github.com/Cloud-Native-Platform-Engineering/cnpe-community/blob/main/platform-as-a-product/paap-research-guide.md)またはブログ記事でご覧ください。
 
-- [プラットフォームとしての製品リサーチ - アンケート調査開始！](/blog/call-participation-paap-survey/)
-- [プラットフォームとしての製品リサーチへの参加招待](/blog/announce-paap-research/)
+- [プラットフォームとしての製品リサーチ - アンケート調査開始！](/ja/blog/call-participation-paap-survey/)
+- [プラットフォームとしての製品リサーチへの参加招待](/ja/blog/announce-paap-research/)

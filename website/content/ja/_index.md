@@ -26,7 +26,7 @@ CNCF Platform Engineering Technical Community Groupは、クラウドネイテ�
 - プロジェクトメンテナおよびコントリビューター
 - セキュリティ、ネットワーク、ストレージなど他の分野の専門家（自身の業務がプラットフォームエンジニアリング実践にどう適合するかに関心を持つ方）
 
-プラットフォームペルソナの例については以下を参照：[Platform as a Product：ペルソナを理解する](/blog/paap-personas/)
+プラットフォームペルソナの例については以下を参照：[Platform as a Product：ペルソナを理解する](/ja/blog/paap-personas/)
 
 ## 最新ニュース
 
@@ -101,9 +101,9 @@ as well as the [CNCF Community Calendar](https://community.cncf.io/tag-app-deliv
 
 | イニシアチブ                                                                 | リード                                                                 | その他の情報                                                         |
 |--------------------------------------------------------------------------------|------------------------------------------------------------------------|----------------------------------------------------------------------|
-| [Content Club](/initiatives/content-club/)   | </initiatives/content-club/#leads>       | </initiatives/content-club/> |
-| [Platform as a Product](/initiatives/platform-as-a-product/)   | </initiatives/platform-maturity-model-assessment/#leads>)       | </initiatives/platform-as-a-product/> |
-| [Maturity Model Assessment](/initiatives/platform-maturity-model-assessment/)   | </initiatives/platform-maturity-model-assessment/#leads>       | </initiatives/platform-maturity-model-assessment/> |
+| [Content Club](/ja/initiatives/content-club/)   | <https://www.cloudnativeplatforms.com/ja/initiatives/content-club/#leads>       | <https://www.cloudnativeplatforms.com/ja/initiatives/content-club/> |
+| [Platform as a Product](/ja/initiatives/platform-as-a-product/)   | <https://www.cloudnativeplatforms.com/ja/initiatives/platform-maturity-model-assessment/#leads>)       | <https://www.cloudnativeplatforms.com/ja/initiatives/platform-as-a-product/> |
+| [Maturity Model Assessment](/ja/initiatives/platform-maturity-model-assessment/)   | <https://www.cloudnativeplatforms.com/ja/initiatives/platform-maturity-model-assessment/#leads>       | <https://www.cloudnativeplatforms.com/ja/initiatives/platform-maturity-model-assessment/> |
 
 
 <p class="mt-5"><img src="/images/man-using-laptop.jpg" alt="Man working on computer"></p>

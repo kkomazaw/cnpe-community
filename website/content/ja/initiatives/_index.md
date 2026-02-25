@@ -13,7 +13,7 @@ description: 貢献や参加の準備が整った、進行中のイニシアチ�
 ## 進行中のイニシアチブとプロジェクト
 
 ### Contents Club
-ウェブサイト: [Contents Club](/initiatives/content-club/)
+ウェブサイト: [Contents Club](/ja/initiatives/content-club/)
 
 #### 概要
 Contents Clubは、プラットフォームエンジニアリング愛好家間のコラボレーションと知識共有を促進するコミュニティ主導のイニシアチブです。メンバーがプラットフォームエンジニアリングの実践、ツール、技術に関連するコンテンツを議論・作成・共有する場を提供します。
@@ -30,11 +30,11 @@ Contents Clubは、プラットフォームエンジニアリング愛好家間�
 - 2025年6月 - 「非技術的」プラットフォームエンジニアリング
 - 2025年7月 - エッジコンピューティングのためのプラットフォームエンジニアリング
 
-現在のトピックの詳細と参加方法については、[Contents Club](/initiatives/content-club/)ページをご覧ください。
+現在のトピックの詳細と参加方法については、[Contents Club](/ja/initiatives/content-club/)ページをご覧ください。
 
 ### Platform as a Product
 
-ウェブサイト: [Platform as a Product](/initiatives/platform-as-a-product/)
+ウェブサイト: [Platform as a Product](/ja/initiatives/platform-as-a-product/)
 
 #### 概要
 
@@ -48,10 +48,10 @@ Contents Clubは、プラットフォームエンジニアリング愛好家間�
 
 - Platform as a Product研究
 - Platform as a Producctホワイトペーパー
-- [注目のブログ記事](/initiatives/platform-as-a-product/#featured-blog-posts)
+- [注目のブログ記事](/ja/initiatives/platform-as-a-product/#featured-blog-posts)
 
 ### プラットフォーム成熟度モデル評価
-ウェブサイト: [プラットフォーム成熟度モデル評価](/initiatives/platform-maturity-model-assessment/)
+ウェブサイト: [プラットフォーム成熟度モデル評価](/ja/initiatives/platform-maturity-model-assessment/)
 
 #### 概要
 

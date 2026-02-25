@@ -1,5 +1,5 @@
 ---
-title: "プラットフォームとしての製品：ペルソナを理解する"
+title: "Platform as a Product：ペルソナを理解する"
 slug: paap-personas
 date: 2025-01-16 12:00:00 +0000
 author: Valentina Rodriguez Sosa, Colin Griffin 

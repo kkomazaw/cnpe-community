@@ -41,7 +41,7 @@ Content Clubは、プラットフォームワーキンググループから生�
 - Bryan Ross - https://newsletter.bryanross.me/p/team-topologies-in-the-real-world
 - Steve Fentonが、[プロダクト＆データチームにおけるチームトポロジの実践体験](https://www.stevefenton.co.uk/blog/2025/02/real-world-team-topologies/)について素晴らしい記事を執筆しました。
 - Matt Menzenskiは[チームトポロジーとディープワークの共通点](https://menzen.ski/posts/2025/02/15/on-team-topologies-and-deep-work/)を探求しています（どちらも優れた書籍です）。
-- Graziano Castoは、技術的進歩は重要だが、[ソフトウェア開発成功の鍵はチームの組織化と活性化にある](https://www.linkedin.com/pulse/behind-engineering-revolution-how-team-topologies-redefining-casto-eiwif/? trackingId=tdnAEygtSISiY0NJI1yH4g%3D%3D) と指摘しています。
+- Graziano Castoは、技術的進歩は重要だが[ソフトウェア開発成功の鍵はチームの組織化と活性化にある](https://www.linkedin.com/pulse/behind-engineering-revolution-how-team-topologies-redefining-casto-eiwif/? trackingId=tdnAEygtSISiY0NJI1yH4g%3D%3D) と指摘しています。
 - Dipesh Patelは、プラットフォームエンジニアリングを世界最高のクリスマス映画に例えた面白い記事を執筆しました[こちら](https://dipeshkpatel.substack.com/p/yippee-ki-yay)。
 - Ricardo Bemficaは、[開発者体験調査を活用してプラットフォーム戦略を策定する](https://medium.com/livelo/leveraging-data-for-success-understanding-the-developer-experience-survey-at-livelo-f4a96ed170c6)ことで、Liveloがチームトポロジーの原則をどのように適用しているかを示し、データに基づく協働を通じてチームがエンパワーされることを保証しています。
 
@@ -54,7 +54,7 @@ Content Clubは、プラットフォームワーキンググループから生�
 ### 4月 - AIはプラットフォームエンジニアをどう支援できるか？
 
 - Bryan Ross - https://newsletter.bryanross.me/p/ai-strategy-for-platform-engineering
-- Colin Lacy[が共有したショート動画](https://www.linkedin.com/posts/colinjlacy_platformengineering-contentclub-ai-activity -7313538283592953856-ykvf/?rcm=ACoAAAMBzrkBPjZLcpVcuNMROWlXCt3UKZHFQY4) で、プラットフォーム対応LLMのビジョンを説明しました。
+- Colin Lacyが共有した[ショート動画](https://www.linkedin.com/posts/colinjlacy_platformengineering-contentclub-ai-activity-7313538283592953856-ykvf/?rcm=ACoAAAMBzrkBPjZLcpVcuNMROWlXCt3UKZHFQY4) で、プラットフォーム対応LLMのビジョンを説明しました。
 - Kalle Sirkesaloは[長編動画](https://www.youtube.com/watch?v=ZEEldccqVbU)を作成し、検索ベースの記憶、オープンソースフレームワーク、推論能力の向上を通じて自律エージェントがどのように進化しているかを探求しています。
 - Graziano Castoは、認知負荷を軽減しツール疲労を緩和することで、[GenAIが開発者の複雑な内部プラットフォーム活用を支援する方法](https://www.linkedin.com/pulse/8-platform-fatigue-real-genai-cure-graziano-casto-m0uhf/)を解説しています。
 

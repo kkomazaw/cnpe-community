@@ -8,12 +8,12 @@ description: 貢献や参加の準備が整った、進行中のイニシアチ�
 ---
 
 貢献や参加の準備が整ったイニシアチブとプロジェクトがここにリストされています。関わり方を探しているなら、ここから始めるのが最適です。
-イニシアチブやプロジェクトの提出方法の詳細については、[貢献](https://cloudnativeplatforms.com/contribute/)ページをご覧ください。
+イニシアチブやプロジェクトの提出方法の詳細については、[コントリビューション](/contribute/)ページをご覧ください。
 
 ## 進行中のイニシアチブとプロジェクト
 
 ### Contents Club
-ウェブサイト: [Contents Club](https://cloudnativeplatforms.com/initiatives/content-club/)
+ウェブサイト: [Contents Club](/initiatives/content-club/)
 
 #### 概要
 Contents Clubは、プラットフォームエンジニアリング愛好家間のコラボレーションと知識共有を促進するコミュニティ主導のイニシアチブです。メンバーがプラットフォームエンジニアリングの実践、ツール、技術に関連するコンテンツを議論・作成・共有する場を提供します。
@@ -34,7 +34,7 @@ Contents Clubは、プラットフォームエンジニアリング愛好家間�
 
 ### Platform as a Product
 
-ウェブサイト: [Platform as a Product](https://cloudnativeplatforms.com/initiatives/platform-as-a-product/)
+ウェブサイト: [Platform as a Product](/initiatives/platform-as-a-product/)
 
 #### 概要
 

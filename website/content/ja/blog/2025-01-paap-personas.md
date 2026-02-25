@@ -1,5 +1,5 @@
 ---
-title: "Platform as a Product: Understanding the Personas"
+title: "プラットフォームとしての製品：ペルソナを理解する"
 slug: paap-personas
 date: 2025-01-16 12:00:00 +0000
 author: Valentina Rodriguez Sosa, Colin Griffin 
@@ -10,60 +10,59 @@ tags:
 - Community Contributions
 ---
 
-# Platform as a Product Overview
+# プラットフォームとしての製品の概要
 
-Platform as a Product is a critical topic in the industry because it helps teams to work agile in our forever changing organizations and market. Platform as a Product is key to helping us move quickly and be ready for new technology in a standardized way. According to the [CNCF Platforms White Paper](https://tag-app-delivery.cncf.io/whitepapers/platforms/), Platform as a product is defined as:
+Platform as a Productは、絶えず変化する組織や市場においてチームがアジャイルに活動するための重要なテーマです。Platform as a Productは、標準化された方法で迅速に動き、新技術に対応する準備を整える鍵となります。[CNCFプラットフォーム白書](https://tag-app-delivery.cncf.io/whitepapers/platforms/)によれば、Platform as a Productは次のように定義されています：
 
-Platform as a product: A platform exists to serve the requirements of its users and it should be designed and evolved based on those requirements, similar to any other software products. Platforms should provide the necessary capabilities to support the most common use cases across product teams and prioritize those over more specific capabilities that are only used by a single team to maximize the value delivered.
+Platform as a Product：プラットフォームはユーザーの要件を満たすために存在し、他のソフトウェア製品と同様に、それらの要件に基づいて設計・進化させるべきである。プラットフォームは、製品チーム全体で最も一般的なユースケースをサポートするために必要な機能を提供し、単一チームのみが使用するより特化した機能よりも優先すべきである。これにより提供される価値を最大化する。
 
+# ペルソナの理解
 
-# Understanding the personas
+ユーザーを考慮する際、開発者、機械学習エンジニア、データサイエンティスト、プラットフォームエンジニアなど、異なるペルソナを特定する必要があります。
 
-When considering its users, we need to identify the different personas such as: Developers, ML Engineers, Data Scientists, Platform Engineers, and others.
+各ペルソナはプラットフォームの異なる側面に焦点を当て、これらは組織内で1つまたは複数の役割やチームに分散して存在し得ます。
 
-The personas would focus on different aspects of the platform, and these could be represented in different organizations on one or multiple roles and teams.
+- **ビルダー**（プラットフォームと受益者体験に焦点を当てる）：
+  
+  - プラットフォーム運用（Day2）の実現
+  - プラットフォームのセットアップ
+  - セキュリティ設定
+  - AI向けプラットフォーム機能
+  - HPCワークロード向けプラットフォーム機能
 
-- **Builders** (focus on platform and beneficiary experience):
+- **イネーブラー**（エンドユーザーとアプリケーション機能に焦点を当てる）：
 
-  - Enabling Day2 Platform Operations
-  - Setting up the platform
-  - Setting up security
-  - Platform Capabilities for AI
-  - Platform capabilities for HPC workloads
+  - CI/CDやセキュリティガードレールなどのベストプラクティスによるクラウドネイティブおよびレガシーワークロードの実現
+  - ユーザー体験とセルフサービス機能の実現
+  - エンドユーザーのオンボーディング体験を簡素化する自動化プラクティスの構築
+  - 構成統合とサードパーティツール
 
-- **Enablers** (focus on end-users and application capabilities):
+- **コンシューマー** - プラットフォーム顧客（開発者）：
 
-  - Enabling cloud-native and legacy workloads with best practices such as CI/CD and security guardrails.
-  - Enabling user experience and self-service capabilities
-  - Build automation practices to simplify onboarding experiences for end users.
-  - Configuration integrations and third-party tools
+  - アプリケーションの維持・構築のためにプラットフォームにアクセス
+  - レガシーシステム、クラウドネイティブ、AIなどあらゆるアプリケーションを構築
+  - プラットフォームと直接やり取りしない場合あり
 
-- **Consumers** - Platform Customers (Developers):
+- **エンドユーザー（顧客）**:
 
-  - Access the platform to maintain and build applications
-  - Build any applications from legacy systems, cloud-native, AI
-  - Might not interact with the platform directly.
+  - プラットフォーム上で動作するアプリケーションやシステムの最終利用者である顧客。
+  - プラットフォームと直接やり取りしない場合がある。
 
-- **End-Users (customers)**:
+- **サービスプロバイダー**:
 
-  - Customers who are the end-users of the applications and systems running on top of the platform.
-  - Might not interact with the platform directly.
+  - Kubernetes上にプラットフォームを提供する組織。
+  - プラットフォームの展開と導入を推進するチームを支援するコンサルティング組織
 
-- **Service Providers**:
-  - Organizations who provide a Platform on top of Kubernetes.
-  - Consulting organizations that help teams drive implementations and adoption around the platform
+# ペルソナの相互作用
 
+**プラットフォーム構築者**とは、組織内でプラットフォームをインストール・設定する担当者です。プラットフォーム自体を管理するチームであり、プラットフォームの多様な側面（ネットワーク、セキュリティ、プラットフォームエンジニアリングなど）に特化したチーム群を指します。これらは組織内の専任チームである場合も、サービスプロバイダーと連携してプラットフォームを提供・設定構築する場合もあります。
 
-# Personas interactions
+**プラットフォーム・イネーブラー**は、DevOps、ミドルウェアチーム、移行チームで構成される場合があります。彼らは主に、プラットフォーム上でベストプラクティスに基づいたアプリケーション機能とユーザーエクスペリエンスを構築することに専念し、開発者やデータサイエンティストと直接連携します。これらのペルソナは、必要な機能に対応できるプラットフォーム基盤が整っていることを確認するため、プラットフォーム構築者と連携します。彼らは内部チーム、外部コンサルティングチーム、またはその両方の混合チームである可能性があります。
 
-The **Platform Builders** are those who are installing the platform and configuring the platform in an organization. These are the teams who are responsible for the platform itself. These personas can be a group of teams dedicated to diverse aspects of the platform, networking teams, security, and Platform Engineers, whether they are internal teams to the organization or work with service providers to provide the platform and build configurations on top of it.
+**プラットフォーム利用者**は、開発者やソフトウェアエンジニアで構成される場合があります。彼らはレガシーシステム、AIワークロード、マイクロサービス、あるいはプラットフォーム上で実行されるあらゆるワークロードからアプリケーションを構築・強化し、ビジネスニーズに応える役割を担います。通常は事業部門に所属し、アプリケーション機能が整っていることを確認し、セルフサービスやユーザーエクスペリエンスにアクセスするために、プラットフォーム提供者と直接連携する場合があります。彼らは内部チーム、外部コンサルティングチーム、またはその混合形態である可能性があります。
 
-The **Platform Enablers** could be composed of DevOps, Middleware teams, and Migration teams, who are mostly dedicated to building application capabilities and user experience with best practices on top of the platform and work directly with Developers and data Scientists. These personas will also interact with Platform Builders to ensure the platform foundation is ready for the capabilities required. They can be internal teams, external consulting teams, or a mix of both.
+- **プラットフォームエンドユーザー**は、組織の顧客であるペルソナです。プラットフォームが存在する主な理由であり、組織のビジネスを推進する存在です。UI、サービス、AI、その他のワークロードにアクセスすることで、プラットフォームと直接やり取りする場合もあれば、そうでない場合もあります。彼らはしばしばプラットフォームコンシューマーに近いチームと連携します。
 
-The **Platform Consumers** could be composed of Developers, Software Engineers. They are the personas who build and enrich applications from legacy systems, AI workloads, microservices or any workload that will run on top of the Platform to serve a business needs. They usually are in the Line of Business, and work might work directly with Platform Enables to ensure application capabilities are in place and access self-service and user experience. They can be internal teams, external consulting teams, or a mix of both.
-
-- The **Platform End-Users**, these personas are an organization customer. They are the main reason why the platform exists and what drives the organization's business. They might interact or not directly with the platform by accessing a UI, service, AI, or any other workload. They will often work with teams closer to the platform consumers.
-
-- The **Service Providers** provide platforms, toolings, and services to help organizations move faster into the cloud native ecosystem. These organizations are focused on resolving common problems that the industry faces and provide diverse tools and frameworks to resolve them. They can be internal teams, external consulting teams, or a mix of both.
+- **サービスプロバイダー**は、組織がクラウドネイティブエコシステムへ迅速に移行できるよう、プラットフォーム、ツール、サービスを提供します。業界が直面する共通課題の解決に注力し、多様なツールやフレームワークを提供します。内部チーム、外部コンサルティングチーム、またはその混合形態が考えられます。
 
 <img src="../assets/paap_personas_interactions.jpg" width=1000px />

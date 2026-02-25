@@ -1,6 +1,6 @@
 ---
 date: '2025-03-26T20:04:39+01:00'
-title: 'TAG App Delivery at Kubecon EU 2025'
+title: 'Kubecon EU 2025におけるTAG App Delivery'
 author: 'Dylan Page'
 categories:
 - Announcement
@@ -10,71 +10,71 @@ tags:
 
 ![Kubecon EU 2025](/images/kubecon-eu-2025.avif)
 
-KubeCon EU 2025 is only a week away!
+KubeCon EU 2025まであと1週間です！
 
-The TAG App Delivery is excited to bring together cloud-native application developers
-and framework builders to meet each other and share insights and knowledge.
-Our goal is to make cloud development better for all by gathering feedback,
-finding synergies and guiding both users and projects.
+TAG App Deliveryは、クラウドネイティブアプリケーション開発者とフレームワーク構築者が互いに交流し、知見や知識を共有する場を提供できることを嬉しく思います。
 
-## TAG booth
+フィードバックの収集、相乗効果の発見、ユーザーとプロジェクト双方のガイダンスを通じて、クラウド開発をすべての人にとってより良いものにすることが私たちの目標です。
 
-You can find the TAG App Delivery at our booth **TAG - A** in the project pavilion,
-where we will have lightning talks and showcase the work of the platforms and artifact working groups.
+## TAGブース
 
-You can find a map of the Project Pavilion booths [here](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/features-add-ons/project-engagement/#project-pavilion)
+プロジェクトパビリオン内の**TAG - A**ブースにて、TAG App Deliveryのブースをご覧いただけます。
 
-## Schedule
+ここではライトニングトークを実施し、プラットフォームおよびアーティファクトワーキンググループの成果を展示します。
 
-We will continuously update the below schedule as more information becomes available. You can also subscribe to the [TAG KubeCon Calendar](https://calendar.google.com/calendar/ical/0305ac2530d63cc0a217362e93ff74be61ee91c8afa750cf8b29aaf7ab3b23ab%40group.calendar.google.com/public/basic.ics) to conveniently keep up to date with our activites. Times are in BST.
+プロジェクトパビリオンのブースマップは[こちら](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/features-add-ons/project-engagement/#project-pavilion)でご確認いただけます。
 
-### Tuesday, April 1st: Co-located Events
+## スケジュール
 
-| Time | Location | Topic | Presenter |
+詳細は随時更新されますので、下記スケジュールをご確認ください。また、[TAG KubeCon カレンダー](https://calendar.google.com/calendar/ical/0305ac2530d63cc0a217362e93ff74be61ee91c8afa750cf8b29aaf7ab3b23ab%40group.calendar.google.com/public/basic.ics) を購読すると、当社の活動を簡単に最新状態に保てます。時間はBST（英国夏時間）です。
+
+### 4月1日（火）：併催イベント
+
+| 時間 | 場所 | トピック | 発表者 |
 |-----|----------|-------|-----------|
 | 07:15 - 08:45 | [Costa Coffee](https://www.excel.london/visitor/food-drink/costa-coffee) , East Entrace, Excel, London | Platform Coffee Meetup | CNCF Platforms Working Group |
-| 09:00 - 19:00 | Level 1 Hall Entrance N10 Room F | [Platform Engineering Day](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-events/platform-engineering-day/) | |
-| 09:00 - 17:30 | Level 0 ICC Capital Hall Room I | [BackstageCon](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-events/backstagecon/) | |
-| 09:00 - 17:30 | Level 1 Hall Entrance S10 Room A | [ArgoCon](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-events/argocon/) | |
-| 09:00 - 17:30 | Level 3 ICC Capital Suite 14-16| [OpenTofu Day](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-events/opentofu-day/) | |
-| 16:55 - 17:25 | Level 1 - Hall Entrance N10 - Room H | Panel: Navigating the Platform Revolution: From Bottom-Up Innovation To Product Thinking | [Antoine Bermon](https://www.linkedin.com/in/antoine-bermon/), SNCF; [Kanika Gera](https://www.linkedin.com/in/kanikagera), Adobe ; [Louis Bichard](https://www.linkedin.com/in/loujaybee), Gitpod; [Christina Kraus](https://www.linkedin.com/in/krauschristina), meshcloud |
+| 09:00 - 19:00 | レベル1ホール入口 N10 ルームF | [Platform Engineering Day](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-events/platform-engineering-day/) | |
+| 09:00 - 17:30 | レベル0 ICCキャピタルホール ルームI | [BackstageCon](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-events/backstagecon/) | |
+| 09:00 - 17:30 | 1階 ホール入口 S10 ルームA | [ArgoCon](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-events/argocon/) | |
+| 09:00 - 17:30 | レベル3 ICCキャピタルスイート14-16| [OpenTofu Day](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-events/opentofu-day/) | |
+| 16:55 - 17:25 | Level 1 - Hall Entrance N10 - Room H | パネルディスカッション: プラットフォーム革命をナビゲートする：ボトムアップ型イノベーションからプロダクト思考へ | [Antoine Bermon](https://www.linkedin.com/in/antoine-bermon/), SNCF; [Kanika Gera](https://www.linkedin.com/in/kanikagera)、Adobe ; [Louis Bichard](https://www.linkedin.com/in/loujaybee)、Gitpod; [Christina Kraus](https://www.linkedin.com/in/krauschristina)、meshcloud |
 
-### Wednesday, April 2nd: Conference Day 1
+### 4月2日（水）：カンファレンス初日
 
-| Time | Location | Topic | Presenter |
+| 時間 | 場所 | トピック | 発表者 |
 |-----|----------|-------|-----------|
-| 07:15 - 08:45 | [Costa Coffee](https://www.excel.london/visitor/food-drink/costa-coffee) , East Entrace, Excel, London | Platform Coffee Meetup | CNCF Platforms Working Group |
-| 10:30 - 12:00 | Booth TAG-A | Open Booth | TAG Leads |
-| 12:00 - 12:10 | Booth TAG-A | Lightning Talk - "Lightning-Fast Local AI App Development with Podman" | [Daniel Oh](https://www.linkedin.com/in/daniel-oh-083818112/) |
-| 12:15 - 12:25 | Booth TAG-A | Lightning Talk - "Build Your Perfect App Delivery Model: Customizing Standards with Crossplane XRDs" | [Sarah Murphy](https://www.linkedin.com/in/murph83) |
-| 12:30 - 12:40 | Booth TAG-A  | Lightning Talk - "Platform Engineering untold thruths: is it just an infrastructure matter?" | [Graziano Casto](https://www.linkedin.com/in/castograziano/) |
-| 12:45- 12:55 | Booth TAG-A  | Lightning Talk - "Platformization: Perceiving Platform Patterns" |[Ram Iyengar](https://www.linkedin.com/in/ram-iyengar) |
-| 13:00 - 14:30 | Booth TAG-A | Platforms Working Group | WG Leads |
-| 14:30- 16:00 | Booth TAG-A | App Development Working Group | WG Leads |
-| 16:00 - 18:00 | Booth TAG-A | Open Booth | TAG Leads |
-| 18:00- 20:00 | Booth TAG-A | KubeCrawl | TAG Leads |
+| 07:15 - 08:45 | [Costa Coffee](https://www.excel.london/visitor/food-drink/costa-coffee) , ロンドン・エクセル東入口 | プラットフォーム・コーヒー・ミートアップ | CNCFプラットフォームワーキンググループ |
+| 10:30 - 12:00 | ブースTAG-A | オープンブース | TAGリーダーズ |
+| 12:00 - 12:10 | ブース TAG-A | ライトニングトーク - 「Podman による超高速のローカル AI アプリ開発」 | [Daniel Oh](https://www.linkedin.com/in/daniel-oh-083818112/) |
+| 12:15 - 12:25 | ブース TAG-A | ライトニングトーク - 「完璧なアプリデリバリーモデルの構築：Crossplane XRD による標準のカスタマイズ」 | [Sarah Murphy](https://www.linkedin.com/in/murph83) |
+| 12:30 - 12:40 | ブース TAG-A  | ライトニングトーク - 「プラットフォームエンジニアリングの知られざる真実：それは単なるインフラの問題なのか？」 | [Graziano Casto](https://www.linkedin.com/in/castograziano/) |
+| 12:45- 12:55 | ブース TAG-A  | ライトニングトーク - 「プラットフォーム化：プラットフォームパターンを認識する」 |[Ram Iyengar](https://www.linkedin.com/in/ram-iyengar) |
+| 13:00 - 14:30 | ブース TAG-A | プラットフォームワーキンググループ | WG リーダー |
+| 14:30- 16:00 | ブース TAG-A | アプリ開発ワーキンググループ | WGリーダー |
+| 16:00 - 18:00 | ブース TAG-A | オープンブース | TAGリーダー |
+| 18:00- 20:00 | ブース TAG-A | KubeCrawl | TAGリーダー |
 
-### Thursday, April 3rd: Conference Day 2
+### 4月3日（木）：カンファレンス2日目
 
-| Time | Location | Topic | Presenter |
+| 時間 | 場所 | トピック | 発表者 |
 |-----|----------|-------|-----------|
-| 07:15 - 08:45 | [Costa Coffee](https://www.excel.london/visitor/food-drink/costa-coffee) , East Entrace, Excel, London | Platform Coffee Meetup | CNCF Platforms Working Group |
-| 10:30 - 12:00 | Booth TAG-A | Open Booth | TAG Leads |
-| 12:00 - 12:10 | Booth TAG-A | Lightning Talk - "Scale Before It Hurts: KEDA for Data-Intensive Apps" | [Graziano Casto](https://www.linkedin.com/in/castograziano/) & [Alessandro Cannarella](https://www.linkedin.com/in/alessandro-cannarella/) |
-| 12:12 - 12:22 | Booth TAG-A | Lightning Talk - "Extensibility and Portability with Radius for Platform Engineers" | Johnathan Smith |
-| 12:25 - 12:35 | Booth TAG-A | Lightning Talk - "Is there a tool for this? - App Developer Edition" | [Alexandra Aldershaab](https://www.linkedin.com/in/housa) |
-| 12:37 - 12:47 | Booth TAG-A | Lightning Talk - "Your Application Delivery Ran Over My CI/CD: Expanding Beyond Pipeline Thinking" | [Luke Philips](https://www.linkedin.com/in/lukephilips) |
-| 12:50 - 13:00 | Booth TAG-A | Lightning Talk - "GitOps for Everything with Pluggable PipeCD" | [Tetsuya Kikuchi](https://www.linkedin.com/in/tetsuya-kikuchi/) |
-| 13:00 - 14:30 | Booth TAG-A | Infrastructure Lifecycle Working Group | WG Leads |
-| 14:30- 16:00 | Booth TAG-A | Artifacts Working Group | WG Leads |
-| 16:00 - 17:00 | Booth TAG-A | Open Booth | TAG Leads |
+| 07:15 - 08:45 | [Costa Coffee](https://www.excel.london/visitor/food-drink/costa-coffee) , イーストエントランス, エクセル, ロンドン | プラットフォームコーヒーミートアップ | CNCFプラットフォームワーキンググループ |
+| 10:30 - 12:00 | ブース TAG-A | オープンブース | TAGリーダーズ |
+| 12:00 - 12:10 | ブース TAG-A | ライトニングトーク - 「問題が起きる前にスケールアップ：データ集約型アプリケーションのためのKEDA」 | [Graziano Casto](https://www.linkedin.com/in/castograziano/) & [Alessandro Cannarella](https://www.linkedin.com/in/alessandro-cannarella/) |
+| 12:12 - 12:22 | ブース TAG-A | ライトニングトーク - 「プラットフォームエンジニアのためのRadiusによる拡張性と移植性」 | Johnathan Smith |
+| 12:25 - 12:35 | ブース TAG-A | ライトニングトーク - 「こんなツールある？ - アプリ開発者編」 | [Alexandra Aldershaab](https://www.linkedin.com/in/housa) |
+| 12:37 - 12:47 | ブース TAG-A | ライトニングトーク - 「アプリケーションデリバリーがCI/CDを轢き潰した：パイプライン思考の枠を超えよう」 | [Luke Philips](https://www.linkedin.com/in/lukephilips) |
+| 12:50 - 13:00 | ブース TAG-A | ライトニングトーク - 「プラグイン可能なPipeCDで実現するオールインワンGitOps」 | [Tetsuya Kikuchi](https://www.linkedin.com/in/tetsuya-kikuchi/) |
+| 13:00 - 14:30 | ブース TAG-A | インフラストラクチャ・ライフサイクルワーキンググループ | WGリーダー |
+| 14:30- 16:00 | ブース TAG-A | アーティファクトワーキンググループ | WGリーダー |
+| 16:00 - 17:00 | ブース TAG-A | オープンブース | TAGリーダー |
 
-### Friday, April 4th: Conference Day 3
+### 4月4日（金）：カンファレンス3日目
 
-| Time | Location | Topic | Presenter |
+| 時間 | 場所 | トピック | 発表者 |
 |-----|----------|-------|-----------|
-| 07:15 - 08:45 | [Costa Coffee](https://www.excel.london/visitor/food-drink/costa-coffee) , East Entrace, Excel, London | Platform Coffee Meetup | CNCF Platforms Working Group |
-| 10:30 - 12:00 | Booth TAG-A | Open Booth | TAG Leads |
-| 12:00 - 12:10 | Booth TAG-A  | Lightning Talk - "Continuous Promotion - Take full advantage of your Cloud Native Infrastructure" | [Christian Hernandez](https://www.linkedin.com/in/chernandez1982) |
-| 12:15 - 12:25 | Booth TAG-A  | Lightning Talk - "Navigating the Cloud-Native Inner and Outer Loop for Developer Productivity" | [Mona Borham](https://www.linkedin.com/in/mona-borham) |
-| 12:30 - 14:00 | Booth TAG-A | Open Booth | TAG Leads |
+| 07:15 - 08:45 | [Costa Coffee](https://www.excel.london/visitor/food-drink/costa-coffee) , ロンドン・エクセル東入口 | プラットフォーム・コーヒー・ミートアップ | CNCFプラットフォームワーキンググループ |
+| 10:30 - 12:00 | ブースTAG-A | オープンブース | TAGリーダー |
+| 12:00 - 12:10 | ブース TAG-A  | ライトニングトーク - 「継続的プロモーション - クラウドネイティブインフラを最大限活用する」 | [Christian Hernandez](https://www.linkedin.com/in/chernandez1982) |
+| 12:15 - 12:25 | ブース TAG-A  | ライトニングトーク - 「開発者生産性向上のためのクラウドネイティブ内ループと外ループの活用」 | [Mona Borham](https://www.linkedin.com/in/mona-borham) |
+| 12:30 - 14:00 | ブース TAG-A | オープンブース | TAGリーダーズ |

@@ -1,5 +1,5 @@
 ---
-title:  Enterprise IDPs must mature fast. Here’s how infrastructure optimization can help
+title:  エンタープライズIDPは急速な成熟が求められる。インフラ最適化が貢献する方法
 slug:   enterprise-idp-maturity-hack
 date:   2024-05-28 12:00:00 +0000
 author: Li-Or Amir
@@ -9,116 +9,94 @@ tags:
 - Community Contribution
 - WG Platforms
 ---
-Enterprises are expected to benefit from platform engineering sooner and bigger than anyone else. This has 2 main reasons:
 
-1. With engineering bodies 100’s or 1,000’s large, standardization across the board is both a pressing need and a major event. 
+企業はプラットフォームエンジニアリングの恩恵を、他の誰よりも早く、より大きく享受できると期待されている。これには主に2つの理由があります：
 
-2. In large organizations, concerns like security, regulatory compliance, and cost efficiency can impede development.
+1. エンジニアリング組織が数百人規模あるいは千人規模であるため、全社的な標準化は差し迫った必要性であると同時に重大なイベントである。
+2. 大規模組織では、セキュリティ、規制順守、コスト効率といった懸念事項が開発を阻害しうる。
 
-With these two combined, the enterprise route to faster time-to-market must also go through scalable, effective guardrails along the product lifecycle. Therefore, Internal Developer Platform (IDP) capabilities that might be dismissed as day-2, effectively become day-1 imperatives. In other words, enterprise IDPs must mature fast – at least in some respects like compliance, security, and efficiency. When the MVP emerges, those must be already thoroughly worked.
+この2つが組み合わさることで、市場投入までの時間を短縮する企業は、製品ライフサイクル全体にわたるスケーラブルで効果的なガードレールを通過する必要があります。したがって、Day 2（導入後）と軽視されがちな内部開発者プラットフォーム（IDP）機能は、実質的にDay 1（導入時）の必須要件となります。言い換えれば、企業向けIDPは、コンプライアンス、セキュリティ、効率性といった少なくとも一部の側面において、急速に成熟しなければなりません。MVPが登場する時点で、これらは既に徹底的に整備されている必要があります。
 
+## 知っておくべきIDP関連フレームワーク
 
-## IDP-related frameworks you should know
+ビジネス価値創出までの時間を短縮するプラットフォームMVP設計において、3つのクラウドネイティブフレームワークが有用となる可能性があります。各フレームワークが企業にとって何を意味するか、その価値実現に向けた_一つの_重要な示唆を明らかにしましょう。
+  
 
-3 cloud-native frameworks might prove useful in designing your platform MVP for faster time-to-(business) value. Let’s see what they mean to enterprises, identifying _one_ takeaway from each towards that value.   
+### CNCF IDP成熟度モデル
+[プラットフォームエンジニアリング成熟度モデル](https://tag-app-delivery.cncf.io/whitepapers/platform-eng-maturity-model/)は、IDPの_5つの側面_（投資、採用、インターフェース、運用、測定）を提示し、それぞれを_4段階の成熟度レベル_（暫定的、運用可能、拡張可能、最適化）で定義します。
 
+このマトリックス形式は、IDPが進化する過程で、一部の側面が他より先に成熟する可能性を示しています。例えば、あるIDPが投資と採用の側面では「運用段階」に留まる一方、インターフェース・運用・測定では「最適化段階」を示すケースが考えられます。
 
-### CNCF IDP maturity model
+このシナリオは、IDPにコスト最適化機能が組み込まれると現実味を帯びます。他のマネージドSaaSとは異なり、こうした機能は通常、サブスクリプション費用以上の価値を還元するからです。したがって、導入を完全に「拡張可能」な段階まで待つ必要はありません。架空の例で説明しましょう：
 
-[The platform engineering maturity model](https://tag-app-delivery.cncf.io/whitepapers/platform-eng-maturity-model/) presents _five_ IDP aspects (investment, adoption, interfaces, operations, measurement), each described in _four_ maturity states (provisional, operational, scalable, optimizing). 
-
-This matrix format means that, as the IDP evolves, some aspects might mature before the others. For instance, a certain IDP might be merely “operational” on its investment and adoption aspects, but demonstrate “optimized” interfaces, operations, and measurement. 
-
-This scenario becomes likely once your IDP includes cost optimization capabilities; unlike other managed SaaS, those typically repay their subscription price and beyond. So, no need to wait until a fully “scalable” stage before they’re introduced. Let’s illustrate it with a hypothetical example:
-
-#### Example: soonicorn.io IDP status
+#### 例：soonicorn.io IDPステータス
 
 |             |                                                                                                                                                                                                                                                                           |             |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| Aspect      | Descriptive example                                                                                                                                                                                                                                                       | Maturity    |
-| Investment  | Dedicated platform team of 4: Senior platform engineer, full-stack developer, product manager, part-time UX designer.                                                                                                                                                     | Scalable    |
-| Adoption    | Push: Teams are instructed to stop using their own deployment scripts; Cloud expenditure for Dev & QA is only authorized if resources are spun up via the IDP.                                                                                                            | Operational |
-| Interfaces  | Integrated services: Every new project receives a space in a task runner (pipelines) and a runtime environment (Kubernetes namespace) and can opt into serverless runtime.Automation schedules pods to run on spot instances in a Dev cluster configured for bin packing. | Optimized   |
-| Operations  | Managed services: VM users are only asked to declare their app as stateful/stateless and fault tolerant/intolerant. VM provisioning then spins up a spot instance configured for state reattachment and fallback or utilizes existing commitments.                        | Optimized   |
-| Measurement | Qualitative and quantitative: Within 1 year of MVP release, Dev vCPU hours increase by 30% while total Dev cloud costs only increase by 15%. Integrated FinOps tool analyzes each node to provide detailed cost attribution per project and team.                         | Optimized   |
+| ----------- | ------------------- --------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------- -------------------------------------------- | ----------- |
+| 側面         | 説明例                                                                                                                                                                                                                                                       | 成熟度    |
+| 投資規模  | 専任プラットフォームチーム（4名）：シニアプラットフォームエンジニア、フルスタック開発者、プロダクトマネージャー、パートタイムUXデザイナー。                                                                                                                                                     | スケーラビリティ    |
+| 採用状況    | プッシュ：各チームは独自デプロイメントスクリプトの使用中止を指示される。開発・QA部門のクラウド支出は、IDP経由でリソースを起動した場合にのみ承認される。                                                                                                            | 運用段階    |
+| インターフェース  | 統合サービス：新規プロジェクトはタスクランナー（パイプライン）内のスペースと実行環境（Kubernetesネームスペース）を付与され、サーバーレスランタイムの選択が可能。自動化により、ビンパッキング設定のDevクラスター内スポットインスタンス上でポッドが実行される。 | 最適化   |
+| 運用 | マネージドサービス：VMユーザーはアプリケーションをステートフル/ステートレス、フォールトトレラント/トレラントとして宣言するのみ。VMプロビジョニングは状態再接続とフォールバック設定のスポットインスタンスを起動、または既存コミットメントを利用する。                        | 最適化 |
+| 測定 | 定性的・定量的: MVPリリース後1年以内に、開発用vCPU使用時間は30%増加する一方、開発クラウド総コストは15%増加のみ。統合FinOpsツールが各ノードを分析し、プロジェクト・チームごとの詳細なコスト帰属を提供。                         | 最適化済み   |
+このシナリオは、本質的に財務保守的な企業にとって極めて関連性が高い。そうした企業にとって、測定はとりわけ財務的側面が最優先となる。取締役会はエンジニアリング生産性向上に全面的に賛同しているが、IDP投資を承認するには期待されるROIを示す必要がある。つまり、エンタープライズプラットフォームは、ソフトウェアエンジニアリング時間の削減やその他の直接的・測定可能な方法でコスト削減を実現し、投資を回収することが求められる。したがって、**IDP導入の可否は、組織のコスト削減効果を実証できるかどうかに依存する可能性がある：**
 
-This scenario is highly relevant for enterprises, which are financially conservative by nature. For those, measurement is, above all, financial. The board is all in for engineering productivity, but it must be shown expected ROI to approve any IDP investment. In other words, an enterprise platform is expected to repay itself by saving software engineering hours or otherwise money in a direct, measurable way. Therefore, **the IDP mandate may depend on the ability to demonstrate how it saves the organization money:**
+- DORAの時間軸指標（変更リードタイム、サービス復旧時間など）を改善するか？
+- ダウンタイムコストが既知である場合、ダウンタイムを削減するか？
+- クラウド支出の削減につながるか？
 
-- Does it improve DORA time-centric metrics? (i.e. lead time for change, time to restore service)
+これを達成するには、IDPが監視ツール（例：GitLab）と責任あるクラウド利用のためのガードレールを統合し、節約手法を適用して結果を可視化する統合ツール群で裏付けられる必要があります。
 
-- Does it decrease downtime whereas the cost of downtime is known?
+**重要なポイント：** IDPは、暫定的な投資・導入段階（つまりエンジニアの作業方法を変えずに）から財務的価値を生み出すことで初期評価を獲得できます。例えばバックエンドでコスト効率的なクラウドリソースプロビジョニングポリシーを強制できます。これにより生じるコスト削減は容易に測定・理解可能です。したがって、このいわゆる「Day 2機能」はプラットフォームのMVPの一部としてより意義があります。これらが解き放つ価値は、実際にプラットフォームの他の側面を成熟させ続けるための権限獲得につながる可能性があります。
 
-- Does it lead to reduced cloud expenditure?
+### プラットフォームエンジニアリングの視点から見たCNoE
 
- Achieving this may require the IDP to integrate both monitoring (e.g. GitLab) and guardrails for responsible cloud usage, backed by integrated tooling that applies savings techniques and visually tracks their results.
+[クラウドネイティブ運用エクセレンス（CNoE）イニシアチブ](https://cnoe.io/)は、企業がクラウドネイティブツール（特にオープンソース）を容易に導入できるよう支援することを目的としています。プラットフォームエンジニアリングはその第一のユースケースです。CNoEは企業におけるクラウドネイティブ成熟度向上のため、以下の原則を提唱しています：
 
-**One takeaway:** an IDP can earn initial credit by generating financial value as soon as its provisional investment or adoption phase, i.e. without changing the way the engineers work. For example, it can enforce cost-effective cloud resource provisioning policies in the backend. The cost reduction generated by those is easily measured and understood. Thus, this so-called day-2 capability makes more sense as part of the platform’s MVP. The value they unlock might actually win the mandate to keep maturing the platform in other aspects.
+1. **プラクティスよりツール優先 –** 困難ではあるが、ツール導入は文化変革より容易です。実装したいプラクティス（特に開発者が手動で実行することに慣れていないクラウドリソースプロビジョニングなど）を自動化するツールを選択しましょう。
+2. **統合性 –** 複数の機能要件を満たし、データ収集・レポート作成・推奨事項提示・実行までの閉ループを実現できるツールを優先しましょう。
+3. **マネージドソリューション –** KubernetesやLinuxディストリビューション、BackstageやCrossplaneといった主要IDPプロジェクトなど、人気クラウドネイティブソリューション向けに商用ベンダーが提供するマネージドサービスでサポートギャップを解消できます。  
+4. **インフラ向けカスタマイズ可能な標準化** – 要件の強制と開発者向け使いやすさのバランスを保ちましょう
+5. **Kubernetesを基盤としつつもそれに限定されない** – 特定のコンテナエンジンに依存しないツールを優先しましょう。これにより、各種マネージドKubernetesに加え、ECS、Openshift、VMWare Tanzuなども利用可能となります。
 
+これらの原則はもはや単なる理論ではありません：CNoEの中核は[idpBuilderツール](https://github.com/cnoe-io/idpbuilder)であり、ブランドに依存しないリファレンスアーキテクチャが伴います。さらに即戦力となるオープンソースIDPを求める企業には、[BACK Stack](https://backstack.dev/intro/)がCNoE原則の実践例として浮上しています。これは後から変更可能な、明確なツール選択を特徴としています。
 
-### CNoE from a platform engineering perspective
+これが理想郷か？確信は持てません。私の見解では、CNoEが解決を目指す課題（標準の急速な進化、DevOpsが常に最適とは限らない点）は、_企業内_で最も深刻な問題ではありません。
 
-[The Cloud Native Operational Excellence (CNoE) initiative](https://cnoe.io/) aims to help enterprises ease into cloud-native tooling, especially open-source. Platform engineering is its #1 use case. CNoE advocates several tenets to increase cloud-native maturity in enterprises:
+全体像を補完するため、企業エンジニアから直接聞いた重大なオープンソース懸念点を以下に示します：
 
-1. **Tools over practices –** as hard as it is, tool adoption is still easier than culture change. Pick tools that automate the practices you want to implement – especially those your developers are not used to perform hands-on, like cloud resource provisioning.
+1. **断片化** – オープンソースツールはネイティブに連携しないことが多く、同じデータセットやポリシーで動作しないため、頻繁な障害発生の原因となります。あるツールが推奨のみ（例：Opencost）、別のツールが実行のみ（例：Terraform）を行う場合、その接点で少なくとも1組の重要な人間の目が必要となる。そして大規模環境では、こうした交差点が1日あたり数千箇所発生します。
+2. **サポート体制の欠如** - オープンソースツールには専門的なサポートがなく、社内エンジニアに追加負担がかかります。
+3. **プライバシー懸念** – GDPR準拠組織では通常、オープンソースソフトウェアやDB、ハイパースケーラー（AWS、Azure、GCP）上でホストされるSaaSを排除します。（AWS、Azure、GCP）。倫理に反して取得したデータを扱う、あるいは自社ユーザーデータを漏洩させた場合の罰則は過大すぎます。たとえ無料でも、一部の調達ガイドラインは適用されます！
+4. **付加価値の測定不能性** – スタックの一部として機能するクラウドネイティブSaaS、あるいはソフトウェア供給チェーン上で特定業務を担うSaaSの場合、メトリクス改善への貢献度を常に分離して測定できるとは限りません。
+**重要なポイント：** 前節では、IDPの初日から重要な能力としてコスト最適化の重要性を確認しました。CNoEの原則に従ってこれを実現するには、管理され、統合され、高度に自動化され、コンテナ化環境と非コンテナ化環境の両方に適したコスト最適化ソリューションをIDPに統合する必要があります。
 
-2. **Convergence –** prefer tools that fulfill multiple desired capabilities, and can close a circle on data collection, reporting, recommendations and execution.
+### アーキテクチャ設計の優れたAWS、Azure、GCP
 
-3. **Managed solutions –** the support gap can be closed by commercial vendors offering manages services for popular cloud-native solutions like Kubernetes, Linux and distros, or popular IDP projects Backstage and Crossplane.  
+コスト最適化は、[AWS](https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html)、 [Azure](https://learn.microsoft.com/en-us/azure/well-architected/cost-optimization/principles#design-with-a-cost-efficiency-mindset)、[GCP](https://cloud.google.com/architecture/framework/cost-optimization) においても同様です。各ハイパースケーラーは柱の定義を若干異ならせていますが、いずれも設計・計画、監視・管理、コスト削減活動の側面を網羅しています。3つの中で最も明快なのはAzureの定義だと考えます：
 
-4. **Customizable standard for infrastructure** – balance between the enforcement of requirements to developer usability 
+1. コスト管理の規律を確立する（FinOpsプラクティスによる）
+2. コスト効率性を考慮した設計
+3. 使用量最適化のための設計
+4. レート最適化のための設計
+5. 継続的な監視と最適化
 
-5. **Powered by Kubernetes but not confined to it** – prefer tooling that isn’t confined to a specific container engine, so besides different types of managed Kubernetes they may use ECS, Openshift, VMWare Tanzu and others.
+直感的に言えば、パブリッククラウド環境全体にとって適切なことは、その環境で稼働するIDP（内部開発者プラットフォーム）にとっても適切です。これにより二つの結論が導かれます：IDP自体がクラウドリソース上でコスト効率的に稼働すること、そして開発組織全体で同様のコスト効率化プラクティスを育むことを支援すべきである、ということです。
 
-These tenets are no longer mere theory: CNoE’s centerpiece is [the idpBuilder tool](https://github.com/cnoe-io/idpbuilder), accompanied by a non-branded reference architecture. For enterprises looking for even more out-of-the-box open-source IDPs, [BACK Stack](https://backstack.dev/intro/) emerges as another practical application of CNoE principles, with opinionated tooling selection which can be modified later.
+FinOpsの観点では、IDPが可視化されたコスト監視機能と、ラベルやネームスペースなどによる各ノードコンポーネントの正確な使用状況帰属を提供することが望ましいです。これにより、エンジニアリング部門と他のコスト関係者（FinOpsを筆頭とする）間の連携が促進されます。
 
-Is this nirvana? I’m not sure. In my opinion, the challenges CNoE sets to solve (rapid evolution of standards, DevOps not always a good fit) aren’t the most painful ones _in enterprises_.
+活動面では、割引コンピューティング（スポット、RI、SP）を活用し、各マシンのCPU、メモリ、ストレージ、ネットワーク容量を継続的に「絞り切る」ことが求められます。これは、[ビンパッキング、リサイズ](https://spot.io/blog/beyond-savings-overlooked-aspects-of-container-optimization/)、シャットダウンスケジューリング、動的ストレージといったKubernetes最適化技術の自動化によって実現可能です。
 
-To complete the picture, here are some grave open-source concerns I heard directly from enterprise engineers:
+**重要なポイント：** 理想的な統合コスト最適化ソリューションは、DevOpsとFinOpsの両方の特性を兼ね備えています： 一方で、クラウド支出を削減し将来的に最小化するために必要なアクションを自動化する実用的なIaC統合を備えています。他方で、クラウドコストの帰属と説明責任を支えるコスト可視化・分析機能を提供します。
 
-1. **Fragmentation** – open-source tools often don’t integrate natively, so they don’t always work off the same datasets and policies – which might lead to frequent failures. When one tool only recommends (e.g. Opencost) and another only executes (e.g. Terraform), you need at least one critical pair of human eyeballs at the intersection. And at scale, there are 1,000’s of those intersections daily.
+## これを自社にどう適用するか？
 
-2. **No support** - Open-source tools lack professional support, which places extra load on in-house engineers.
+Backstage、Port、Crossplane、Cortexなどの外部プラットフォームやポータルツールを利用している場合、次の手順に従ってください：
 
-3. **Privacy concerns** – GDPR-compliant organizations usually rule out open-source software and DBs, and also SaaS hosted on hyperscalers (AWS, Azure or GCP)The potential fine for working on data acquired unethically or exposing their own users’ data is just too big. Even if it’s free, some procurement guidelines still apply!
+1. クラウドリソース管理ソリューションの統合カタログを確認してください。これらはプロビジョニング、オートスケーリング、最適化として分類されている場合もあります。
+2. Kubecostなどのオープンソースレポートツールから始め、最適化の可能性を把握することを検討してください。
+3. 継続的な最適化の重労働を自動化できるツールを外部で調査してください。現在、プラットフォームベンダーの統合カタログにこうしたツールがほぼ存在しないのは、これらが「運用段階（day-2）」の機能と見なされ、大半のプラットフォームが対応していないためです。しかし心配は無用です。オートスケーリング関連は飽和状態の競争激化分野です。POCを開始すれば、ベンダーは自社のプラットフォームツール向けプラグインやプロバイダーを開発する強い動機付けを得ます。こうしたプラグインは、他の多くのユーザーへの露出機会にもつながり得ます。
 
-4. **Inability to measure added value** – in the case of cloud-native SaaS which serves as part of a stack, or does something specific along the software supply chain, its  contribution to metrics improvement cannot always be isolated.
+プラットフォームをゼロから構築する場合？ 上記のステップ2から開始してください。ステップ3に到達したら、ベンダーのGitHubリポジトリやTerraformモジュールを探して統合を作成します。専任の開発リソースがない場合は、POCが有料サブスクリプションに移行した時点でベンダーに依頼することも可能です。
 
-**One takeaway:** in the previous section we established the importance of cost optimization as an IDP’s day-1 capability. To realize this according to CNoE tenets, we want to integrate into our IDP a cost optimization solution that is managed, converged, highly automated, and suits all containerized and non-containerized settings.
-
-
-### Well-architected AWS, Azure, and GCP
-
-Cost optimization is a Well-Architected pillar in [AWS](https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html), [Azure](https://learn.microsoft.com/en-us/azure/well-architected/cost-optimization/principles#design-with-a-cost-efficiency-mindset), and [GCP](https://cloud.google.com/architecture/framework/cost-optimization) alike. Each hyperscaler outlines pillar slightly different, but all touch aspects of designing & planning, monitoring & managing, and cost-reducing activities. Out of all 3, I find Azure’s to be the most straightforward:
-
-1. Develop cost-management discipline (by FinOps practices)
-
-2. Design with a cost-efficiency mindset
-
-3. Design for usage optimization
-
-4. Design for rate optimization
-
-5. Monitor and optimize over time
-
-Intuitively, what’s right for your entire public cloud estate is right for an IDP that runs in it. This leads to a two-fold conclusion: the IDP itself must run cost-efficiently on cloud resources; and it should help cultivate the same cost efficiency practices in the entire Dev organization. 
-
-From a FinOps standpoint, you want your IDP to provide visualized cost observability and accurate usage attribution of each node’s components by label, namespace etc. This means it will facilitate collaboration between the engineering body and other cost stakeholders, FinOps first.
-
-From an activity standpoint, you want it to leverage discount compute (spots, RIs, SPs) and to continuously “squeeze the lemon” of each machine’s CPU, memory, storage, and network capacity. This is achievable by automating Kubernetes optimization techniques like [bin packing, rightsizing,](https://spot.io/blog/beyond-savings-overlooked-aspects-of-container-optimization/) shutdown scheduling, and dynamic storage.
-
-**One takeaway:** Your IDP’s ideal integrated cost optimization solution has dual DevOps/FinOps qualities: On one hand, it has workable IaC integrations to automate the actions needed to lower cloud spend and minimize it going forward; On the other hand, it provides cost visibility & analysis that support cloud cost attribution and accountability. 
-
-
-## How do I make this my own?
-
-If you work with external platform or portal tooling, e.g. Backstage, Port, Crossplane, Cortex etc. – follow the next steps:
-
-1. Check integration catalog for cloud resource management solutions. These might also be classified as provisioning, autoscaling & optimization. 
-
-2. Consider starting with open-source reporting tools like Kubecost to learn about your optimization potential. 
-
-3. Research externally for tools capable of automating the heavy lifting of continuous optimization. Today, these are nearly non-existent in the integration catalogs of platform vendors – because they are considered day-2 capabilities, and most platforms are simply not there. No reason to worry though – autoscaling & co. is a saturated, competitive segment. Once you start a POC, it’s in the vendor’s best interest to develop a plugin or provider for your chosen platform tool. Such a plugin might help put them in front of many other users.
-
-Platforming from scratch? Start off from step 2 above. When you hit step 3, look for the vendor’s GitHub repo, or Terraform module, to create the integration. If you don’t have Dev resources to dedicate, you may request it from the vendor once your POC becomes a paid subscription.
-
-_Special thanks to Artem Lajko and Abby Bangser for their insightful reviews._
+_Artem Lajko氏とAbby Bangser氏による洞察に富んだレビューに深く感謝します。_

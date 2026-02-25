@@ -1,5 +1,5 @@
 ---
-title:  TAG App Delivery at Kubecon Chicago
+title:  Kubecon ChicagoにおけるTAG App Delivery
 slug:   tag-app-delivery-at-kubecon-chicago
 date:   2023-10-09 12:00:00 +0000
 author: Josh Gavant
@@ -11,62 +11,60 @@ tags:
 
 ![Kubecon Chicago 2023](/images/kubecon-chicago-2023.jpg)
 
-At Kubecon Chicago TAG App Delivery will bring together maintainers and users of
-projects that enable cloud-native application delivery to meet and learn from
-each other. The TAG's goals as always are to a) enable application delivery projects
-to learn from each other and from cloud application developers and b) make
-application delivery faster and more efficient for end users.
- 
-To this end the TAG will host
-[a project meeting](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/project-engagement/#in-person-project-working-session)
-on Monday morning at [the Marriott Marquis](https://maps.app.goo.gl/6gczBxScup8Cn6tBA) on Level 4, room name "Probability"; and booth 41 in
-[the project pavilion](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/project-engagement/#project-pavilion)
-at the conference center on Tuesday, Wednesday and Thursday. At these venues we'll be hosting talks and discussions about app
-delivery topics; if you'd like to share an open source project,
-a new idea, or just lead an open discussion please let us know by filling out
-[this form](https://forms.gle/ZbNxrK5f72otckvj7).
-The project meeting will also be [livestreamed to YouTube](https://www.youtube.com/watch?v=NZCmYRVziGY).
+Kubecon Chicago にて、TAG App Delivery はクラウドネイティブアプリケーションデリバリーを実現するプロジェクトのメンテナーとユーザーを結びつけ、互いに学び合う場を提供します。TAG の目標は常に以下の通りです：a) アプリケーションデリバリープロジェクト同士、およびクラウドアプリケーション開発者からの相互学習を促進すること、b) エンドユーザーにとってアプリケーションデリバリーをより迅速かつ効率的にすること。
 
-Here's that info again:
+この目的のため、TAGはイベントにて下記を実施します。
 
-- Project meeting on Monday 11/6 from 8am-12pm at the [Marriot Marquis](https://maps.app.goo.gl/6gczBxScup8Cn6tBA), Level 4, room name Probability and [YouTube](https://www.youtube.com/watch?v=NZCmYRVziGY).
-- Booth and meetup spot at project pavilion booth #P10 on the show floor each afternoon and evening
-- Form for presentation and discussion proposals: <https://forms.gle/ZbNxrK5f72otckvj7>
+[プロジェクトミーティング](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/project-engagement/#in-person-project-working-session)
+月曜日の午前中、[マリオット・マーキス](https://maps.app.goo.gl/6gczBxScup8Cn6tBA) 4階「Probability」ルームにて開催します。また、
 
-The TAG will also host
-[a panel discussion](https://kccncna2023.sched.com/event/eb75a050355eccf96c4f1d77a831f7d4)
-on Tuesday at 3:25pm on the relevance of platforms and platform engineering for
-efficient cloud-native computing. Please join us!
+[プロジェクトパビリオン](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/project-engagement/#project-pavilion)
+にてブース41を出展します。これらの会場では、App Deliveryに関するトピックについての講演やディスカッションを開催します。
 
-Stop by our booth to chat about platforms, GitOps, artifacts and other app
-delivery topics and learn more about the TAG.
+オープンソースプロジェクトや新しいアイデアを共有したい方、あるいはオープンディスカッションをリードしたい方は、
+[こちらのフォーム](https://forms.gle/ZbNxrK5f72otckvj7)にご記入の上お知らせください。
 
-## Pre-day meetup - Monday morning
+プロジェクトミーティングは[YouTubeでライブ配信](https://www.youtube.com/watch?v=NZCmYRVziGY)されます。
 
-The schedule for the project meeting on Monday morning will be as follows. The
-meeting will be live streamed and recorded too.
+詳細を再掲します：
 
-Time   | Topic | Presenter
+- プロジェクトミーティング：11月6日（月）午前8時～12時  会場：[the Marriott Marquis](https://maps.app.goo.gl/6gczBxScup8Cn6tBA) 4階、部屋名「Probability」  配信：[YouTube](https://www.youtube.com/watch?v=NZCmYRVziGY)
+- 展示会場内プロジェクトパビリオンブース#P10にて、毎日午後と夜間にブース及びミートアップ会場を設置
+- 発表・ディスカッション提案用フォーム：<https://forms.gle/ZbNxrK5f72otckvj7>
+
+TAGではさらに
+
+[パネルディスカッション](https://kccncna2023.sched.com/event/eb75a050355eccf96c4f1d77a831f7d4)
+を火曜日15:25より開催します。テーマは効率的なクラウドネイティブコンピューティングにおけるプラットフォームとプラットフォームエンジニアリングの重要性です。ぜひご参加ください！
+
+プラットフォーム、GitOps、アーティファクト、その他のApp Deliveryに関する話題についてお話しし、TAGについて詳しく知るために、ぜひブースにお立ち寄りください。
+
+## 事前ミーティング - 月曜日午前
+
+月曜午前中のプロジェクトミーティングのスケジュールは以下の通りです。
+ミーティングはライブ配信され、録画もされます。
+
+時間   | トピック | 発表者
 -------|-------|------
-08:00  | TAG General Review | [TAG Leads](https://tag-app-delivery.cncf.io/#leads)
-09:00  | Sandbox submission review for [Radius](https://radapp.io/) | Jonathan Smith, Microsoft
-10:00  | Learn about and discuss [CNOE](https://cnoe.io/) | Nima Kaviani, AWS
-11:00  | Workload Specifications: Your Best Friends In Platform Engineering | Atulpriya Sharma, InfraCloud
-\-     | Automating the Deployment of Data Workloads to Kubernetes with ArgoCD, Argo Workflows, and Hera | Matt Menzenski, Payit
-\-     | Beyond the Bundle: Porter and CNAB | Sarah Christoff, Microsoft
-\-     | From Apps to Stacks: Delivering Reusable Analytic Stacks on Kubernetes | Robert Hodges, Altinity
+08:00  | TAG全般レビュー | [TAGリーダー](https://tag-app-delivery.cncf.io/#leads)
+09:00  | [Radius](https://radapp.io/) サンドボックス提出内容レビュー | Jonathan Smith, Microsoft
+10:00  | [CNOE](https://cnoe.io/) について学び議論する | Nima Kaviani, AWS
+11:00  | ワークロード仕様書：プラットフォームエンジニアリングにおける最強の相棒 | Atulpriya Sharma, InfraCloud
+\-     | ArgoCD、Argo Workflows、Heraを用いたKubernetesへのデータワークロード自動デプロイ | Matt Menzenski, Payit
+\-     | バンドルを超えて：PorterとCNAB | Sarah Christoff, Microsoft
+\-     | アプリからスタックへ：Kubernetes上で再利用可能な分析スタックを提供 | Robert Hodges, Altinity
 
-## Booth meetups - Tuesday, Wednesday, Thursday
+## ブースミートアップ - 火曜日、水曜日、木曜日
 
-The schedule for talks at the booth follows:
+ブースでのトークスケジュールは以下の通りです：
 
-Date/Time     | Topic
+日時     | トピック
 --------------|-------
-Nov 7 @ 17:00 | Chat with participants from [Platforms Panel](https://kccncna2023.sched.com/event/eb75a050355eccf96c4f1d77a831f7d4)
-Nov 8 @ 15:00 | Talks and discussions
-\-            | Speed up your API delivery with Microcks | Yacine Kheddache, Microcks
-\-            | How to Build a GitOps Internal Developer Platform on Kubernetes | Christina Andonov, AWS
-\-            | KubeConstellations: Platform Engineering Patterns | Ram Iyengar, Cloud Foundry
-\-            | AAA framework & DCD capability map for Platform Engineering | Vishal Biyani, InfraCloud
+11月7日 17:00 | [Platforms Panel](https://kccncna2023.sched.com/event/eb75a050355eccf96c4f1d77a831f7d4)参加者との交流
+11月8日 15:00 | トーク＆ディスカッション
+\-            | MicrocksでAPIデリバリーを高速化 | Yacine Kheddache, Microcks
+\-            | Kubernetes上でのGitOps内部開発者プラットフォーム構築方法 | Christina Andonov, AWS
+\-            | KubeConstellations: プラットフォームエンジニアリングパターン | Ram Iyengar, Cloud Foundry
+\-            | プラットフォームエンジニアリングのためのAAAフレームワークとDCD能力マップ | Vishal Biyani, InfraCloud
 
-See you in Chicago!
+シカゴでお会いしましょう！

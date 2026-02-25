@@ -1,5 +1,5 @@
 ---
-title:  "Navigating Platform Engineering with the maturity model assessment"
+title:  "成熟度モデル評価によるプラットフォームエンジニアリングのナビゲーション"
 slug: navigating-platform-engineering
 date:   2025-09-15 01:00:00 +0000
 author: Steve Fenton
@@ -10,74 +10,74 @@ tags:
 - Community Contributions
 ---
 
-The [CNCF Platform Engineering community](https://cloudnativeplatforms.com) has been working on an assessment to accompany the [Platform Engineering Maturity Model](https://cloudnativeplatforms.com/whitepapers/platform-eng-maturity-model/). It's now available as a preview for feedback, but it's crucial to understand its purpose to know what it can do for you and what you need to put in once you get your score.
+[CNCF Platform Engineering Community](https://cloudnativeplatforms.com)は、[プラットフォームエンジニアリング成熟度モデル](https://cloudnativeplatforms.com/whitepapers/platform-eng-maturity-model/)に付随する評価ツールの開発を進めてきました。現在フィードバック用のプレビュー版が公開されていますが、この評価ツールの目的を理解することが重要です。そうすることで、このツールがどのような役割を果たすのか、またスコア取得後にどのような情報を入力する必要があるのかが明確になります。
 
-The assessment is a series of multiple-choice questions that takes around 20 minutes to complete. It runs in your browser and no data is shared. Once complete, you'll get a report card that shows you where you sit within the Platform Engineering Maturity Model.
+この評価ツールは選択式問題で構成され、所要時間は約20分です。ブラウザ上で動作し、データは一切共有されません。完了後、プラットフォームエンジニアリング成熟度モデルにおける自組織の位置付けを示すレポートカードが発行されます。
 
-Help us out by [trying out the assessment](https://cloud-native-platform-engineering.github.io/pemm-assessment/) and [giving us feedback](https://docs.google.com/forms/d/e/1FAIpQLScXru41BVVQDipxuSCQaNmo0GcBpBM8jHhDbX3pQskJXFgV8A/viewform).
+評価ツールの[試用](https://cloud-native-platform-engineering.github.io/pemm-assessment/)と[フィードバックの提供](https://docs.google.com/forms/d/e/1FAIpQLScXru41BVVQDipxuSCQaNmo0GcBpBM8jHhDbX3pQskJXFgV8A/viewform)にご協力ください。
 
-## Platform orienteering
+## プラットフォーム・オリエンテーリング
 
-Picture yourself at the edge of a vast forest. You know there's a destination somewhere out there, but between you and your goal lies unfamiliar terrain filled with hills, valleys, streams, and dense woodland. This is orienteering, the sport of navigating unknown territory using only a map and compass.
+広大な森の縁に立っている自分を想像してください。どこかに目的地があることはわかっていますが、あなたと目標の間に丘、谷、小川、密林に満ちた見知らぬ地形が広がっています。これがオリエンテーリング、地図とコンパスだけを使って未知の領域を航行するスポーツです。
 
-You can take part in orienteering with minimal kit. If you have a map, you can work out the rest using landmarks. Perhaps you'll spot that distinctive hill in the distance, follow the bend of a river, or use a church spire as a reference point. But it gets a whole lot easier if you have a compass to tell you which direction you're facing.
+オリエンテーリングは最小限の装備で参加できます。地図さえあれば、目印を使って残りを把握できます。遠くに特徴的な丘を見つけたり、川の曲がり角を辿ったり、教会の尖塔を基準点にしたりできるでしょう。しかし、自分がどの方向を向いているかを教えてくれるコンパスがあれば、はるかに簡単になります。
 
-That's why we wanted to add an assessment tool to accompany the Platform Engineering maturity model. Just like orienteering requires both a map and a compass working together, a successful Platform Engineering transformation needs a clear picture of the landscape and a way to determine your current position.
+だからこそ、プラットフォームエンジニアリング成熟度モデルに評価ツールを追加したかったのです。オリエンテーリングが地図とコンパスの連携を必要とするように、プラットフォームエンジニアリング変革の成功には、地形を明確に把握する方法と現在地を特定する手段が不可欠です。
 
-## The maturity model is the map
+## 成熟度モデルは地図である
 
-In orienteering, a map is your window into the landscape. It shows you the contour lines that reveal steep climbs and gentle slopes, the symbols that mark forests, clearings, and water features, and the network of paths that connect different areas. But here's what's crucial to understand: the map shows you the terrain as it exists, not where you are within that terrain.
+オリエンテーリングにおいて、地図は地形を映し出す窓です。等高線は急勾配や緩やかな斜面を、記号は森林・開けた場所・水域を示し、道路網は各エリアを繋ぎます。しかし肝心なのは、地図が示すのは「地形そのもの」であって「地形内の現在位置」ではない点です。
 
-The Platform Engineering maturity model works the same way. It's a detailed map that describes the features of the Platform Engineering landscape. It has the organizational structures, the technical capabilities, the process maturity levels, and the cultural elements that define different stages of platform evolution. It shows you what "good" looks like at various levels of sophistication.
+プラットフォームエンジニアリング成熟度モデルも同様です。これはプラットフォームエンジニアリングの風景を詳細に描いた地図です。組織構造、技術的能力、プロセスの成熟度レベル、プラットフォーム進化の異なる段階を定義する文化的要素が記載されています。様々な成熟度レベルにおける「理想的な状態」を示しているのです。
 
-![A diagram showing a typical growth pattern for platform adoption: A slow start, and a tipping point where the value is sufficient to cause growth to be pulled by platform users](/images/maturity-growth-pattern.png)
+![プラットフォーム導入の典型的な成長パターンを示す図：緩やかなスタートから、価値が十分に高まりプラットフォームユーザーによって成長が牽引される転換点まで](/images/maturity-growth-pattern.png)
 
-What a map doesn't tell you is where you are right now, or where you want to go. When it comes to your destination, it's your journey, so it's for you to decide. We're each heading somewhere different, and that's as true for Platform Engineering maturity as it is for choosing whether to head to a peaceful lakeside clearing or push for the challenging summit.
+この地図が示さないのは、現在の位置や目指すべき地点です。目的地はあなた自身の旅路であり、決めるのはあなた自身です。私たちはそれぞれ異なる場所へ向かっています。それはプラットフォームエンジニアリングの成熟度においても、静かな湖畔の開けた場所を目指すか、挑戦的な山頂を目指すかの選択においても同じです。
 
-Some organizations want to reach the beach: a stable, reliable platform that serves their current needs without unnecessary complexity. Others are drawn to the heady heights of mountains, pursuing cutting-edge capabilities and pushing the boundaries of what's possible with Platform Engineering. Both destinations are valid; the map just helps you understand the terrain that lies between you and your next waypoint.
+ある組織は浜辺を目指します。不要な複雑さを排し、現在のニーズを満たす安定した信頼性の高いプラットフォームを求めて。別の組織は山の頂上へと惹かれ、最先端の機能の追求やプラットフォームエンジニアリングの可能性の限界への挑戦を求めます。どちらの目的地も正当です。地図は単に、あなたと次の目標地点の間に広がる地形を理解する手助けをするだけです。
 
-## The assessment is a compass
+## 評価は羅針盤である
 
-Once you have the map and an idea of where you want to get to, the one thing standing in your way is knowing where you are right now. In orienteering, you might recognize that hill over there and that stream down below, but you can't orient the map correctly without knowing which way is north. You could be looking at the landscape upside down for all you know.
+地図を手に入れ、目指す場所のイメージが固まったら、最後に必要なのは「今自分がどこにいるか」を知ることです。オリエンテーリングで言えば、あそこの丘や下流の小川を認識できても、北の方向が分からなければ地図を正しく向き合わせられません。もしかすると、風景を逆さまに見ている可能性すらあるのです。
 
-You can't plan a route until you know your starting point. Are you at the bottom of the valley looking up, or are you halfway up the slope? Are you even on the side of the right mountain? The difference determines everything about your next steps.
+出発点を把握しなければ、ルートを計画することはできません。あなたは谷底から上を見上げているのか、それとも斜面の途中まで登っているのか？そもそも正しい山の斜面に立っているのか？この違いが、次の行動のすべてを決定します。
 
-This is where the Platform Engineering assessment comes in. It functions as your compass, not the magnetic but the organizational kind. It helps you work out which way around to hold the map and where you are within the Platform Engineering landscape. The assessment asks targeted questions about your current practices, capabilities, and organizational structures, then plots your position on the maturity model map.
+ここでプラットフォームエンジニアリング評価が役立ちます。これは磁石ではなく組織的な羅針盤として機能します。地図をどの方向に向けて持つべきか、プラットフォームエンジニアリングの風景の中で自組織がどこに位置するかを把握する手助けとなります。この評価では、現在の実践内容、能力、組織構造について的を絞った質問を行い、成熟度モデルマップ上にあなたの位置をプロットします。
 
-With both map and compass in hand, you can finally see the whole picture: here's where you are, there's where you want to go, and now you can begin to understand the terrain you'll need to cross to get there.
+地図と羅針盤を手にした今、ようやく全体像が見えてきます：ここが現在の位置、あそこが目指す地点、そしてそこへ至るために越えるべき地形を理解し始めることができるのです。
 
-## Route planning
+## ルート計画
 
-When we were gathering feedback on the assessment during its development, one question came up repeatedly: "This is great for showing me where I am and where I could go, but how do I actually get from here to there?"
+アセスメント開発中にフィードバックを収集した際、繰り返し寄せられた質問があります：「現在地と到達可能な地点は明確になったが、実際にどう移動すればよいのか？」
 
-It's a natural question. In orienteering, once you know your position and your destination, the next step is route planning. Do you take the direct path that cuts straight across that steep hill, or do you follow the longer but easier route that curves around the valley? Should you push through the dense forest or stick to the clearer paths that might add distance but save time?
+これは当然の疑問です。オリエンテーリングでは、位置と目的地が判明した次の段階がルート計画です。急峻な丘を真っ直ぐ横切る直行ルートを選ぶか、谷に沿って迂回する距離は長いが楽なルートを選ぶか？ 密林を突破すべきか、距離は増えるが時間を節約できる見通しの良い道に留まるべきか？
 
-At the moment, detailed route planning isn't part of the assessment. Think of our current tool as a reliable map and compass combination, but not a complete GPS navigation system yet. The "SatNav version" that provides turn-by-turn directions is a later evolution we're considering.
+現時点では、詳細なルート計画は評価機能に含まれていません。現在のツールは信頼性の高い地図とコンパスの組み合わせと捉えてください。完全なGPSナビゲーションシステムではありません。ターンバイターン方式の指示を提供する「SatNav版」は、今後検討中の進化形です。
 
-The assessment might prompt you about your intended destination and offer some general recommendations, like suggesting that organizations aiming for advanced platform capabilities typically need to focus on developer experience metrics or that teams targeting rapid scaling should prioritize automation investments. But we deliberately don't want to remove human expertise and judgment from the process.
+評価では、目標とする目的地について質問し、一般的な推奨事項を提示する場合があります。例えば、高度なプラットフォーム機能を目指す組織は通常、開発者体験の指標に注力すべきであることや、迅速なスケーリングを目指すチームは自動化投資を優先すべきであるといった提案です。ただし、このプロセスから人間の専門知識や判断力を意図的に排除することは望んでいません。
 
-When we add more detailed recommendations in future versions, those recommendations will remain general enough to require customization. There's always space for the next steps to be tailored by people who understand your organization's unique context, constraints, and goals. After all, no two orienteering courses are exactly alike, and neither are any two Platform Engineering transformations.
+将来バージョンで詳細な推奨事項を追加する際も、それらはおおむねカスタマイズが必要な一般的な内容に留まります。組織固有の文脈・制約・目標を理解する人間による次段階の調整余地は常に存在します。結局のところ、全く同じオリエンテーリングコースが二つとないのと同様に、プラットフォームエンジニアリング変革も二つとして同じものはありません。
 
-## Prototype assessment feedback
+## プロトタイプ評価に関するフィードバック
 
-We are open to feedback for all elements of the assessment. For example:
+評価の全要素についてフィードバックを歓迎します。例えば：
 
-- Are the questions and answer options clear?
-- Did the result match your expectation?
-- Are the visualizations helpful or should we try something else?
+- 質問と回答選択肢は明確ですか？
+- 結果はご期待に沿いましたか？
+- ビジュアライゼーションは有用ですか？それとも別の方法を試すべきですか？
 
-The assessment scores responses for each category in the maturity model. This information is shown in three ways in the assessment's output.
+本評価では成熟度モデルの各カテゴリに対する回答をスコアリングします。この情報は評価結果出力において3つの方法で表示されます。
 
-1. **Spider chart**: Uses the average score in each category to highlight strengths and weaknesses.
-2. **Matrix**: Plots answer density to show the spread within each category.
-3. **Table**: Displays average scores per category.
+1. **スパイダーチャート**：各カテゴリの平均スコアを用いて強みと弱みを可視化します。
+2. **マトリクス**：回答密度をプロットし、各カテゴリー内の分布を示します。
+3. **表形式**：カテゴリーごとの平均スコアを表示します。
 
-![A diagram showing a typical growth pattern for platform adoption: A slow start, and a tipping point where the value is sufficient to cause growth to be pulled by platform users](/images/assessment-result.png)
+![プラットフォーム導入の典型的な成長パターンを示す図：緩やかなスタートから、プラットフォームユーザーが成長を牽引する十分な価値が生じる転換点まで](/images/assessment-result.png)
 
-## Helping you navigate
+## ナビゲーションの支援
 
-The assessment gives you the essential foundation: a clear understanding of where you stand and the possible paths forward. From there, the art of navigation, whether through forests or platform transformations, remains a uniquely human skill.
+本評価は、現状と今後の可能性を明確に把握する基盤を提供します。そこから先、森の航海であれプラットフォーム変革であれ、ナビゲーションの技は依然として人間固有のスキルです。
 
-You can help by [trying the assessment](https://cloud-native-platform-engineering.github.io/pemm-assessment/) and [giving us feedback](https://docs.google.com/forms/d/e/1FAIpQLScXru41BVVQDipxuSCQaNmo0GcBpBM8jHhDbX3pQskJXFgV8A/viewform).
+[評価を試す](https://cloud-native-platform-engineering.github.io/pemm-assessment/) と[フィードバックの提供](https://docs.google.com/forms/d/e/1FAIpQLScXru41BVVQDipxuSCQaNmo0GcBpBM8jHhDbX3pQskJXFgV8A/viewform)で支援いただけます。
 
-To learn more about what's happening in the platform engineering community, join our [Slack Channel](https://cloud-native.slack.com/archives/C020RHD43BP) and follow [our LinkedIn page](https://www.linkedin.com/company/cloud-native-platforms/).
+Platform Engineering Communityの最新動向については、[Slackチャンネル](https://cloud-native.slack.com/archives/C020RHD43BP)への参加と[LinkedInページ](https://www.linkedin.com/company/cloud-native-platforms/)のフォローをお願いします。

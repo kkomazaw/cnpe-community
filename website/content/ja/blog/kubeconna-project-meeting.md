@@ -1,5 +1,5 @@
 ---
-title:  TAG App Delivery at Kubecon NA 2022
+title:  Kubecon NA 2022におけるTAG App Delivery 
 date:   2022-09-12 12:00:00 +0000
 author: Jennifer Strejevitch and Josh Gavant
 categories:
@@ -8,14 +8,15 @@ tags:
 - Event
 ---
 
-Join CNCF TAG App Delivery and our working groups at Kubecon in Detroit October 24-28.
+CNCF TAG App Deliveryおよびワーキンググループが、10月24日～28日にデトロイトで開催されるKubeconに参加します。
 
-Many app delivery-related projects will be holding open office hours and maintaining booths in the project pavilion as detailed [here](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/project-engagement/).
+多くのアプリデリバリー関連プロジェクトが、[こちら](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/project-engagement/)で詳細を記載している通り、オープンオフィスアワーを開催し、プロジェクトパビリオンにブースを出展します。
 
-A general meeting on the state of the TAG and some emerging app delivery patterns will be held Tuesday, October 25 1-5pm at Huntington Place. Find it on sched.com [here](https://kccncna2022.sched.com/event/1BaU0/cncf-tag-app-delivery-project-meeting).
+TAGの現状と新たなアプリデリバリーパターンに関する全体会議を、10月25日(火) 13:00～17:00にハンティントン・プレイスで開催します。スケジュールは[こちら](https://kccncna2022.sched.com/event/1BaU0/cncf-tag-app-delivery-project-meeting)でご確認ください。
 
-The agenda for the TAG Meeting on Tuesday is [here](https://docs.google.com/document/d/1aBLVTg2Ev27fIhFpXvsuL8WwqtK9AuMXgL6RpeozOTc/).
+火曜日のTAGミーティングの議題は[こちら](https://docs.google.com/document/d/1aBLVTg2Ev27fIhFpXvsuL8WwqtK9AuMXgL6RpeozOTc/)です。
 
-Finally, the Platforms WG will be gathering platform component providers in an "unmeetup" on Thursday 10/27 at 1:30pm, details in [this doc](https://docs.google.com/document/d/1YNA1rYlZRZCGIj1VW6mL6a8HUXPHgQ2HaxunMOaoIVI/).
+最後に、プラットフォーム作業部会（Platforms WG）は、10月27日（木）午後1時30分にプラットフォームコンポーネントプロバイダーを対象とした「アンミートアップ」を開催します。詳細は[こちらの文書](https://docs.google.com/document/d/1YNA1rYlZRZCGIj1VW6mL6a8HUXPHgQ2HaxunMOaoIVI/)をご覧ください。
 
-See you in Detroit!
+デトロイトでお会いしましょう！
+

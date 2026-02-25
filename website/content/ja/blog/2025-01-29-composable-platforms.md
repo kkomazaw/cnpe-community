@@ -1,5 +1,5 @@
 ---
-title: "Demystifying Composability on Platforms: extending Platforms to business needs"
+title: "プラットフォームにおける構成可能性の解明：ビジネスニーズへのプラットフォーム拡張"
 slug: composable
 date: 2025-01-29 12:00:00 +0000
 author: Colin Lacy, Simon Forster, Valentina Rodriguez Sosa
@@ -10,82 +10,75 @@ tags:
 - Community Contributions
 ---
 
-## Introduction
+## はじめに
 
-Let’s start with what’s a Platform, according to the [CNCF Platforms White Paper](https://tag-app-delivery.cncf.io/whitepapers/platforms/#what-is-a-platform),  “A platform for cloud-native computing is an integrated collection of capabilities defined and presented according to the needs of the platform’s users.  The specific set of capabilities and scenarios supported by a platform should be determined by the needs of stakeholders and users. And while platforms provide these required capabilities, it’s critical to note that platform teams should not always implement them themselves.”
+まず、[CNCF Platforms White Paper](https://tag-app-delivery.cncf.io/whitepapers/platforms/#what-is-a-platform) に基づく「プラットフォーム」の定義から始めましょう。「クラウドネイティブコンピューティングのためのプラットフォームとは、プラットフォーム利用者のニーズに応じて定義・提供される統合された機能群である。 プラットフォームがサポートする具体的な機能セットとシナリオは、ステークホルダーとユーザーのニーズによって決定されるべきである。プラットフォームはこれらの必要な機能を提供する一方で、プラットフォームチームが常にそれらを自ら実装する必要はないという点に留意することが重要である。」
 
-Composable platforms promote flexibility and adaptability in the configuration and setup of the Platform. These individual solutions are then combined to form a larger, more feature-rich Platform. This allows configuring different components to achieve various technical and business needs by providing specific components or allowing setup of this component. When looking for a platform, understanding the end goal – bringing value to the business – is critical for ensuring the right capabilities meet the organization’s needs. 
+コンポーザブル（構成可能な）プラットフォームは、プラットフォームの構成と設定における柔軟性と適応性を促進します。これらの個別ソリューションを組み合わせることで、より大規模で機能豊富なプラットフォームを形成します。これにより、特定のコンポーネントを提供したり、そのコンポーネントの設定を許可したりすることで、様々な技術的・ビジネス的ニーズを達成するために異なるコンポーネントを構成することが可能になります。プラットフォームを探す際には、最終目標である「ビジネスへの価値提供」を理解することが、適切な機能が組織のニーズを満たすことを保証する上で重要です。
 
-Composability, then, is the characteristic of a platform that, through different user experiences and a broad range of components, expands to fulfill technical needs at the end, supporting business value and increasing competitiveness advantage.
+つまり、コンポーザビリティとは、多様なユーザー体験と幅広いコンポーネントを通じて、最終的に技術的ニーズを満たし、ビジネス価値を支え、競争優位性を高めるプラットフォームの特性です。
 
-As the platform supports and enables different personas, each persona will have distinct needs and usage of the platform and, accordingly, differing requirements and perspectives on what composable means. Platform consumers may leverage some or all of the composable capabilities, depending on their needs. For example, while one development team may choose to only make use of the platform’s full capabilities to build, test, scan, and store artifacts; another team may opt into the build and scan capabilities only, storing their artifacts in a different repository from the one provided by the platform team. The flexibility to consume only the parts that provide business value based on a team’s specific business deliverable, as opposed to an all-or-nothing approach, is a hallmark of composable platforms.
+プラットフォームが異なるペルソナをサポートし実現するにつれ、各ペルソナはプラットフォームに対して異なるニーズと使用方法を持ち、それに応じてコンポーザブルの意味に対する要求や視点も異なります。プラットフォーム利用者は、ニーズに応じて構成可能な機能の一部または全てを活用できます。例えば、ある開発チームはプラットフォームの全機能（ビルド、テスト、スキャン、成果物保存）を利用する場合もある一方、別のチームはビルドとスキャンの機能のみを選択し、成果物をプラットフォームチーム提供のリポジトリとは別の場所に保存する選択もできます。オール・オア・ナッシング型のアプローチではなく、チームの具体的なビジネス成果物に基づいてビジネス価値を提供する部分のみを柔軟に消費できる点が、コンポーザブルプラットフォームの特徴です。
 
 <img src="../assets/platforms-def.drawio.png" width=1000px />
 
-Fig 1. [Platform Capabilities](https://tag-app-delivery.cncf.io/whitepapers/platforms/#capabilities-of-platforms)
+図1. [プラットフォーム機能](https://tag-app-delivery.cncf.io/whitepapers/platforms/#capabilities-of-platforms)
 
-It’s worth noting that this loose coupling does not preclude the benefits of interoperable components. While capabilities such as build and test, as well as artifact storage may be consumed separately, a composable platform can still provide benefits for those consumers who wish to use the two together, such as automatic image signing and SBOM generation. 
+この疎結合性が相互運用可能なコンポーネントの利点を排除しない点は注目に値します。ビルドやテスト、アーティファクトストレージといった機能は個別に利用可能ですが、コンポーザブルプラットフォームは両機能を併用したい利用者（自動イメージ署名やSBOM生成など）に対しても依然として利点を提供できます。
 
-A key concept in building platforms is the persona. We refer to a persona as a group of stakeholders within a platform.
-Note that a persona is not the same as a role, and is intended to apply to different roles in team topologies. Some individuals will fit into one or more persona - especially in smaller organizations where team members are expected to wear multiple hats. 
+プラットフォーム構築における重要概念がペルソナです。ペルソナとはプラットフォーム内のステークホルダー群を指します。
 
+ペルソナは役割（role）とは異なり、チーム構成における異なる役割に適用されることを意図しています。特に小規模組織ではチームメンバーが複数の役割を担うことが想定されるため、個人が1つ以上のペルソナに該当する場合があります。
 
-# Characteristics of a Composable Platform according to the personas
+# ペルソナに基づく構成可能プラットフォームの特徴
 
+- **ビルダー**  (プラットフォームと受益者体験に重点): 拡張性と設定可能性を備え、オンプレミスからクラウドまで、プラットフォームが稼働する多様な基盤インフラをサポートすべきです。
+- **イネーブラー**  (エンドユーザーとアプリケーション機能に重点): 異なるインストール方法へのアクセスを提供し、カスタム設定を許可することでプラットフォームを構成可能にし、追加インフラへプラットフォームを拡張します。プラットフォーム機能を以下のいずれかの役割（開発者／ビジネス顧客）へ拡張します。
+- **コンシューマー**  - プラットフォーム顧客（開発者）向けコンポーネントは、データベース・可観測性・アプリケーションログ管理など、ビジネス目標達成のためのアプリケーション機能を追加するツールです。開発リードタイムの短縮は開発者生産性を向上させます。
+- **エンドユーザー（顧客）**  -  エンドユーザーはプラットフォームと直接やり取りしませんが、プラットフォーム消費者の生産性向上による恩恵を受け、市場投入までの時間を短縮します。プラットフォーム機能とアプリケーション機能はビジネスユースケースに貢献し、顧客価値を高めます。顧客はまた、強化された信頼性と可用性を通じて強力なプラットフォームの価値を測定でき、時間の経過とともに信頼を構築します。さらに、多様なワークロードをサポートする能力は、プラットフォームがビジネス要件を満たし、エンドユーザーに価値を提供することを可能にします。
 
-- **Builders**  (focus on platform and beneficiary experience): From being extensible and configurable, the platform should support a variety of underlying infrastructure on which the platform will run, from on-premise to cloud.
-- **Enablers**  (focus on end-users and application capabilities): Provide availability to access different installation methods and configure the platform by allowing the custom configurations, extend the platform to additional infrastructure.  Increase platform capabilities to either of the following two roles- Developers and Business Customers
-- **Consumers**  - Platform Customers (Developers) components are the tools that add application capabilities, such as database, observability, and application log management to accomplish business goals. Decreasing lead time in development will increase developer productivity.
-- **End-users (customers)**  -  End users don’t interact directly with the platform but benefit from the increased productivity of the platform consumers, which reduces the time to market. Platform capabilities and application features will contribute to business use cases and add customer value. Customers can also measure the value of a strong platform through enhanced reliability and availability, building trust over time.  Furthermore, the ability to support a variety of workloads helps the platform meet business requirements and provide value to the end users. 
+ペルソナの詳細はこちら：https://tag-app-delivery.cncf.io/blog/paap-personas/
 
+# 異なるペルソナはプラットフォームをどのように捉えるか？
 
-Learn more about the personas: https://tag-app-delivery.cncf.io/blog/paap-personas/
+以下の図は、各ペルソナの異なる視点からプラットフォームがどのように見えるか、また新たなコンポーネントと共にプラットフォームがどのように進化するかを考察するのに役立ちます。
 
-# How do the different personas view a platform?
+### [ビルダー視点](https://tag-app-delivery.cncf.io/blog/paap-personas/)
 
-The following diagrams help us explore how a platform looks from the  differing perspective of each  persona and how the platform evolves with the new components.
-
-### [From Builders:](https://tag-app-delivery.cncf.io/blog/paap-personas/)
-
-The underlying infrastructure may not necessarily be part of the platform.  However, the platform takes advantage of the underlying hardware resources and services. The following diagram shows an example of how a composable platform expands its components according to the organization’s setup and configuration requirements.
-
+基盤インフラは必ずしもプラットフォームの一部とは限りません。しかしプラットフォームは基盤となるハードウェアリソースとサービスを有効活用します。以下の図は、コンポーザブルプラットフォームが組織のセットアップと構成要件に応じてコンポーネントを拡張する例を示しています。
 
 <img src="../assets/composable_builders.png" width=1000px />
 
-Once the infrastructure is defined, the platform can be set up; as a platform expanded using different configurations from networking and security configuration.  Once the platform is up and running and accessible it can be handed over to the next team.
+インフラストラクチャが定義されると、プラットフォームを設定できます。ネットワークやセキュリティ設定など、異なる構成を用いて拡張されたプラットフォームとしてです。プラットフォームが稼働しアクセス可能になれば、次のチームに引き継ぐことができます。
 
-Fig 2. Platform Expands within an infrastructure
+図2. インフラストラクチャ内でのプラットフォーム拡張
 
-Once the infrastructure is defined, the platform can be set up as a platform expanded using different configurations from networking and security until the platform is running and accessible for the next team.
+インフラストラクチャが定義されると、プラットフォームはネットワークやセキュリティなど異なる構成を用いて拡張され、稼働状態となり次のチームがアクセス可能になるまで設定されます。
 
+### [プラットフォーム・イネーブラーより](https://tag-app-delivery.cncf.io/blog/paap-personas/)
 
-### [From Platform Enablers:](https://tag-app-delivery.cncf.io/blog/paap-personas/)
-
-Growing a Platform by increasing platform and application capabilities, taking advantage of the platform components or new components selected by the organization. 
-
+プラットフォームとアプリケーションの機能を増強し、組織が選択したプラットフォームコンポーネントや新規コンポーネントを活用することでプラットフォームを成長させることができます。
 
 <img src="../assets/composable_enablers.png" width=1000px />
-Fig 3. Platform Expands within platform and application capabilities
 
-After cluster installation and setup typically with a Kubernetes distribution, platform engineers embarked on Day 2 operation activities, ensuring relevant governance and security are in place.  Next, the teams will work to ensure an efficient onboarding experience and a great user experience, allowing teams to access the platform directly or indirectly and bringing application capabilities closer to developer teams. It’s critical to meet the business’s scalability, resilience, and high availability needs before moving forward with production workloads.
+図3. プラットフォームとアプリケーション機能内でのプラットフォーム拡張
 
+クラスターのインストールと設定（通常はKubernetesディストリビューションを使用）後、プラットフォームエンジニアはDay 2運用活動に着手し、適切なガバナンスとセキュリティを確保します。次に、チームは効率的なオンボーディング体験と優れたユーザー体験を確保し、チームが直接または間接的にプラットフォームにアクセスできるようにし、アプリケーション機能を開発チームに近づけます。本番ワークロードを進める前に、ビジネスのスケーラビリティ、回復力、高可用性の要件を満たすことが重要です。
 
-### [From Developers (platform end-users):](https://tag-app-delivery.cncf.io/blog/paap-personas/)
+### [開発者（プラットフォームエンドユーザー）からの声](https://tag-app-delivery.cncf.io/blog/paap-personas/)
 
-The platform expands with each component, building out CI/CD pipelines, then moving on to tune resources to meet requirements, and ensuring the availability to run multiple and diverse workloads. The platform can be extensible enough to support different third-party tools for application and user needs, such as databases, interconnectivity, and security tools. 
-
+プラットフォームは各コンポーネントの追加に伴い拡張され、CI/CDパイプラインを構築した後、要件を満たすようリソースを調整し、複数かつ多様なワークロードを実行可能な状態を確保します。プラットフォームは拡張性が高く、データベース、相互接続性、セキュリティツールなど、アプリケーションやユーザーのニーズに応じた様々なサードパーティ製ツールをサポートできます。
 
 <img src="../assets/composable_dev.png" width=1000px />
-Fig 4. Platform Expands within new workloads, tools and resources.
 
-End users of the platform, such as Developers, MLOps, and Software Engineers, will benefit from the platform's readiness to start bringing new workloads and promoting best practices from CI/CD, accessing more resources, and setting up third-party tools to fulfill business needs.
+図4. 新たなワークロード、ツール、リソースの中で拡張するプラットフォーム
 
+開発者、MLOps、ソフトウェアエンジニアなどのプラットフォームエンドユーザーは、新たなワークロードの導入やCI/CDのベストプラクティスの促進、より多くのリソースへのアクセス、ビジネスニーズを満たすサードパーティツールの設定を即座に開始できるプラットフォームの即応性から恩恵を受けます。
 
-### [From Customers (platform end-users):](https://tag-app-delivery.cncf.io/blog/paap-personas/)
+### [顧客（プラットフォームエンドユーザー）からの声](https://tag-app-delivery.cncf.io/blog/paap-personas/)
 
-As the platform expands to fulfill technical and user needs, each expansion means new components that make the platform composable. A composable platform will bring value to the business by providing scalability and flexibility to different personas to achieve business goals. Examples of this might be increased trust, speedy service, or cost efficiency for those funding the service.  While this persona will receive an indirect benefit from platform composability, they have a sizable role in driving the priority of composable capabilities and components, as facilitating their evolving needs helps determine the necessary platform capabilities for increasing business value. 
+技術的・ユーザーニーズを満たすためにプラットフォームが拡張されるたび、新たなコンポーネントが追加され、プラットフォームのコンポーザブル性が強化されます。コンポーザブルなプラットフォームは、ビジネス目標達成に向け、異なる役割を持つユーザー層にスケーラビリティと柔軟性を提供することでビジネス価値をもたらします。例としては、サービス資金提供者にとっての信頼性向上、迅速なサービス提供、コスト効率化などが挙げられます。この役割層はプラットフォームのコンポーザビリティから間接的な恩恵を受ける一方、進化するニーズの促進がビジネス価値向上のために必要なプラットフォーム機能の決定に寄与するため、コンポーザブルな機能やコンポーネントの優先順位付けを推進する上で重要な役割を担っています。
 
+# 結論
 
-# Conclusion
-
-Composability allows the different personas in an organization to get what they need from a platform without undue investment by stakeholders in areas that are of secondary importance, allowing for flexibility and more efficient onboarding.  We discussed what composable platforms are, and how they can help a business to succeed in their goal of deriving the most business value from their investment in cloud native technology.  
+コンポーザビリティにより、組織内の異なるペルソナは、二次的な重要性を持つ領域へのステークホルダーの不必要な投資なしに、プラットフォームから必要なものを得ることが可能になります。これにより柔軟性と効率的なオンボーディングが実現します。コンポーザブルプラットフォームとは何か、そしてクラウドネイティブ技術への投資から最大のビジネス価値を引き出すという目標において、コンポーザブルプラットフォームがどのようにビジネスの成功を支援できるかについて議論しました。

@@ -1,5 +1,5 @@
 ---
-title:  "Announcing a Whitepaper on Platforms for Cloud-native Computing"
+title:  "クラウドネイティブコンピューティング向けプラットフォームに関するホワイトペーパー発表のお知らせ"
 date:   2023-04-10 01:00:00 +0000
 author: Josh Gavant, Abby Bangser
 categories:
@@ -10,50 +10,30 @@ tags:
 
 <img src="../assets/platforms-pyramid.png" width=400px />
 
-CNCF’s Platforms working group (WG) is pleased to announce the first release of
-a whitepaper to provide guidance and clarity on the nature and benefits of
-platforms for cloud-native computing. Download it now as a
+CNCFプラットフォームワーキンググループ（WG）は、クラウドネイティブコンピューティング向けプラットフォームの性質と利点に関するガイダンスと明確化を提供するホワイトペーパーの初版リリースを発表いたします。
+
+今すぐ
 [PDF](https://github.com/Cloud-Native-Platform-Engineering/cnpe-community/raw/main/platforms-whitepaper/v1/assets/platforms-def-v1.0.pdf)
-or view it on [our website](https://tag-app-delivery.cncf.io/whitepapers/platforms).
+としてダウンロードするか、[当ウェブサイト](https://tag-app-delivery.cncf.io/whitepapers/platforms)でご覧ください。
 
-Thank you to our many contributors listed below for their ongoing input and
-insights!
+継続的なご意見と洞察を提供してくださった下記の多くの貢献者に感謝いたします！
 
-We prepared this paper because we've learned that platforms enable organizations
-to fully realize the promises of cloud computing. Platforms accelerate
-application and service delivery by enabling rapid integration of infrastructure
-and application components. They are a step in the ongoing evolution of
-enterprise IT, providing core capabilities consistently to enable DevOps-style
-efficiency and autonomy across an organization.
+本稿を作成した背景には、プラットフォームが組織にクラウドコンピューティングの真価を完全に実現させることを学んだことがあります。プラットフォームはインフラストラクチャとアプリケーションコンポーネントの迅速な統合を可能にすることで、アプリケーションとサービスの提供を加速します。これらは企業ITの継続的な進化における一歩であり、組織全体でDevOpsスタイルの効率性と自律性を実現するための中核機能を一貫して提供します。
 
-The objective of this paper is to educate and advise organizational leaders and
-would-be platform builders by describing the values internal platforms offer,
-the problems they solve, methods to track their success and attributes and
-capabilities they require. It presents how today’s CNCF projects fit together as
-the foundation of complete platform initiatives. Finally, it provides guidance
-on how to enable platform teams to succeed, how to measure their progress, and
-some challenges to prepare them for.
+本稿の目的は、内部プラットフォームが提供する価値、解決する課題、成功を追跡する方法、そして必要とされる属性と能力を説明することで、組織のリーダーや将来のプラットフォーム構築者に対して教育と助言を行うことです。現代のクラウドネイティブコンピューティングにおけるプラットフォームの性質と利点について、明確なガイダンスと理解を提供します。
 
-WG Platforms and TAG App Delivery are building on this foundation to provide
-more guidance and reduce complexity for cloud application builders and CNCF
-project maintainers. Join us via the links below as we expand guidance on
-practices like integrating a product mindset in platform teams and applying
-standard governance policies; and as we pursue conventions for capabilities like
-secrets management, artifact storage, web portals and API frameworks, all
-potential parts of a complete platform:
+本稿の目的は、組織リーダーおよび将来のプラットフォーム構築者に対し、内部プラットフォームが提供する価値、解決する課題、成功を追跡する方法、必要とされる属性と機能について説明することで教育と助言を行うことです。現代のCNCFプロジェクトが完全なプラットフォーム構想の基盤としてどのように連携するかを提示します。最後に、プラットフォームチームの成功を可能にする方法、進捗を測定する方法、そして彼らが備えるべき課題についてのガイダンスを提供します。
+
+WG PlatformsとTAG App Deliveryはこの基盤を土台に、クラウドアプリケーション開発者とCNCFプロジェクトメンテナ向けにさらなるガイダンス提供と複雑性削減を進めています。下記リンクからご参加ください。プラットフォームチームへのプロダクト思考の統合や標準ガバナンスポリシーの適用といった実践手法のガイダンス拡充、シークレット管理・アーティファクトストレージ・Webポータル・APIフレームワークなど完全なプラットフォームを構成する可能性のある機能群の標準化を推進中です：
 
 <img src="../assets/platform_components.png" width=600px />
 
-Last but not least, this version of this paper will not be the last! Please
-inform future iterations by responding to our survey (to be shared soon!) and
-sharing your platform stories with us in CNCF groups and meetups. Hope to talk
-to you soon!
+最後に重要な点として、本稿のこのバージョンが最終版ではありません！今後の改訂版には、調査（近日公開予定！）へのご回答や、CNCFグループ・ミートアップでのプラットフォーム事例共有を通じてぜひご意見をお寄せください。近いうちにお話しできることを楽しみにしております！
 
-## Thank you to our contributors!
+## 貢献者への感謝
 
-As we reach this milestone we want to thank members of CNCF's WG Platforms for all
-[their contributions](https://github.com/Cloud-Native-Platform-Engineering/cnpe-community/commits/main/platforms-whitepaper)
-and feedback, particularly the following:
+この節目を迎えるにあたり、CNCF WG Platformsのメンバーの皆様の[貢献](https://github.com/Cloud-Native-Platform-Engineering/cnpe-community/commits/main/platforms-whitepaper)
+とフィードバックに感謝申し上げます。特に以下の皆様に深く御礼申し上げます：
 
 - Abby Bangser
 - Abhinav Mishra
@@ -80,7 +60,7 @@ and feedback, particularly the following:
 - Thomas Vitale
 - Viktor Nagy
 
-## Resources
+## リソース
 
 - Slack: <https://cloud-native.slack.com/archives/C020RHD43BP>
 - Work item tracker: <https://github.com/Cloud-Native-Platform-Engineering/cnpe-community/issues/new/choose>

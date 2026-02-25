@@ -1,5 +1,5 @@
 ---
-title:  "Infrastructure for Apps: Platforms for Cooperative Delivery"
+title:  "アプリケーションのためのインフラストラクチャ：協調的配信のためのプラットフォーム"
 date:   2022-09-22 00:00:00 +0000
 author: Josh Gavant
 categories:
@@ -9,44 +9,44 @@ tags:
 - Event
 ---
 
-![infrastructure integration](/images/infrastructure-integration.png)
+![インフラストラクチャの統合](/images/infrastructure-integration.png)
 
-TAG App Delivery formed the Cooperative Delivery working group in late 2021 to gather and report on emerging trends around coordinated delivery of infrastructure capabilities and applications. The TAG noted that while infrastructure teams are successfully adopting software development practices and deploying features and fixes continuously via the likes of GitOps and IaC (Infrastructure as Code), delivery of infrastructure capabilities is often not coordinated well with delivery of applications using that infrastructure. That is, there's a *gap* in delivery between application and infrastructure and coordination/cooperation is needed to bridge that gap.
+TAG App Delivery は、インフラストラクチャ機能とアプリケーションの協調的なデリバリーに関する新たなトレンドを収集し、報告するために、2021 年後半に Cooperative Delivery ワーキンググループを設立しました。TAG は、インフラストラクチャチームはソフトウェア開発手法をうまく採用し、GitOps や IaC (Infrastructure as Code) などを通じて機能や修正を継続的にデプロイしている一方で、インフラストラクチャ機能のデリバリーは、そのインフラストラクチャを使用するアプリケーションのデリバリーとよく調整されていないことが多いと指摘しました。つまり、アプリケーションとインフラストラクチャのデリバリーには*ギャップ*があり、そのギャップを埋めるためには調整/協力が必要なのです。
 
-The primary goals of the group have been to a) confirm the hypothesis that there is a gap, b) clarify how it manifests for end users and c) identify and encourage emerging trends to facilitate cooperation. For example, the group's [first hypotheses](https://github.com/Cloud-Native-Platform-Engineering/cnpe-community/blob/main/cooperative-delivery-wg/charter/README.md#examples-of-known-patterns-aimed-to-deploy-applications) mentioned the following existing trends:
+本グループの主な目的は、a) ギャップの存在という仮説の確認、b) エンドユーザーへの影響の明確化、c) 連携促進のための新たな動向の特定と推進です。例えば、グループの[最初の仮説](https://github.com/Cloud-Native-Platform-Engineering/cnpe-community/blob/main/cooperative-delivery-wg/charter/README.md#examples-of-known-patterns-aimed-to-deploy-applications)では、以下の既存のトレンドが言及されています：
 
-- GitOps: continuous idempotent reconciliation of configuration from declarative descriptors
-- Operators: reconciliation-oriented services
-- Pipelines: imperative orchestration of services and applications
+- GitOps：宣言型記述子からの設定を恒等的に継続的に調整
+- オペレーター：調整指向のサービス
+- パイプライン：サービスとアプリケーションの命令型オーケストレーション
 
-In this article we'll review new trends we've learned about from end users and from emerging [CNCF projects](https://landscape.cncf.io/card-mode?category=application-definition-image-build,continuous-integration-delivery&grouping=no) like Backstage, Crossplane, Dapr, KubeVela and more.
+本稿では、エンドユーザーやBackstage、Crossplane、Dapr、KubeVelaなどの新興[CNCFプロジェクト](https://landscape.cncf.io/card-mode?category=application-definition-image-build,continuous-integration-delivery&grouping=no)から学んだ新たな動向を検証します。
 
-We've also learned over the past year that while "cooperation" between infrastructure and application teams is what we seek to achieve, "cooperative delivery" is not a familiar term to most of our contributors. Recognizing that this cooperation is also the goal of "internal developer platforms" (IDPs) and the emerging platform engineering movement, we're preparing to rename the working group Platforms.
+また、過去1年間で「インフラチームとアプリケーションチームの協力」こそが目指すべき目標である一方、「協調的デリバリー」という用語は多くの貢献者にとって馴染みの薄いものであることも判明しました。この協力関係が「内部開発者プラットフォーム（IDP）」や新興のプラットフォームエンジニアリング運動の目標でもあることを踏まえ、ワーキンググループの名称を「Platforms」に変更する準備を進めています。
 
-We're always seeking more input from users and contributors to guide us. Please consider sharing how your organization coordinates application and infrastructure delivery via [this GitHub form](https://github.com/Cloud-Native-Platform-Engineering/cnpe-community/issues/new/choose) and share your thoughts in [GitHub](https://github.com/Cloud-Native-Platform-Engineering/cnpe-community/discussions) or [Slack](https://cloud-native.slack.com/archives/CL3SL0CP5).
+ユーザーや貢献者の皆様からのご意見をお待ちしております。組織におけるアプリケーションとインフラストラクチャのデリバリー連携方法について、[こちらのGitHubフォーム](https://github.com/Cloud-Native-Platform-Engineering/cnpe-community/issues/new/choose)からご共有いただき、ご意見は [GitHub](https://github.com/Cloud-Native-Platform-Engineering/cnpe-community/discussions) または [Slack](https://cloud-native.slack.com/archives/CL3SL0CP5) でご意見をお聞かせください。
 
-## Platform Engineering
+## プラットフォームエンジニアリング
 
-Beyond our original hypotheses, an emerging trend we've noted for coordinating infrastructure and applications is platform engineering (PE) and particularly its principle of **self-serviceable capabilities**. [Backstage](https://www.cncf.io/projects/backstage/), for example, is a popular portal framework for these emerging platforms. According to Humanitec lead [Luca Galante](https://platformengineering.org/authors/luca-galante), platform engineering is "the discipline of designing and building toolchains and workflows that enable **self-service** capabilities for software engineering organizations in the cloud-native era ([link](https://platformengineering.org/blog/what-is-platform-engineering))." *Self-service* describes the mechanism of cooperative delivery: a developer provisions and uses capabilities in their app on-demand by following documented steps.
+当初の仮説を超え、インフラとアプリケーションの連携において顕在化した新たな潮流がプラットフォームエンジニアリング（PE）であり、特にその核心となる**セルフサービス可能な機能**の原則です。例えば[Backstage](https://www.cncf.io/projects/backstage/)は、こうした新興プラットフォーム向けの代表的なポータルフレームワークです。Humanitecのリーダーである[Luca Galante](https://platformengineering.org/authors/luca-galante)によれば、プラットフォームエンジニアリングとは「クラウドネイティブ時代におけるソフトウェアエンジニアリング組織に**セルフサービス**機能を実現するツールチェーンとワークフローを設計・構築する分野である（[リンク](https://platformengineering.org/blog/what-is-platform-engineering)）」と定義されています。*セルフサービス*とは、協調的デリバリー（協働的提供）の仕組みを指します。開発者が文書化された手順に従い、オンデマンドでアプリ内の機能をプロビジョニング（調達）し利用する形態です。
 
-In addition to its self-service paradigm, platform engineering also **focuses on the needs of application developers** and operators, the users of the platform. This increases PEs' empathy for developers and other platform users and helps them gather feedback and iteratively improve to meet their needs, as product developers do for end customers. The shift in focus also better aligns platform development with an enterprise's true value streams, rather than infrastructure teams being an out-of-band cost center. It's not technical exactly, but **empathetic relationships between platform engineering and application teams** lead to better coordination of infrastructure capabilities and app requirements.
+セルフサービスというパラダイムに加え、プラットフォームエンジニアリングは**アプリケーション開発者や運用担当者（プラットフォーム利用者）のニーズに焦点を当てます**。これにより、PE（プラットフォームエンジニア）は開発者や他のプラットフォーム利用者への共感を高め、フィードバックを収集し、製品開発者がエンドユーザーに対して行うように、反復的に改善してニーズを満たすことができます。この焦点の移行により、プラットフォーム開発はインフラチームが帯域外コストセンターとなるのではなく、企業の真の価値ストリームとより適切に連携します。厳密には技術的ではありませんが、**プラットフォームエンジニアリングとアプリケーションチーム間の共感的な関係性**が、インフラ機能とアプリ要件のより良い調整につながります。
 
-These platforms are typically built using foundational CNCF projects like Kubernetes, Helm, Prometheus, Backstage, Istio, Knative, Keptn and more.
+こうしたプラットフォームは通常、Kubernetes、Helm、Prometheus、Backstage、Istio、Knative、KeptnなどCNCFの基盤プロジェクトを用いて構築されます。
 
-## Kubernetes for Everything
+## 万能のKubernetes
 
-Another trend we've noted in projects like [Crossplane](https://www.cncf.io/projects/crossplane/) is the adoption of the Kubernetes resource model for configuring and managing all types of infrastructure capabilities and application components. Users no longer provision only deployments, volumes and ingresses via the Kubernetes API; custom resource definitions (CRDs) now enable provisioning of databases, identities, message brokers, observability systems, and much more.
+[Crossplane](https://www.cncf.io/projects/crossplane/)のようなプロジェクトで確認されたもう一つの傾向は、あらゆる種類のインフラ機能やアプリケーションコンポーネントの設定・管理にKubernetesリソースモデルが採用されていることです。ユーザーはもはや、デプロイメント、ボリューム、イングレスだけを Kubernetes API 経由でプロビジョニングするわけではありません。カスタムリソース定義 (CRD) により、データベース、ID、メッセージブローカー、可観測性システムなど、さらに多くのものをプロビジョニングできるようになりました。
 
-The [GitOps](https://www.cncf.io/projects/opengitops/) movement demonstrated the value of continuous reconciliation for applications, and with so many resource types available developers can now reconcile infrastructure in the same way as applications. For those providing their own infrastructure capabilities, the [Operator Framework](https://www.cncf.io/projects/operator-framework/) is a popular foundation for custom Kubernetes-based reconciler implementations.
+[GitOps](https://www.cncf.io/projects/opengitops/) の動きは、アプリケーションの継続的な調整の価値を実証しました。利用可能なリソースタイプが非常に多くなったことで、開発者はアプリケーションと同じ方法でインフラストラクチャを調整できるようになりました。独自のインフラストラクチャ機能を提供するユーザーにとって、[Operator Framework](https://www.cncf.io/projects/operator-framework/) は、カスタム Kubernetes ベースのリコンサイラー実装のための人気のある基盤です。
 
-## Capability Injection
+## 機能注入
 
-Finally, we've noted projects like [Dapr](https://www.cncf.io/projects/dapr/) and [KubeVela](https://www.cncf.io/projects/kubevela/) which seek to coordinate infrastructure capabilities for apps through inference and late resolution and injection of those capabilities. These projects often ask app developers to declare the capabilities they require, like databases and message brokers, and then resolve actual implementations at runtime, perhaps using sidecar containers or eBPF programs. Some projects like [Istio](https://www.redhat.com/en/blog/istio-service-mesh-applies-become-cncf-project) can even inject capabilities transparently to the app developer.
+最後に、[Dapr](https://www.cncf.io/projects/dapr/) や [KubeVela](https://www.cncf.io/projects/kubevela/) といったプロジェクトに注目しています。これらは推論と遅延解決・機能注入を通じて、アプリケーション向けのインフラ機能を調整することを目指しています。これらのプロジェクトでは、アプリ開発者にデータベースやメッセージブローカーなど必要な機能を宣言させ、実行時にサイドカーコンテナやeBPFプログラムを用いて実際の実装を解決することが多いです。Istio(https://www.redhat.com/en/blog/istio-service-mesh-applies-become-cncf-project)のようなプロジェクトでは、アプリ開発者に対して機能を透過的に注入することさえ可能です。
 
-Late resolution and injection loosens coupling of apps and infrastructure and is another form of "cooperative" delivery. Imagine getting a database from a different provider depending on the application's context - an RDS instance in AWS, a CloudSQL instance in GCP, or a [CloudNativePG](https://cloudnative-pg.io/) instance on premises.
+レイト・リゾリューションとインジェクションは、アプリケーションとインフラストラクチャの結合を緩め、「協調的」なデリバリーのもう一つの形です。アプリケーションのコンテキストに応じて、AWS の RDS インスタンス、GCP の CloudSQL インスタンス、オンプレミスの [CloudNativePG](https://cloudnative-pg.io/) インスタンスなど、さまざまなプロバイダからデータベースを取得することを想像してみてください。
 
-## Conclusion
+## 結論
 
-The mission of the Cooperative Delivery WG - soon to be the Platforms WG - is to gather feedback and highlight emerging trends that address gaps in coordination of infrastructure capabilities and applications. [Join us](https://github.com/cncf/tag-app-delivery) in TAG App Delivery to advance this topic and others relevant to application and platform developers and operators.
+Cooperative Delivery WG（まもなく Platforms WG に名称変更予定）の使命は、インフラストラクチャ機能とアプリケーションの連携におけるギャップに対処します、新たなトレンドに関するフィードバックを収集し、その重要性を強調することです。このトピックや、アプリケーションおよびプラットフォームの開発者や運用者に関連するその他のトピックを推進するために、TAG App Delivery にぜひご参加ください（https://github.com/cncf/tag-app-delivery）。
 
-<sub>Image credit https://www.cleo.com/blog/knowledge-base-cloud-integration-platform</sub>
+<sub>画像クレジット https://www.cleo.com/blog/knowledge-base-cloud-integration-platform</sub>

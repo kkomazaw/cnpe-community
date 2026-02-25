@@ -1,5 +1,5 @@
 ---
-title: "Platform As A Product: Getting Into The Mindset With User Stories"
+title: "プラットフォームを製品として捉える：ユーザーストーリーでマインドセットを構築する"
 slug: paap-mindset-user-stories
 date: 2024-10-30 15:00:00
 author: David Stenglein
@@ -10,54 +10,52 @@ tags:
 - Platform As A Product
 ---
 
+プラットフォーム向けのユーザーストーリーを作成する際、すべて「プラットフォームエンジニアとして...」で始まっていませんか？ストーリーの書き方を変えることでプロダクト思考を活性化し、顧客満足度を大幅に向上させられます！
 
-When you create user stories for your platform, do they all start with "As a platform engineer ..."? Switching up how you write stories can engage Product Thinking and give you much happier customers!
+## 従来のアプローチ
 
-## The Traditional Approach
+従来、システム担当者（システム管理者からSRE、プラットフォームエンジニアなど）はアジャイルなユーザーストーリーの作成に苦労してきました。彼らは頻繁に、作業を内部的なものとして表現するために無理な表現を強いられてきました（自分たちの仕事をユーザー志向に感じさせるのは難しいものです）。
 
-Historically, systems people (including everyone from sysadmins through SREs, platform engineers, etc) have had a tough time with creating agile user stories. They frequently go through contortions to describe the work as internal (making our work feel user-oriented can be tough). 
+こうした無理な表現は、「舞台裏」的な考え方から生じています。この考え方は、物事を「我々対彼ら」という対立構造で捉え、構築対象である顧客としてのユーザーとの断絶を生み出します。代わりに、システム担当者（別名プラットフォームエンジニア）は、通常、自身の視点からストーリーを書いてきました。
 
-These contortions are a result of having a "behind-the-scenes" mentality which creates an us-versus-them approach to things and a disconnect with the user as a customer you are building for. Instead systems people (aka Platform Engineers) have typically written stories from their own perspective.
+具体例をいくつか挙げます：
 
-Here are a couple of examples:
-> As a platform engineer, I want to create a Terraform module for DNS to make it easier to manage DNS with local standards.
+> プラットフォームエンジニアとして、DNS管理をローカル基準で容易にするため、DNS用Terraformモジュールを作成したい。
+または
+> プラットフォームエンジニアとして、ユーザーが自身のアプリケーションのログを確認できるよう、Lokiをデプロイしたい。
 
-or
+この書き方の問題は、ユーザーニーズではなくタスク指向である点です。他者が利用するプラットフォームを構築する際には、自らの作業スタイルを加速させるツール開発という慣習から脱却し、他者が（できればセルフサービスで）これらのツールをどう利用するか考える必要があります。
 
-> As a platform engineer, I want to deploy Loki so that users can see logs for their applications.
+では、その解決策を考えてみましょう。
 
-The problem with writing user stories this way is that it is task oriented rather than addressing user needs. As we start to build platforms for other people to use, we need to get out of our usual pattern of building tools that accelerate our own style of work and think about how others will use these tools, preferably self-service.
+## 視点の転換
 
-Let's see what we can do about that.
+最初の例を見てください。顧客がDNSに関連してプラットフォームに求めるものは何でしょうか？
 
-## Changing Perspectives
+次のように書き換えられます：
 
-Take the first example. What would a customer need from our platform that would relate to DNS?
+> アプリケーション開発者として、ユーザーと共有できる既知のアドレスでアプリケーションを公開する必要があります。
 
-This could be rewritten this way: 
+これは興味深いですね。当初の記述では、terraformによるDNS管理の簡素化という課題解決を目指していました。開発者が新たなterraformモジュールを要求することはあるでしょうか？視点を変えると、開発者が解決しようとしている問題は「アプリケーションを既知の場所で利用可能にすること」だとわかります。当初のストーリーは、真のユーザーニーズに対するサブタスクのように見えます。TLS証明書など、他にも考慮すべき事項があるでしょう。
 
-> As an application developer, I need to publish my application at a well-known address that I can share with users.
+Lokiを用いた2つ目の例では、顧客がプラットフォームに求めるものは何でしょうか？顧客と対話し日常業務を観察した後、ストーリーを次のように書き換えるかもしれません：
 
-This is interesting. The way we originally wrote it, we were trying to solve an issue with making DNS easier to manage through terraform. Do developers ever ask for new terraform modules? When we change the perspective, we can see that the problem the developer is trying to solve is making their app available in a well known place. Our original story is looking more like a subtask for the real user need. There are probably other things to take care of like TLS certificates, too.
+> アプリケーション開発者として、私はアプリケーションの障害発生時に迅速に根本原因を特定し、その結果として実施した修正が正しく機能しているかを理解できるように対応できる必要があります。
 
-In our second example with Loki, what does the customer need from the platform? Maybe, after sitting down with the customer and observing their day to day work, you might rewrite the story as:
+なるほど、これは単なるストーリー以上の、はるかに大きなものです。これはまるでエピック（大規模なストーリー）のようです！ユーザーは障害対応のための可観測性ツールを必要としており、Lokiは解決策の一部ではあるものの、ログはメトリクスやトレーシングと並ぶ可観測性戦略の一要素に過ぎません。既にログソリューションがあり、Lokiが次に取り組むべき課題に思えたかもしれません。しかし顧客の立場に立つことで、彼らのニーズを直接解決する新たな優先事項が見えてくるでしょう。
 
-> As an application developer, I need to be able to respond to outages in my application by being able to quickly pinpoint the root cause and then understand if the resulting fix is working correctly.
+## 始め方
 
-Okay, this one is more than just a story, much more. This is sounding like a whole epic! The user needs observability tooling to respond to outages and  while Loki may be part of the solution, logs are just a component of an observability strategy alongside metrics or tracing. Maybe you already have a logging solution and Loki seemed like the next obvious thing to work on. But if you put yourself in the customer's shoes, you might start to see new priorities that will directly address their needs.
+ユーザーに焦点を当てたユーザーストーリーを得るには、プロダクトマインドセットが必要です。これは顧客のニーズを理解し、そのニーズに対応するソリューションに取り組むことを意味します。
 
-## Getting Started
+このマインドセットを身につけ理解を深める最も簡単な方法は、ユーザーと話し、真に_耳を傾ける_ことです。
 
-In order to get user stories that are focused on, well, users, we need to get into a product mindset. This involves working to understand the customer's needs and only then working on solutions that address those needs.
+顧客インサイトを得るためのプロダクトマネジメント手法は数多く存在しますが、ユーザーとの対話とユーザーストーリーの書き方を見直すことは、優れた第一歩です。自らの仕事をユーザーに関連性のあるものにするよう自らを律することで、ユーザーニーズの調査や傾聴という良い行動が促されます。
 
-The easiest way to get into the mindset and gain that understanding is to talk to users and really _listen_.
+これはアーキテクチャ設計やユニットテストに似ています。優れたユニットテストの実践はエンジニアを自然と良いアーキテクチャパターンへと導き、ユーザーストーリーの見直しはプラットフォームエンジニアリングにおいても同様の効果をもたらします。
 
-Sure, there are many product management practices you can use to get customer insight, but talking to them and reframing how you write user stories is a great first step. By challenging ourselves to make our work relevant to users, it pushes us into good behaviors of researching user needs and listening.
+次に「プラットフォームエンジニアとして…」でストーリーを始めようとしたら、立ち止まって自分の行動とその理由を考えてみてください。そして必要な明確さを得て、自信を持って正しいものを構築しましょう。
 
-It's a lot like architecture and unit tests. Good unit testing practices naturally push engineers into good architecture patterns and reframing user stories can do the same for platform engineering.
+元記事掲載先: https://www.missingmass.io/blog/platform-as-a-product-getting-into-the-mindset-with-user-stories
 
-So the next time you start a story with "As a platform engineer...", stop and think about what you're doing and why. Then go out and get the clarity you need to confidently build the right thing.
-
-Originally posted at: https://www.missingmass.io/blog/platform-as-a-product-getting-into-the-mindset-with-user-stories
-
-**Disclaimer**: This blog post represents the viewpoint of its author(s) and does not necessarily reflect an official position or perspective of the TAG or any subsidiary working group. See [this blog](https://tag-app-delivery.cncf.io/contribute/community-post-guidelines/) and contributions guidelines for more information on how you too can contribute.
+**免責事項**: 本ブログ記事は執筆者の見解を示すものであり、TAGまたはその下部ワーキンググループの公式見解を必ずしも反映するものではありません。寄稿方法の詳細については[本ブログ](https://tag-app-delivery.cncf.io/contribute/community-post-guidelines/)および寄稿ガイドラインをご参照ください。

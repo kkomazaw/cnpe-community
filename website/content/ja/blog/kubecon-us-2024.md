@@ -1,6 +1,6 @@
 ---
 date: '2024-11-01T13:04:39+01:00'
-title: 'TAG App Delivery at Kubecon NA (Salt Lake City) 2024'
+title: 'Kubecon NA (Salt Lake City) 2024におけるTAG App Delivery'
 author: 'Colin Griffin'
 categories:
 - Announcement
@@ -10,74 +10,76 @@ tags:
 
 ![Kubecon NA 2024](/images/KCCNCNA2024.png)
 
-KubeCon NA 2024 is almost here!  
-The TAG App Delivery is excited to bring together cloud-native application developers
-and framework builders to meet each other and share insights and knowledge.
-Our goal is to make cloud development better for all by gathering feedback,
-finding synergies and guiding both users and projects.
+KubeCon NA 2024が間もなく開催されます！
 
-## TAG booth
+TAG App Deliveryは、クラウドネイティブアプリケーション開発者とフレームワーク構築者が互いに交流し、知見や知識を共有する場を提供できることを嬉しく思います。
 
-You can find the TAG App Delivery at our booth **Kiosk 4A** in the project pavilion,
+フィードバックの収集、相乗効果の発見、ユーザーとプロジェクト双方のガイダンスを通じて、クラウド開発をすべての人にとってより良いものにすることを目指します。
 
-## Lightning Talks
+## TAGブース
 
-Will have lightning talks and showcase the work of the platforms and artifact working groups at the TAG booth.
+プロジェクトパビリオン内の**キオスク4A**でTAG App Deliveryのブースをご利用いただけます。
 
-If you would like to submit a Lightning Talk, please use this form: [Lightning Talk Submission Form](https://forms.gle/Bd1niXk9kxnctxtBA)
+## ライトニングトーク
 
-Please note the following requirements to submit a talk proposal
+TAGブースでは、プラットフォームおよびアーティファクトワーキンググループの取り組みを紹介するライトニングトークを開催します。
 
-- The topic should be relevant to the TAG app-delivery. If in doubt, refer to [our charter](https://tag-app-delivery.cncf.io/)
-- When submitting project presentations, keep in mind that we will only accept CNCF projects, or projects submitted to CNCF sandbox.
-- Lightning talks will be a maximum of 10 minutes, a computer display can not be guaranteed.
+ライトニングトークの提出をご希望の方は、こちらのフォームをご利用ください：[ライトニングトーク提出フォーム](https://forms.gle/Bd1niXk9kxnctxtBA)
 
-The call for proposals ends November 8th. If your talk is accepted, we will notify you by November 9th.
-If you did not hear back from us, your submission has unfortunately not been accepted.
+トーク提案の提出にあたっては、以下の要件にご注意ください
 
-## Schedule
+- トピックはTAG app-deliveryに関連していること。不明な点は[当チャーター](https://tag-app-delivery.cncf.io/)
+をご参照ください。
+- プロジェクト発表を提出する際は、CNCFプロジェクトまたはCNCFサンドボックスに提出されたプロジェクトのみを受け付ける点にご留意ください。
+- ライトニングトークは最大10分間です。コンピューターディスプレイの使用は保証できません。
 
-We will continuously update the below schedule as more information becomes available. You can also subscribe to the [TAG KubeCon Calendar](calendar) to conveniently keep up to date with our activites.
+提案募集は11月8日で締め切ります。採択された場合は11月9日までに通知します。
 
-### Tuesday: Co-located Events
+連絡がない場合は、残念ながらご提案は採用されませんでした。
 
-Time | Location | Topic  | Presenter
+## スケジュール
+
+詳細は随時更新します。活動の最新情報は[TAG KubeConカレンダー](calendar)を購読すると便利です。
+
+### 火曜日：併催イベント
+
+時間 | 場所 | トピック | 発表者
 -----|----------|--------|----
-7:15am MST | [Cupla Coffee](https://maps.app.goo.gl/DEvS6igyhQkJbU359) - 77 W 200 S, Salt Lake City, UT 84101 | "Platform Coffee" meetup | Platforms WG (sponsor TBD)
-9:10am MST | Salt Palace - Level 1 - Grand Ballroom G | [Platform Working Group Update](https://sched.co/1jKMS) | Platform Working Group Leads
-10:40am MST | Salt Palace - Level 1 - Grand Ballroom G | [Portals and Platforms, Two Ps in a Pod? How Good Interfaces Make for Good Operability](https://sched.co/1izqS) | Jorge Lainfiesta, Rootly & Abby Bangser, Syntasso
-11:15am MST | Salt Palace - Level 1 - Grand Ballroom G | [Lightning Talk: Are You Really Ready to Adopt a Platform?](https://sched.co/1izqv) | Atulpriya Sharma, InfraCloud Technologies
+午前7時15分 MST | [Cupla Coffee](https://maps.app.goo.gl/DEvS6igyhQkJbU359) - 77 W 200 S, ソルトレイクシティ、ユタ州 84101 | 「Platform Coffee」ミートアップ | Platforms WG (スポンサー未定)
+午前9時10分 MST | ソルトパレス - レベル1 - グランドボールルームG | [Platform Working Group Update](https://sched.co/1jKMS) | Platform Working Group リーダー陣
+午前10時40分 MST | ソルトパレス - 1階 - グランドボールルームG | [ポータルとプラットフォーム、二つのPは一体？優れたインターフェースがもたらす操作性の良さ](https://sched.co/1izqS) | Jorge Lainfiesta, Rootly & Abby Bangser, Syntasso
+午前11時15分 MST | ソルトパレス - 1階 - グランドボールルームG | [ライトニングトーク：プラットフォーム導入の準備は本当に整っているか？](https://sched.co/1izqv) | Atulpriya Sharma, InfraCloud Technologies
 
-### Wednesday: Conference Day 1
+### 水曜日：カンファレンス初日
 
-Time | Location | Topic | Presenter
+時間 | 場所 | トピック | 発表者
 -----|----------|-------|----
-7:15am MST | [Cupla Coffee](https://maps.app.goo.gl/DEvS6igyhQkJbU359) - 77 W 200 S, Salt Lake City, UT 84101 | "Platform Coffee" meetup | Platforms WG (sponsor TBD)
-11:15am MST | Hyatt Regency - Level 2 - Salt Lake Ballroom C | [The State of Cloud Native Business Value in 2024](https://sched.co/1hovP) | Danielle Cook, StackGen; Simon Forster, Stackegy; Catherine Paganini, Buoyant; Colin Griffin, Krumware; Robbie Glenn, Glennium
-10:45am - 3:15pm | Kiosk 3B | [Microcks](https://github.com/microcks/microcks), The open source, cloud native tool for API Mocking and Testing | Yacine Kheddache, Laurent Broudoux and community members 
-12:00pm - 1:30pm MST | [Platforms Working Group](https://tag-app-delivery.cncf.io/wgs/platforms/) | Platform Working Group Leads
-1:35pm MST | Kiosk 4A | Lighning Talk - "You Can Score It! Shift Down to the Platform. Do Not Shift Left to the Developers." | Mathieu Benoit
-1:55pm MST | Kiosk 4A | Lighning Talk - "A Quick Dive into ArgoCD Sync Phases & Waves" | Colin Lacy
-2:15pm MST | Kiosk 4A | Lighning Talk - "What's Inside The Platform Fanny Pack?" | Ram Iyengar
-2:30pm - 4:00pm MST | [Artifacts Working Group](https://tag-app-delivery.cncf.io/wgs/artifacts/) | Artifacts Working Group Leads
-5:25pm MST | Salt Palace - Level 1 - Grand Ballroom H | [Creating Paved Paths for Platform Engineers](https://sched.co/1i7mT) | Ritesh Patel, Nirmata; Abby Bangser, Syntasso; Viktor Farcic, Upbound; Nicholas Morey, Akuity; Praseeda Sathaye, Amazon
+午前7時15分 MST | [Cupla Coffee](https://maps.app.goo.gl/DEvS6igyhQkJbU359) - 77 W 200 S, Salt Lake City, UT 84101 | 「Platform Coffee」ミートアップ | Platforms WG (スポンサー未定)
+午前11時15分 MST | ハイアットリージェンシー - 2階 - ソルトレイクボールルームC | [2024年クラウドネイティブのビジネス価値の現状](https://sched.co/1hovP) | Danielle Cook, StackGen; Simon Forster, Stackegy; Catherine Paganini, Buoyant; Colin Griffin, Krumware; Robbie Glenn, Glennium
+午前10時45分～午後3時15分 | キオスク3B | [Microcks](https://github.com/microcks/microcks)、APIモッキングとテストのためのオープンソース・クラウドネイティブツール | Yacine Kheddache, Laurent Broudoux、コミュニティメンバー
+12:00pm - 1:30pm MST | [Platforms Working Group](https://tag-app-delivery.cncf.io/wgs/platforms/) | プラットフォームワーキンググループリーダー
+13:35 MST | キオスク4A | ライトニングトーク - 「スコアを付けよう！開発者へシフト左ではなく、プラットフォームへシフトダウンを」 | Mathieu Benoit
+13:55 MST | キオスク4A | ライトニングトーク - 「ArgoCDの同期フェーズとウェーブを素早く掘り下げる」 | Colin Lacy
+午後2時15分 MST | キオスク4A | ライトニングトーク - 「プラットフォーム・ファニーパックの中身とは？」 | Ram Iyengar
+午後2時30分 - 午後4時00分 MST | [アーティファクトワーキンググループ](https://tag-app-delivery.cncf.io/wgs/artifacts/) | アーティファクトワーキンググループリーダー
+午後5時25分 MST | ソルトパレス - 1階 - グランドボールルームH | [プラットフォームエンジニアのための舗装された道の創造](https://sched.co/1i7mT) | Ritesh Patel, Nirmata; Abby Bangser, Syntasso; Viktor Farcic, Upbound; Nicholas Morey, Akuity; Praseeda Sathaye, Amazon
 
-### Thursday: Conference Day 2
+### 木曜日: カンファレンス2日目
 
-Time | Location | Topic | Presenter
+時間 | 場所 | トピック | 発表者
 -----|----------|-------|----
-7:15am MST | [Cupla Coffee](https://maps.app.goo.gl/DEvS6igyhQkJbU359) - 77 W 200 S, Salt Lake City, UT 84101 | "Platform Coffee" meetup | Platforms WG (sponsor TBD)
-12:00pm - 1:30pm MST | [App Development Working Group](https://tag-app-delivery.cncf.io/wgs/app-development/) | App Development Working Group Leads
-1:45pm - 5:00pm | Kiosk 5B | [Microcks](https://github.com/microcks/microcks), The open source, cloud native tool for API Mocking and Testing | Yacine Kheddache, Laurent Broudoux and community members 
-1:35pm MST | Kiosk 4A | Lighning Talk - "A deep dive in Guidewire's Cloud Platform with CrossPlane and Kubevela" | Jérôme Guionnet
-1:55pm MST | Kiosk 4A | Lighning Talk - "Another Platform Engineering Story: Migration of Legacy PaaS and the Platform Team's Contributions" | Hiroshi Hayakawa
-2:15pm MST | Kiosk 4A | Lighning Talk - "Platform as a Product: Starting with the Personas" | Valentina Rodriguez Sosa
-2:30pm MST | Salt Palace - Level 3 - 355 E | [Applications, Platforms, and Infrastructure Oh My! What Is the TAG App Delivery Doing to Support You](https://sched.co/1howi) | Daniel Oh, Red Hat; Roberth Strand, Sopra Steria; Ryan Nowak, Microsoft; Abby Bangser, Syntasso
+午前7時15分 MST | [Cupla Coffee](https://maps.app.goo.gl/DEvS6igyhQkJbU359) - 77 W 200 S, ソルトレイクシティ、UT 84101 | 「Platform Coffee」ミートアップ | Platforms WG (スポンサー未定)
+12:00pm - 1:30pm MST | [App Development Working Group](https://tag-app-delivery.cncf.io/wgs/app-development/) | App Development Working Group リーダー陣
+1:45pm - 5:00pm | キオスク5B | [Microcks](https://github.com/microcks/microcks)、APIモッキングとテストのためのオープンソース・クラウドネイティブツール | Yacine Kheddache、Laurent Broudouxおよびコミュニティメンバー 
+1:35pm MST | キオスク4A | ライトニングトーク - 「CrossPlaneとKubevelaを用いたGuidewireクラウドプラットフォームの深掘り」 | Jérôme Guionnet
+1:55pm MST | キオスク4A | ライトニングトーク - 「プラットフォームエンジニアリングのもうひとつの事例：レガシーPaaSの移行とプラットフォームチームの貢献」 | 早川 浩
+午後 2:15（山岳部標準時間） | キオスク 4A | ライトニングトーク - 「製品としてのプラットフォーム：ペルソナから始める」 | Valentina Rodriguez Sosa
+午後 2:30（山岳部標準時間） | ソルトパレス - 3 階 - 355 E | [アプリケーション、プラットフォーム、インフラストラクチャ、なんてこった！TAGアプリデリバリーがあなたをサポートするために何をしているのか](https://sched.co/1howi) | Daniel Oh, Red Hat; Roberth Strand, Sopra Steria; Ryan Nowak, Microsoft; Abby Bangser, Syntasso
 
-### Friday: Conference Day 3
+### 金曜日：カンファレンス3日目
 
-Time | Location | Topic | Presenter
+時間 | 場所 | トピック | 発表者
 -----|----------|-------|----
-7:15am MST | [Cupla Coffee](https://maps.app.goo.gl/DEvS6igyhQkJbU359) - 77 W 200 S, Salt Lake City, UT 84101 | "Platform Coffee" meetup | Platforms WG (sponsor TBD)
-12:00pm - 1:30pm MST | [Infrastructure Lifecycle Working Group](https://tag-app-delivery.cncf.io/wgs/infra-lifecycle/) | Infrastructure Lifecycle Working Group Leads
-11:00am MST | Salt Palace - Level 1 - Grand Ballroom H | [Platform Engineering in Financial Institutions: The Practitioner Panel](https://sched.co/1i7rP) | Paula Kennedy, Syntasso; Chris Plank, NatWest Bank; Suhail Patel, Monzo; Jinhong Brejnholt, Saxo Bank; Rachael Wonnacott, Fidelity International
+午前7時15分 MST | [クプラ・コーヒー](https://maps.app.goo.gl/DEvS6igyhQkJbU359) - 77 W 200 S, Salt Lake City, UT 84101 | 「プラットフォーム・コーヒー」ミートアップ | プラットフォーム作業部会 (スポンサー未定)
+12:00pm - 1:30pm MST | [インフラストラクチャ・ライフサイクル作業部会](https://tag-app-delivery.cncf.io/wgs/infra-lifecycle/) | インフラストラクチャ・ライフサイクル作業部会リーダー
+午前11時 MST | ソルトパレス - 1階 - グランドボールルームH | [金融機関におけるプラットフォームエンジニアリング：実務者パネル](https://sched.co/1i7rP) | Paula Kennedy, Syntasso; Chris Plank, NatWest Bank; Suhail Patel, Monzo; Jinhong Brejnholt, Saxo Bank; Rachael Wonnacott, Fidelity International

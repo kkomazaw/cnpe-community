@@ -1,5 +1,5 @@
 ---
-title:  TAG App Delivery at Kubecon EU 2023
+title:  Kubecon EU 2023におけるTAG App Delivery 
 date:   2023-04-14 12:00:00 +0000
 author: Josh Gavant
 categories:
@@ -10,80 +10,72 @@ tags:
 
 ![Kubecon EU 2023](/images/kubecon-eu-2023.jpg)
 
-At Kubecon EU next week TAG App Delivery will bring together cloud-native
-application developers and framework builders to meet each other and share
-insights and knowledge. Our goal is to make cloud development better for all by
-gathering feedback, finding synergies and guiding both users and projects.
+来週開催のKubecon EUにおいて、TAG App Deliveryはクラウドネイティブアプリケーション開発者とフレームワーク構築者を一堂に集め、相互交流と知見・知識の共有を促進します。フィードバックの収集、シナジーの発見、ユーザーとプロジェクト双方のガイダンスを通じて、
+クラウド開発の全体的な向上を目指すのが私たちの目標です。
 
-To this end the TAG will host the following lightning talk meetups. The list of
-talks and presenters follows below.
+この目的のため、TAGは以下のライトニングトーク・ミートアップを主催します。
 
-- a [pre-day meetup](https://kccnceu2023.sched.com/event/1JWPr/tag-app-delivery-project-meeting) in RAI Room D301, Congress Center
-- a booth meetup on Wednesday 4/19 at 3:00pm in booth K1 in the CNCF Project Pavilion in the Solutions Hall
-- a booth meetup on Thursday 4/20 at 1:30pm in booth K1 in the CNCF Project Pavilion in the Solutions Hall
+講演と発表者のリストは以下の通りです。
 
-In addition to these meetings and talks, the TAG will host booth K1 in the
-project pavilion in the first half of each conference day. Stop by any time to
-chat with us and learn more about the TAG; initiatives related to operators,
-GitOps, Platforms and more; and App Delivery-related CNCF projects.
+- [前夜ミートアップ](https://kccnceu2023.sched.com/event/1JWPr/tag-app-delivery-project-meeting) 4月19日(水) 18:00～ 会場: RAI Room D301, Congress Center
+- 水曜日4月19日 15:00 ソリューションホール内CNCFプロジェクトパビリオン K1ブースにて
+- 木曜日4月20日 13:30 ソリューションホール内CNCFプロジェクトパビリオン K1ブースにて
 
-Also, if you work on an open source project related to app delivery and don't
-have your own booth, you're welcome to reserve the TAG booth for a session
-describing your project! Please DM [Josh Gavant](https://cloud-native.slack.com/archives/DRTPUJL5V)
-on CNCF Slack to coordinate.
+これらのミーティング・トークに加え、TAGは各カンファレンス日午前中、プロジェクトパビリオンのK1ブースを出展します。お気軽にお立ち寄りください。TAGについて、オペレーター、GitOps、プラットフォームなどに関連する取り組み、そしてアプリデリバリー関連のCNCFプロジェクトについて詳しくお話ししましょう。
 
-## Pre-day meetup - Tuesday
+また、アプリデリバリー関連のオープンソースプロジェクトに携わっていて、ご自身のブースをお持ちでない方は、TAGブースを予約して、ご自身のプロジェクトについて説明するセッションを開催することも可能です！調整のため、CNCF Slack上で[Josh Gavant](https://cloud-native.slack.com/archives/DRTPUJL5V)までDMをお送りください。
 
-Time   | Topic  | Presenter
+## プレデイ・ミートアップ - 火曜日
+
+時間   | トピック  | 発表者
 -------|--------|------------
-13:00  | TAG General Review | [TAG Leads](https://tag-app-delivery.cncf.io/#leads)
-13:30  | Lightning Talks on Application Delivery
---     | _Porting CloudFoundry Abstractions on Kubernetes_ | [Ram Iyengar](https://twitter.com/ramiyengar)
---     | _Platform Maturity Model_ | [Abby Bangser](https://twitter.com/a_bangser)
---     | _Project Unox - A platform showcase experiment_ | [Gopal Ramachandran](https://twitter.com/goposky)
---     | _Burden of Responsibility in cloud-native App Development_ | [Colin Griffin](https://www.linkedin.com/in/colin-e-griffin/)
---     | _Tailored Platforms on top of Kubernetes_ | [Mauricio Salatino](https://twitter.com/salaboy)
-14:30  | TAG Work in Progress Review | [WG Leads](https://tag-app-delivery.cncf.io/about/#working-groups)
---     | _Platforms_ | Josh Gavant
---     | _Operators_ | Jennifer Streyevitch
---     | _Artifacts_ | Andrew Block
---     | _GitOps_ | Scott Rigby
---     | _Other_
-15:30  | Lightning Talks on Application Delivery
---     | _Capabilities of Portals_ | [Josh Gavant](https://www.linkedin.com/in/joshgav/)
---     | _K8sGPT brings superpowers to everyone_ | [Alex Jones](https://twitter.com/alexjonesax)
---     | _Enable secure self-service access to Kubernetes clusters with Paralus_ | [Abhinav Mishra](https://www.linkedin.com/in/abhinav-mishra-1b0093126/)
---     | _Microcks intro: The Open-source Kubernetes Native tool for API Mocking and Testing_ | [Yacine Kheddache](https://www.linkedin.com/in/yacinekheddache/)
---     | _Identity-defined Microservice Networks_ | [Karthik Prabhakar](https://twitter.com/worldhopper)
+13:00  | TAG総合レビュー | [TAGリーダー](https://tag-app-delivery.cncf.io/#leads)
+13:30  | アプリケーションデリバリーに関するライトニングトーク
+--     | _Kubernetes上でのCloudFoundry抽象化の移植_ | [Ram Iyengar](https://twitter.com/ramiyengar)
+--     | _プラットフォーム成熟度モデル_ | [アビー・バングサー](https://twitter.com/a_bangser)
+--     | _プロジェクトUnox - プラットフォームショーケース実験_ | [ゴパル・ラマチャンドラン](https://twitter.com/goposky)
+--     | _クラウドネイティブアプリ開発における責任の負担_ | [Colin Griffin](https://www.linkedin.com/in/colin-e-griffin/)
+--     | _Kubernetes上の特化プラットフォーム_ | [Mauricio Salatino](https://twitter.com/salaboy)
+14:30  | TAG 進行中の作業レビュー | [WG リーダー](https://tag-app-delivery.cncf.io/about/#working-groups)
+--     | _プラットフォーム_ | Josh Gavant
+--     | _オペレーター_ | Jennifer Streyevitch
+--     | _アーティファクト_ | アンドルー・ブロック
+--     | _GitOps_ | スコット・リグビー
+--     | _その他_
+15:30  | アプリケーションデリバリーに関するライトニングトーク
+--     | _ポータルの機能_ | [Josh Gavant](https://www.linkedin.com/in/joshgav/)
+--     | _K8sGPT はすべての人に超能力をもたらす_ | [Alex Jones](https://twitter.com/alexjonesax)
+--     | _Paralus による Kubernetes クラスタへの安全なセルフサービスアクセスを実現_ | [Abhinav Mishra](https://www.linkedin.com/in/abhinav-mishra-1b0093126/)
+--     | _Microcks イントロ：API モックとテストのためのオープンソース Kubernetes ネイティブツール_ | [Yacine Kheddache](https://www.linkedin.com/in/yacinekheddache/)
+--     | _アイデンティティ定義型マイクロサービスネットワーク_ | [Karthik Prabhakar](https://twitter.com/worldhopper)
 
-## Booth meetups - Wednesday and Thursday
+## ブースミートアップ - 水曜日と木曜日
 
-As mentioned above, we'll hold meetups with lightning talks on App Delivery topics at booth K1 on Wednesday at 3:00pm and Thursday at 1:30pm.
+前述の通り、水曜日15:00と木曜日13:30にブースK1にて、アプリデリバリーをテーマにしたライトニングトーク付きミートアップを開催します。
 
-The schedule for the booth follows:
+ブースのスケジュールは以下の通りです：
 
-Date/Time       | Topic | Presenter
-----------------|-------|-----------
-Apr 19 @ 10:30 - 16:00 | Booth open
-Apr 19 @ 15:00 - 16:00 | Meetup and Lightning Talks
--- | _ClickOps over GitOps_ | [Laszlo Fogas](https://twitter.com/laszlocph)
--- | _Implementing the pattern of "as-a-Service" (using Kratix)_ | [Abby Bangser](https://twitter.com/a_bangser)
--- | _Monitoring-As-Code with Crossplane_ | [Matthias Luebken](https://twitter.com/luebken/)
--- | _Using GitOps for AWS Serverless Infrastructure_ | [Carlos Santana](https://www.linkedin.com/in/csantanapr)
--- | _Far Beyond Virtual Clusters_ | [Dario Tranchitella](https://www.linkedin.com/in/dariotranchitella/)
--- | _GitOps made easy for any applications with PipeCD_ | [Khanh Tran](https://twitter.com/khanhtc1202)
-Apr 20 @ 10:30 - 14:30 | Booth open
-Apr 20 @ 13:30 - 14:30 | Meetup and presentations
--- | _ReleaseOps: GitOps for the People_ | [Lian Li](https://twitter.com/lianmakesthings)
--- | _Composable Platforms with Carvel_ | [Thomas Vitale](https://twitter.com/vitalethomas)
--- | _Making "Tenants" first-class citizens in Kubernetes with Capsule_ | [Dario Tranchitella](https://www.linkedin.com/in/dariotranchitella/)
-Apr 21 @ 10:30 - 12:30 | Booth open
+日時       | トピック | 発表者
+----------------|-------|---- -------
+4月19日 10:30 - 16:00 | ブース開場
+4月19日 15:00 - 16:00 | 交流会とライトニングトーク
+-- | _GitOpsを超えるClickOps_ | [Laszlo Fogas](https://twitter.com/laszlocph)
+-- | _「as-a-Service」パターンの実装（Kratix使用）_ | [Abby Bangser](https://twitter.com/a_bangser)
+-- | _CrossplaneによるMonitoring-As-Code_ | [Matthias Luebken](https://twitter.com/luebken/)
+-- | _AWSサーバーレスインフラストラクチャにおけるGitOpsの活用_ | [Carlos Santana](https://www.linkedin.com/in/csantanapr)
+-- | _仮想クラスターの遥か彼方へ_ | [Dario Tranchitella](https://www.linkedin.com/in/dariotranchitella/)
+-- | _PipeCDでどんなアプリケーションでも簡単に実現するGitOps_ | [Khanh Tran](https://twitter.com/khanhtc1202)
+4月20日 @ 10:30 - 14:30 | ブースオープン
+4月20日 13:30 - 14:30 | 交流会とプレゼンテーション
+-- | _ReleaseOps: 誰もが使えるGitOps_ | [リアン・リー](https://twitter.com/lianmakesthings)
+-- | _Carvelによるコンポーザブルプラットフォーム_ | [トーマス・ヴィターレ](https://twitter.com/vitalethomas)
+-- | _CapsuleでKubernetesにおいて「テナント」を第一級の市民にする方法_ | [Dario Tranchitella](https://www.linkedin.com/in/dariotranchitella/)
+4月21日 @ 10:30 - 12:30 | ブースオープン
 
-## TAG presentation
+## TAGプレゼンテーション
 
-Last but not least, join TAG leads on Thursday for
-[a session](https://kccnceu2023.sched.com/event/e52f9dc38bcbb6504e65d0e6c66170b3/)
-describing how applications, operators, GitOps and platforms come together to
-enable efficient and delightful cloud-native application delivery.
+最後に、木曜日にTAGリーダーによる
+[セッション](https://kccnceu2023.sched.com/event/e52f9dc38bcbb6504e65d0e6c66170b3/)
+にご参加ください。アプリケーション、オペレーター、GitOps、プラットフォームが連携し効率的で快適なクラウドネイティブアプリケーション提供を実現する方法を解説します。
 
-Hope to see you in Amsterdam!
+アムステルダムでお会いできるのを楽しみにしています！

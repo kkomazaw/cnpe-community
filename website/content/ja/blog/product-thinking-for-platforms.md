@@ -1,5 +1,5 @@
 ---
-title:  "Product Thinking for Platforms"
+title:  "プラットフォームのためのプロダクト思考"
 slug: product-thinking-for-platforms
 date:   2024-06-13 01:00:00 +0000
 author: Dominik Kress, Michael Luskind, David Stenglein
@@ -8,127 +8,122 @@ tags:
 - WG Platforms
 ---
 
+# プラットフォームのためのプロダクト思考
 
-# Product Thinking For Platforms
+## はじめに
 
-## Introduction
+エンジニアが愛用するプラットフォームを構築できていますか？
 
-Are you building platforms your engineers love to use?
+KubeCon EU 2024が終了しました。AIに関する話題が至る所で取り上げられる中、クラウドネイティブコミュニティが特に熱心に取り上げたもう一つのトピックがありました：プラットフォームエンジニアリングです。初めて開催されたCoLocated [Platform Engineering Day](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-events/platform-engineering-day/# について)、[Platform Engineering Talks Track](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/program/schedule/)を視聴した方、スポンサーブースホールを散策した方、あるいは自宅でFOMOを感じながらソーシャルメディアのスレッドをチェックしていた方でも構いません。
 
-KubeCon EU 2024 just wrapped up and while the buzz around AI was omnipresent, there was another topic the cloud native community couldn’t seem to get enough of: platform engineering. It doesn’t matter if you attended the very first CoLocated [Platform Engineering Day](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/co-located-events/platform-engineering-day/#about), listened in on the [Platform Engineering Talks Track](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/program/schedule/), strolled through the sponsored booth hall or just sat at home checking your Social Media Thread with FOMO.
+プラットフォームエンジニアリングについて語るなら、組織が自社のプラットフォームの現状を評価し、ギャップを理解し、将来のプラットフォーム戦略を策定するのに役立つ[CNCFプラットフォームエンジニアリング成熟度モデル](https://tag-app-delivery.cncf.io/wgs/platforms/maturity-model/v1/)に触れないわけにはいきません。多くの高パフォーマンス組織が共有する方向性のひとつは、プラットフォームを製品として扱うことです。
 
-If we're talking about platform engineering, we of course need to bring up the [CNCF Platform Engineering Maturity Model](https://tag-app-delivery.cncf.io/wgs/platforms/maturity-model/v1/) that helps organizations evaluate the current state of their platform, understand the gaps, and inform the strategy for the future of their platform. One such direction that many high performing organizations share is treating your platform as a product. 
+「なるほど！」とあなたは言うでしょう。「では、プラットフォームを製品化するツールと方法論をくれれば、それで問題ない！」と付け加えるかもしれません。しかし、そう簡単ではありません。[CNCF Platform Working Group](https://tag-app-delivery.cncf.io/wgs/platforms/)内では組織がプラットフォームを製品として扱う方法を研究する取り組みが進められていますが、一つ明らかなことがあります。それは単なるツールや方法論ではなく、マインドセット、すなわちプロダクト思考が重要だということです。
 
-“Nice!”, you say. “Alright then, give me the tools and methodologies to make my platform-as-a-product and then we’re good!”, you might add. But it’s not that easy. While there is a research initiative within the [CNCF Platform Working Group](https://tag-app-delivery.cncf.io/wgs/platforms/) to find out how organizations approach platform-as-a-product, one thing is already clear: It’s not just about a set of tools and methodologies, it’s about a mindset - Product Thinking. 
+では、このプロダクト思考とは何か？そしてなぜ重要なのか？プロダクト思考とは、ユーザーが関心を持たないものに時間・リソース・資金を浪費せず、正しいものを確実に構築することです。だからこそ本ブログでは、プロダクト思考の定義、そのメリット、そしてエンジニアが愛用するプラットフォームを実現する方法から解説を始めます。
 
-But now what’s this Product Thinking? And why should you care? Product Thinking is making sure you build the right things without wasting time, resources and money to build something that users don’t care about. That’s why this blog is starting with a look at what Product Thinking is, how you can benefit from it and how it can make your platform into something engineers love to use.
+## プロダクト思考とは何か？
 
-## What Is Product Thinking?
+プロダクト思考とは、顧客が直面する課題を特定・優先順位付けし、それらを解決することで価値を創造するプロセスです。
 
-Product Thinking is the process of identifying and prioritizing the problems your customers face and creating value by solving them.
+ここで重要なのは、解決策や機能そのものは含まれていない点です。
 
-Notice that didn't include solutions or features.
+### 課題解決と解決策創出の違い
 
-### Solving Problems VS Creating Solutions
+成功するプロダクトを創るには、**何を**構築するかと同じくらい、**なぜ**構築するのかを理解することが重要です。結局のところ、構築する理由が分からなければ、正しいものを構築していると言えるでしょうか？成功するプロダクトチームはこの点を理解し、解決策を急ぐ前にユーザーの課題点を把握することに注力します。
 
-In order to have a successful product knowing **why** you are building something is just as important as **what** you build. After all, if you don't know why you are building something, how do you know you are building the right thing? Successful product teams understand this and focus their efforts on understanding user pain points before jumping in with solutions. 
+エンジニアがすぐに解決策を考え始めるのは自然な傾向ですが、このアプローチには欠点があります。問題の探求を省略して解決策に飛びつくと、想定以上に広範な問題を見逃す可能性があります。作成した解決策がユーザーのニーズに合わず、間違ったものを構築するために時間と資金を無駄にしただけになるのです。自らの時間を浪費しただけでなく、ユーザーは依然として根本的な問題に直面したままです。むしろ、不適切な解決策を強制的に採用させられることで、さらなる苦痛を経験する可能性すらあります。
 
-It is all too natural for engineers to jump into solutioning, but this approach has downsides. By jumping straight to solutioning, you cut off exploration of the problem, which could have a larger scope than you realize. The solution you create might not fit user needs and you've just wasted time and money building the wrong thing. Not only have you wasted your own time, but your users still struggle with the same underlying problem. Perhaps they even experience additional pain by being forced to adopt your ill-fitting solution.
+プロダクト思考は、ユーザーの問題を積極的に学び、体験を改善する新たな機会を発掘する手助けとなります。根本的な問題を完全に理解し、構築前に潜在的な解決策に関する仮説を検証することで、取り組みのリスクを軽減する能力を与えてくれるのです。
 
-Product Thinking helps you become proactive in learning about your users' problems and unearthing new opportunities to improve their experience. It gives you the ability to de-risk your effort by fully understanding the underlying problems and validating your assumptions about your potential solutions before you build.
+解決策ではなく、問題そのものを愛することを学びましょう。
 
-Learn to love the problem, not the solution. 
+### 顧客にとっての価値
 
-### Value For Customers
+顧客？どの顧客？
 
-Customers? What customers?
+ユーザーの問題を解決するとき、あなたは彼らに価値を創出しています。これがプロダクト思考の核心であり、優れたプロダクトチームが顧客に執着する理由です。ユーザーが何を達成しようとしているのか、その方法を可能な限り深く理解する時間を割けば、「何を構築すべきか」という悩みは消えます。
 
-When you solve a problem for a user, you create value for them. This is at the core of Product Thinking and it's why great product teams obsess over their customers. If you take the time to learn as much as possible about what your users are trying to accomplish and how they go about it, your problem of figuring out what to build goes away.
+ユーザーを遠巻きに観察し、彼らのニーズを推測することも可能ですが、それは全く不要です。必要な洞察は全てユーザーから直接得られます。外に出て彼らと話しましょう！焦点を絞り、解決策の提示ではなく問題発見に徹することが重要です（ユーザー自身も自らの問題に対して解決策を提示しがちです）。第一歩は学ぶための余地を作ること。一歩引いて耳を傾けることで共感が生まれ、ユーザーが直面する課題が見えてきます。このアプローチにより、実際の問題に関する貴重な情報を豊富に得られ、自信を持って解決策の創出に進めます。これらの解決策はより小規模で焦点を絞ったものとなり、迅速なフィードバックループを構築できます。
 
-You could study your users from afar and try to intuit what their needs are, but that's entirely unnecessary. You can have all of the insight you need directly from users. Go out and talk to them! It's good to stay focused and stick to discovering problems rather than solutioning (users are just as guilty of solutioning for their own problems). The first step is to create the room to learn. By stepping back and listening, you develop empathy and see what your users are facing. With this approach, you have lots of valuable information on real problems and can move confidently to creating solutions. These solutions can be smaller and more focused, creating faster feedback loops.
+### 継続的アプローチ
 
+プロダクト思考は従来のプロジェクト指向型管理手法とは異なります。プロジェクトが通常、要件収集・実装・展開といった大規模なフェーズに焦点を当てるのに対し、プロダクト思考は継続的な運用を前提としています。プロダクト思考では、顧客に寄り添い、ニーズを把握し、価値を継続的に提供することを目標とします。顧客と継続的に関わることで、彼らに価値を届ける確率を大幅に高められます。価値提供の実績を積み重ねることで顧客との信頼関係を構築し、新たな機会をもたらし続ける顧客を獲得できます。これに対し、プロジェクト指向のアプローチでは、膨大な時間と資金を投じた大規模プロジェクトが根本的なニーズを外すケースが頻発します。このような場合、関係者は皆この失敗を忘れ去りたがり、結果として中途半端に実装されたソリューションが足枷となるのです。
 
-### Continuous Approach
+プロジェクトからプロダクトへのこの思考の転換こそが、成功するプラットフォーム構築に不可欠です。
 
-The Product Mindset differs from the traditional project-oriented management approach. While a project is usually focused around larger phases of requirements gathering, implementation and deployment, Product Thinking is meant to operate continuously. When using Product Thinking, the goal is to stay close to the customer, figure out their needs and deliver value to them in a continuous cycle. By engaging with customers continuously you significantly raise the odds of delivering value for them. And when you build a track record of delivering value, you build trust with customers and they keep coming back to you with new opportunities. Contrast this with the project oriented approach where a large project that take huge amounts of time and money to implement misses the mark with the underlying need. In this case everyone usually wants to forget this happened and you end up with another partially implemented solution that becomes a drag.
+## プロダクト思考はプラットフォームとどう調和するか？
 
-This mindset shift from project to product is essential for creating successful platforms.
+現代のプラットフォームとプラットフォームエンジニアリングは、エンジニアの認知負荷を軽減し、ビジネス価値の創出に集中させることに焦点を当てています。プラットフォームをビジネス価値連鎖の一部となるプロダクトとして扱うのは当然の帰結です。
 
+プラットフォームは「構築」と「運用」のためのものです。プラットフォームユーザーは両方を実行できる必要があります。
 
-## How Does Product Thinking Fit With platforms?
+### プラットフォームユーザーと価値の発見
 
-Modern platforms and platform engineering are focused on reducing cognitive load for engineers and allowing them to focus on creating business value. It only makes sense to treat the platform as a product that becomes part of the value chain of the business. 
+この前提を受け入れるなら（その理由は後述）、ユーザーに価値を創出する方法を模索する必要があります。前述の通り、ユーザーはビジネスに価値を生み出しており、そのプロセスを支援するあらゆる取り組みがユーザーにとって価値となります。
 
-Platforms are for building things and running them. A platform user needs to be able to do both.
+ここがプロダクト思考とプラットフォームエンジニアリングの本領発揮の場です。
 
+人が利用するプラットフォームを構築する際、二つの選択肢があります：ユーザーの課題に焦点を当てるか、自らの課題に焦点を当てるかです。これは直感に反するように思えるかもしれません。プラットフォームを構築するのは他者が利用するためでしょう？ そうかもしれません。インフラの世界では、ユーザーからのインバウンドリクエストに対応するため、自ら利用するプラットフォームを構築することが多いです。自動化へのアプローチが良い例です。従来の自動化の多くは、日常的なインフラ作業の処理、あるいはユーザーからのインバウンドリクエストへの対応自動化に焦点を当てています。
 
-### Find The Platform User And Value
+これを逆転させ、ユーザーにどう価値を創造するか問いかけるなら、仕事の進め方は大きく変わります。ユーザーからのリクエストをどう処理するかを考えるのではなく、その根本的な問題に迫るために「なぜ」を問い始めるのです。自らの作業を楽にするツールを構築する代わりに、ユーザーの作業プロセスを理解し、その効果を倍増させる方法を模索します。ユーザーのニーズを自分たちで決めつけるのではなく、時間をかけて耳を傾け、実際の問題に対する解決策を構築していることを確認します。
 
-If we accept this premise (and we'll get into why you would want to below) then we need to figure out how to create value for our users. As we mentioned above, our users are creating value for the business and anything we can do to aid in that process will be of value to them.
+プロダクト思考を活用し、ユーザーへの価値に焦点を当てることで、適切なものを構築することが容易になり、企業全体の価値への貢献が確固たるものになります。
 
-This is where the rubber hits the road with Product Thinking and platform engineering. 
+### プラットフォームにとって「正しいもの」を構築する重要性
 
-You have two choices when you build platforms for people to use: you can be focused on their problems or your own. This might seem counter-intuitive. Of course when you build a platform it is for other people to use, right? Well, maybe. In the infrastructure world, we frequently build platforms for ourselves to deal with inbound requests from our users. The approach to automation is a good example. Much traditional automation is focused on dealing with either day to day infrastructure work or automating our response to inbound user requests. 
+前述の通り、ユーザーの課題に焦点を当てて価値を創造するプロダクト思考の重要性（ソリューション先行開発との対比）について説明しました。
 
-If we turn this around and start asking how we create value for our users, our approach to work is very different. Rather than figuring out how to deal with requests from users, we start asking why to get to the core of their problem. Rather than building tools to make our own work easier, we try to understand how our users go about their work and find ways to multiply their effectiveness. Instead of assuming we know what users need, we take time to listen and make sure we are building solutions to actual problems. 
+それは「正しいもの」を構築することを可能にするからです。
 
-Using Product Thinking and focusing on value for users makes it easy for us to build the right thing and cements our contribution to overall company value.
+重要に思えますが、その重要性が代替案と比べてどれほど大きいかは明確ではないかもしれません。
 
-### Importance of building the right thing for platforms 
+考えてみてください：真のユーザーニーズに対応しない解決策の構築に費やされる一分一秒は、機会損失であるだけでなく、貴重な時間とリソースの浪費でもあります。
 
-So we mentioned above that we'd get to why it is important to use Product Thinking to create value for users by focusing on their problems (rather than building solutions first).
+つまり、間違ったものを構築するために時間と資金を無駄にしたのです。これは悪いことです。
 
-It allows you to build the right thing.
+さらに悪いことに：間違ったものを構築していた間中、ユーザーは同じ根本的な問題を抱えたままでした。つまり、ビジネスに価値を生み出すことを妨げる問題です。この見落としは、浪費した時間と資金、そして収益創出の効率低下という形で、莫大な機会損失をもたらします。
 
-That seems important, but it might not be clear just how important it is vs the alternative.
+そして最悪なのは：今構築したそのものが、実は正しいニーズを解決していないかもしれません。おそらく、それをただ捨てるわけにはいかないでしょう。今やあなたは、依然として価値が比較的低いものの、放置すれば負債となる恐れがあるため、そのまま放置できないものを維持する羽目になります。代わりに、四角い穴に丸い杭を無理やりはめ込む方法を模索せざるを得なくなるのです。
 
-Consider this: every minute spent on building solutions that don't address genuine user needs represents not only a squandered opportunity but also a drain on valuable time and resources. 
+さらに悪いことに：間違ったものを構築することは、ユーザーがあなたを迂回する方法を考え始める（シャドーIT）ほどの重荷になり得ます。つまり、資金を浪費するだけでなく、ユーザーも価値を生み出す代わりに自らの問題を解決しようと時間と資金を無駄にしているのです。
 
-So you've wasted time and money building the wrong thing. That's bad.
+では、正しいものを構築したらどうなるでしょうか？
 
-It gets worse: All throughout the time you spent building the wrong thing, your users have had the same core problem, something preventing them from creating value for the business. This miss results in a huge opportunity cost between the wasted time and money and reduced effectiveness in creating revenue.
+まず良い点は、間違ったもの（あるいは複数の間違ったもの）を構築するために多くの時間と労力を浪費しなかったことです。これはプラットフォームチームの効果性を大きく向上させ、より低いコストで価値を創出する時間を劇的に短縮します。
 
-And worse: That thing you just built? That doesn't actually solve the right need? You're probably not going to just throw it away. Now you're stuck maintaining something that still has relatively little value, but can't be just left to rot lest it become a liability. Instead, you'll be motivated to figure out how to fit a square peg in a round hole.
+さらに良いことに、正しいものを構築することで、当初目指した効果——ユーザーがビジネスに価値を生み出す効率を高める——が実現します。プラットフォームは戦力増強装置となり、ユーザー、ひいてはビジネスへの価値がはるかに明確になります。
 
-And even worse: Building the wrong thing can be enough of a drag that users start figuring out ways to build around you (shadow IT). So not only are you wasting money, your users are wasting time and money trying to solve their own problems rather than generating value.
+さらに良いことに、正しいものを構築することで、長期的に構築・管理すべきものを最小限に抑えられます。実際に構築するものはより多くの要素を考慮したものであり、時間の経過とともに負債ではなく資産へと変化します。
 
+そして最も素晴らしい点は、ユーザーからの積極的な採用を得られることです。結局のところ、彼らの課題解決に努力を注いだのですから。これによりユーザーとの信頼が築かれ、プロダクト思考を用い適切な焦点を維持することで、組織全体の効果性を継続的に高められます。
 
-So what happens if we build the right thing?
+ではどちらの道を選ぶか：継続的な改善と効果性の好循環か、それとも苦痛と絶望の悪循環か？
 
-The first good thing is that we've not wasted a lot of time and energy building the wrong thing (or several wrong things). This is a big boost in the platform teams effectiveness, drastically shortening the time create value at a lower cost.
+## 結論
 
-Even better, building the right thing has the effect we set out to create of making our users more effective at creating value for the business. The platform becomes a force multiplier and the value to users and therefore the business is much more apparent.
+プロダクト思考を活用し、エンジニアが愛用するプラットフォームを構築することは、組織に強力な効果をもたらします。
 
-Better still, by building the right thing, you minimize what you need to build and manage over time; the things you do build take more into consideration, becoming an asset rather than a liability over time.
+この道の第一歩はプロダクト思考そのものを理解することです：
 
-And the best part is that you get eager adoption from users. After all, you've made the effort to solve their pain points. This builds trust with your users and by using Product Thinking and keeping the right focus, continuously increase effectiveness of the whole organization.
+- 問題解決 vs 解決策創出：なぜを問う
+- 顧客価値の理解：価値創造への貢献
+- 継続的プロセス：製品はユーザーニーズに応えるため進化し続ける
 
-So which path would you take: a virtuous cycle of continuous improvement and effectiveness or a spiral of misery and despair?
+プロダクト思考を理解したら、プラットフォームに適用します：
 
+- プラットフォーム利用者の価値：価値創造の障壁とフロー強化に焦点を当てる
+- 焦点の選択：自社の問題ではなくユーザーの問題を解決するプラットフォームを構築する
+- 正しいものを作る：プラットフォームは組織に多大な影響を与え得るが、正しいものを構築しなければその影響力を大きく失う
 
-## Conclusion
+プラットフォーム構築においてプロダクト思考を活用し、ユーザーと対話することの重要性を十分に説明できたと願っています。では、実際にこれらの実践をどう導入すればよいのでしょうか？チームがこれらの手法を始める手助けとなるブログシリーズを計画中です。
 
-Using Product Thinking and building platforms your engineers love to use can have powerful effects on an organization.
+ただし、今すぐ始めることも可能です。方法はシンプルです：ユーザーと話す、耳を傾ける、そして彼らの問題を解き明かし始めることです。
 
-The first step on this path is to understand Product Thinking itself:
-- Problem solving vs creating solutions: asking why
-- Understanding value for customers: contribute to value creation
-- Continuous process: a product keeps evolving to meet user needs
+プラットフォームワーキンググループについて詳しく知りたい方は、以下のリソースをご参照ください：
 
-Once we understand Product Thinking, we can apply it to platforms:
-- Value for platform users: focus on barriers to creating value and enhancing flow
-- Choice of focus: build platforms to solve user problems, not your own
-- Building the right thing: platforms can have a huge impact on an organization, but they can also lose a lot of that impact if you don't build the right thing
+- [Platforms WG ホームページ](https://tag-app-delivery.cncf.io/wgs/platforms/)
+- [CNCF Slack サインアップ](https://communityinviter.com/apps/cloud-native/cncf)
+- [#platform-engineering チャンネル](https://cloud-native.slack.com/archives/C020RHD43BP)
 
-
-We hope we've made a good case for the important of using Product Thinking and interacting with your users when building platforms. But how do you actually adopt these practices? We have a series of blogs planned to help teams get started with these methods. 
-
-You can get started right now, though. It's simple: talk to your users, listen to them and start figuring out their problems.
-
-If you'd like to learn more about the Platforms Working Group, here are some resources:
-- [Platforms WG Home Page](https://tag-app-delivery.cncf.io/wgs/platforms/) 
-- [CNCF Slack Signup](https://communityinviter.com/apps/cloud-native/cncf)
-- [#platform-engineering channel](https://cloud-native.slack.com/archives/C020RHD43BP)
-
-Also, consider participating in our Platform As A Product [research effort](https://tag-app-delivery.cncf.io/blog/call-participation-paap-research/).
-
+また、当社の「Platform As A Product」[研究活動](https://tag-app-delivery.cncf.io/blog/call-participation-paap-research/)への参加もご検討ください。

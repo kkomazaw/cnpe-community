@@ -1,5 +1,5 @@
 ---
-title:  Platform Engineering in 2024, Industry Trends and Emerging Focus (An holistic proposal for Internal Developer Platforms named Platform Engineering ++)
+title:  2024年のプラットフォームエンジニアリング、業界動向と新たな焦点（内部開発者プラットフォーム「Platform Engineering ++」の包括的提案）
 slug:   proposal-platform-engineering-++
 date:   2024-06-25 15:21:00 +0000
 author: Giulio Roggero
@@ -10,182 +10,178 @@ tags:
 - WG Platforms
 ---
 
-In this blog post, I'll explore Platform Engineering, covering its diverse interpretations and implementations across organizations.
+本ブログ記事では、組織間で多様な解釈と実装がなされているプラットフォームエンジニアリングについて考察します。
 
-I'm trying to answer to the following question: *"Should Internal Developer Platforms be limited to self-service infrastructure provisioning and application deployment?"*
+以下の問いに答えようとしています：*「内部開発者プラットフォームは、セルフサービス型インフラプロビジョニングとアプリケーションデプロイメントに限定されるべきか？」*
 
-Organizations approach Platform Engineering in different ways:
+組織によるプラットフォームエンジニアリングへのアプローチは様々です：
 
-- Some build self-service tools for infrastructure provisioning, giving developers autonomy over infrastructure management.
-- Others focus on enhancing the developer experience, simplifying coding and deployment.
-- Some adopt a marketplace-centric approach, creating a repository of reusable components like containers, data, and APIs.
+- インフラプロビジョニング用のセルフサービスツールを構築し、開発者にインフラ管理の自律性を与える組織。
+- 開発者体験の向上に注力し、コーディングとデプロイを簡素化する組織
+- マーケットプレイス中心のアプローチを採用し、コンテナ・データ・APIなどの再利用可能コンポーネントリポジトリを構築する組織
 
-While current Platform Engineering practices effectively address many aspects of simplifying people's lives, there are other areas that require attention. Data, ML, API, Security, Privacy, and others are crucial for a better Software Product Lifecycle. It is essential to consider whether these teams can benefit from the existing Platform Engineering practices.
+現在のプラットフォームエンジニアリング実践は多くの面で人々の業務を効率化していますが、注目すべき他の領域も存在します。データ、機械学習、API、セキュリティ、プライバシーなどは、ソフトウェア製品ライフサイクルの改善に不可欠です。これらのチームが既存のプラットフォームエンジニアリング手法から恩恵を受けられるか検討することが不可欠です。
 
-By expanding the focus beyond a singular aspect, we can ensure a comprehensive and enhanced experience for all users.
+単一側面を超えた視野の拡大により、全ユーザーに対する包括的かつ強化された体験を保証できます。
 
-I believe that Platform Engineering should encompass the entire end-to-end value chain to deliver products and applications to end users effectively. Often, Platform Engineering is “solely” associated with Infrastructure and DevOps simplification, with the primary goal of providing a self-service platform for developers. 
+プラットフォームエンジニアリングは、製品やアプリケーションをエンドユーザーに効果的に届けるため、エンドツーエンドのバリューチェーン全体を包含すべきだと考えます。往々にしてプラットフォームエンジニアリングは「専ら」インフラとDevOpsの簡素化と結び付けられ、開発者向けセルフサービスプラットフォームの提供を主目的とされます。
 
-By envisioning this, we run the risk of creating new barriers between Platform Engineers and Developers, similar to the barriers that existed in the past between IT Operations and Developers. Furthermore, we now have Data, ML, API, and other engineers to consider.
+このような認識では、プラットフォームエンジニアと開発者の間に新たな障壁が生じるリスクがあります。これは過去にIT運用と開発者の間に存在した障壁と同様です。さらに現在では、データ、機械学習、APIなどのエンジニアも考慮する必要があります。
 
-In my opinion, expanding Platform Engineering and its tools to encompass the entire spectrum of Digital Applications is a worthwhile endeavor also for not typical aspects of what is usually called platform.
+私の見解では、プラットフォームエンジニアリングとそのツールをデジタルアプリケーションの全領域に拡大することは、通常「プラットフォーム」と呼ばれるものの典型的な側面以外においても、価値ある取り組みです。
 
-For example we can consider parts of a Platform also:
+例えば、プラットフォームの一部として以下も考慮できます：
 
-- a Design System reusable by several teams;
-- a repository of libraries;
-- a metadata catalog;
-- the teams working agreements;
-- a set of guardrails for ensuring legal and compliance requirements;
-- a set of standards that application should follow.
+- 複数チームで再利用可能なデザインシステム
+- ライブラリのリポジトリ
+- メタデータカタログ
+- チーム間の業務協定
+- 法的・コンプライアンス要件を保証する一連のガードレール
+- アプリケーションが従うべき一連の標準
 
-I suggest calling this expansion **Platform Engineering ++**. The core elements, Infrastructure and DevOps plus Data/ML Engineering and plus Software Composability (API, Events, Micro Frontend, Libraries and all aspects of a Software Application that can be reusable and evolved with an Inner Source approach).
+この拡張を**Platform Engineering ++**と呼ぶことを提案します。中核要素であるインフラストラクチャとDevOpsに加え、データ/機械学習エンジニアリング、そしてソフトウェア構成可能性（API、イベント、マイクロフロントエンド、ライブラリ、およびインナーソースアプローチで再利用・進化可能なソフトウェアアプリケーションのあらゆる側面）を包含するものです。
 
-I believe this will lead to a more comprehensive and effective approach to application development and management. I will provide further justification for this position in the following paragraphs.
+これにより、アプリケーション開発と管理に対するより包括的かつ効果的なアプローチが実現すると確信しています。この立場のさらなる根拠については、以下の段落で説明します。
 
-## Introduction to Platforms, a metaphor
+## プラットフォームのメタファーとしての導入
 
-Like a library where people bring books to share and people borrow books to read, Platforms are a place where people share resources. In the digital realm, platforms serve as virtual libraries, enabling individuals to share and access a diverse range of resources. 
-
+人々が本を共有するために持ち寄り、読むために借りる図書館のように、プラットフォームは人々がリソースを共有する場です。デジタル領域においてプラットフォームは仮想図書館として機能し、個人が多様なリソースを共有・アクセスすることを可能にします。
 ![Library Platform Metaphor](/images/2024-06-20-pelibrary-platform-metaphor.png)
 
-You can represent a Library as a Platform where Assets are provided in the form of Books, Video, Papers and more. The Library offers Capabilities like Catalog Collections, Reading Rooms, Cafes and people can use those capabilities thanks to a Research Assistant, a Website, a Subscription Service. Librarians keep everything working and well organized providing a self service experience to users that can be private people, schools, and other groups.
+図書館をプラットフォームとして捉えると、書籍・動画・論文などの形で資産が提供されます。図書館はカタログコレクション・閲覧室・カフェといった機能を提供し、利用者は研究助手・ウェブサイト・購読サービスを通じてそれらを利用できます。司書は全てを円滑に運営し、個人・学校・団体といった利用者に対し、セルフサービス体験を提供します。
 
-Library users are not only readers, but also potential writers. They may draw inspiration, gather facts, and formulate thesis from other books they find in the library, which they can use to create new works.
+図書館利用者は単なる読者ではなく、潜在的な執筆者でもあります。図書館で見つけた他の書籍からインスピレーションを得たり、事実を収集したり、論文を構築したりして、新たな作品を生み出すことができます。
 
-## Internal Developer Platforms
+## 内部開発者プラットフォーム
 
-In this analogy, we can liken Librarians to Platform Engineers. Their primary objective is to make sure that users of the platform receive top-notch services and have a delightful experience while interacting with it.
-In the realm of metaphors, books can be likened to various resources and tools (just some examples):
+この比喩において、司書はプラットフォームエンジニアに例えられます。彼らの主な目的は、プラットフォーム利用者が最高水準のサービスを受け、プラットフォームとのやり取りにおいて快適な体験を得られるようにすることです。
 
-- A kubernetes cluster with all necessary software and configurations.
-- A crossplane CRD to create an infrastructure resource.
-- A kafka topic used for data streaming.
-- A data product available for consumption.
-- A software library designed for logging in the correct format, including the traceId.
-- A web component library to compose in a micro frontend.
-- An API for initiating payments through a digital payment provider.
-- A complete application accessible to end users.
+比喩の世界では、書籍は様々なリソースやツールに例えられます：
 
-The facilities of a library can be (just some examples):
+- 必要なソフトウェアと設定を全て備えたKubernetesクラスター
+- インフラストラクチャリソースを作成するCrossplane CRD
+- データストリーミングに使用されるKafkaトピック
+- 利用可能なデータプロダクト
+- トレースIDを含む適切な形式でのロギング用に設計されたソフトウェアライブラリ
+- マイクロフロントエンドを構築するためのWebコンポーネントライブラリ
+- デジタル決済プロバイダーを介した支払いを開始するためのAPI
+- エンドユーザーがアクセス可能な完全なアプリケーション。
 
-- A service catalog where all consumable and composable resources are listed.
-- A self-service UI to create a new software element (infrastructure, application or other).
-- A command line interface to view live logs in production.
-- A monitoring system to see microservice metrics.
-- A set of scorecards to gather information about team metrics.
+ライブラリの機能には以下のようなものがあります：
 
-The library, which I like to call the **Internal Platform** (or Internal Developer Platform, see next paragraph), is where all the technological magic happens. **Platform Engineers** manage this platform, ensuring that all Internal Platform Users have an exceptional experience. Their approach is product-oriented, focused on delivering a seamless and intuitive user experience.
+- 利用可能かつ組み込み可能な全リソースを一覧表示するサービスカタログ。
+- 新規ソフトウェア要素（インフラストラクチャ、アプリケーション等）を作成するセルフサービスUI。
+- 本番環境のライブログを閲覧するコマンドラインインターフェース。
+- マイクロサービスのメトリクスを確認する監視システム。
+- チームメトリクスに関する情報を収集するスコアカード一式。
 
-Depending on the usage patterns of the platform users and the organization's specific requirements, Platform Engineers fine-tune the platform to deliver the necessary services.
+このライブラリ（私は**内部プラットフォーム**、または内部開発者プラットフォームと呼んでいます。詳細は次項参照）こそが、あらゆる技術的魔法が起きる場所です。**プラットフォームエンジニア**がこのプラットフォームを管理し、すべての内部プラットフォームユーザーが卓越した体験を得られるよう保証します。彼らのアプローチはプロダクト志向であり、シームレスで直感的なユーザー体験の提供に焦点を当てています。
 
-A platform is a virtual place where resources (I will call them Items as a synonym) are systematically arranged and disseminated. By optimizing time utilization, more resources become accessible.
+プラットフォーム利用者の使用パターンや組織固有の要件に応じて、プラットフォームエンジニアは必要なサービスを提供できるようプラットフォームを微調整します。
 
-By effectively leveraging these items, that were books in the analogy, organizations can create innovative solutions, optimize operations, and gain a competitive advantage.
+プラットフォームとは、リソース（ここでは「アイテム」と同義語として扱います）が体系的に整理・提供される仮想空間です。時間利用を最適化することで、より多くのリソースが利用可能になります。
 
+この比喩における書籍に相当するアイテムを効果的に活用することで、組織は革新的なソリューションを創出し、業務を最適化し、競争優位性を獲得できます。
 ![Platform High Level View](/images/2024-06-20-platform-zoom-out.png)
 
-Within the Internal Platform's Platform Capabilities, capability providers offer a range of fundamental resources (Items), including Infrastructure, DevOps Toolchains, SaaS Services, and Tools, which are organized and consistently curated by Platform Engineers.
+内部プラットフォームのプラットフォーム機能内では、機能プロバイダーがインフラストラクチャ、DevOpsツールチェーン、SaaSサービス、ツールなど、プラットフォームエンジニアによって組織化され一貫して管理される一連の基本リソース（アイテム）を提供します。
 
-Each capability constitutes an Item of the Platform and is characterized by a:
+各機能はプラットフォームのアイテムを構成し、以下の特徴を持ちます：
 
-- **definition**: describes inputs, outputs, configurable behaviors, metrics and documentation;
-- **life cycle**: an item goes through a life cycle that includes development, testing, deployment, operation and decommissioning.
-- **consumption and composition**: items can be consumed and composed to create more complex applications and become other items to be consumed.
+- **定義**：入力、出力、設定可能な動作、メトリクス、ドキュメントを記述
+- **ライフサイクル**：開発、テスト、デプロイ、運用、廃止を含むライフサイクルを経る
+- **消費と構成**：アイテムは消費・構成され、より複雑なアプリケーションを生成したり、他の消費対象アイテムとなる
 
-Product Teams can engage with and use these Items through user interfaces, command lines, and APIs. AI Agents can assist the team in simplifying usage, while the Items are organized in Catalogs with the corresponding documentation.
-
+プロダクトチームは、ユーザーインターフェース、コマンドライン、APIを通じてこれらのアイテムを利用できます。AIエージェントはチームの操作簡素化を支援し、アイテムは対応するドキュメントと共にカタログに整理されます。
 ![Platform High Level View with Loop](/images/2024-06-20-platform-zoom-out-loop.png)
 
-As a result of the collaboration, new applications are created. These applications can then be transformed into Raw Assets, which can be reused repeatedly by other teams, enhancing the organization's DevX. 
+この連携の結果、新たなアプリケーションが生成されます。これらのアプリケーションは生アセットへ変換可能であり、他のチームが繰り返し再利用することで組織のDevXを強化します。
 
-This cycle can be seen as a circular economy in software development, where resources are continuously reused and repurposed, leading to a more efficient and sustainable development process.
+このサイクルはソフトウェア開発における循環型経済と見なせ、リソースが継続的に再利用・転用されることで、より効率的で持続可能な開発プロセスが実現します。
 
-## Platform Items Lifecycle
+## プラットフォームアイテムのライフサイクル
 
-Platform items come in several varieties, but possessing common characteristics:
+プラットフォームアイテムには複数の種類がありますが、共通の特徴を備えています：
 
-- are described by a plain text file (there are several format that are emerging and I hope in the future we will have a standard);
-- can be put in relationships each to other;
-- have a life cycle for create, ship, run, operate and catalog that item in order to be consumed by Product and Application teams.
-
+- プレーンテキストファイルで記述される（複数のフォーマットが台頭しており、将来的には標準化されることを期待しています）
+- 相互に関連付けが可能
+- プロダクトチームやアプリケーションチームが利用できるよう、作成、出荷、実行、運用、カタログ化というライフサイクルを経る。
 ![Platform Resources Lifecycle](/images/2024-06-20-platform-lifecycle.png)
 
-It's important to note that users can interact with the system through a UI or CLI, or through another software that automates some tasks, or via an AI agent based on LLM. 
+ユーザーはUIやCLI、タスクを自動化するソフトウェア、LLMベースのAIエージェントを通じてシステムと対話できる点が重要です。
 
-If you had access to a comprehensive internal platform containing all the descriptions of behaviors and relationships necessary to run your application, how beneficial would it be to have an AI companion? 
+アプリケーションを実行するために必要な動作や関係性の記述をすべて含む包括的な内部プラットフォームにアクセスできる場合、AIコンパニオンがどれほど有益か想像してみてください。
 
-Imagine having a companion that simplifies tasks such as finding items, configuring them, and releasing and operating those items in production, all through simple conversations with the AI. This companion would significantly streamline your workflow and enhance your overall productivity.
+アイテムの検索、設定、本番環境でのリリース・運用といったタスクを、AIとの簡単な会話を通じて簡素化するコンパニオンを想像してください。このコンパニオンはワークフローを大幅に効率化し、全体的な生産性を向上させます。
 
-I propose referring to this as **"Conversational DevX”**, which will be the focus of my next blog post.
+これを**「対話型DevX」**と呼ぶことを提案します。次回のブログ記事ではこの概念に焦点を当てます。
 
-## Internal Developer Platform or Platform of Platforms or Internal Platform?
+## 内部開発者プラットフォームか、プラットフォームの集合体か、それとも内部プラットフォームか？
 
-I don’t know if it should be better to say that an Internal Developer Platform is an ensemble of different platforms or that it’s just one of the platforms. This is an [open discussion](https://github.com/cncf/tag-app-delivery/issues/586) where we welcome conversation and other ideas.
+内部開発者プラットフォームを「複数のプラットフォームの集合体」と表現すべきか、それとも「単一のプラットフォーム」と捉えるべきか、判断に迷っています。これは[オープンな議論](https://github.com/cncf/tag-app-delivery/issues/586)であり、皆様の意見やアイデアをお待ちしています。
 
-Names are important but in this blog post I don’t want to focus on the name but on the content and I hope that together with the tag-app-delivery (https://github.com/cncf/tag-app-delivery) people we will figure out a standard nomenclature. 
+名称は重要ですが、本記事では名称ではなく内容に焦点を当てます。tag-app-delivery（https://github.com/cncf/tag-app-delivery）コミュニティの皆様と共に標準的な命名規則を確立できれば幸いです。
 
-As mentioned in the introduction of this blog post, Platform Engineering is more than Infrastructure and it isn’t an evolution of DevOps but is a way to reduce the cognitive load for people that are creating, delivering and operating software items like Applications, Data, API and ML Models.
+本記事の冒頭で述べた通り、プラットフォームエンジニアリングはインフラストラクチャを超えた概念であり、DevOpsの進化形ではなく、アプリケーション・データ・API・機械学習モデルといったソフトウェアアイテムを創出・提供・運用する人々の認知負荷を軽減する手法です。
 
-The trend I see is that each type of software item has its platform. However, the user experiences across these platforms are becoming increasingly similar. This suggests a potential convergence of all software platforms into a single platform or a "platform of platforms."
+私が観察する傾向として、各ソフトウェアアイテムには固有のプラットフォームが存在します。しかし、これらのプラットフォームにおけるユーザー体験は次第に類似しつつあります。これは、全てのソフトウェアプラットフォームが単一のプラットフォーム、すなわち「プラットフォームのプラットフォーム」へと収束する可能性を示唆しています。
 
-An Item in the Internal Platform can be of different types:
+内部プラットフォーム内のアイテムは、以下の異なるタイプに分類されます：
 
-- **Infrastructure Resources**: this encompasses the underlying hardware and software components that support your applications and services. It includes physical servers, virtual machines, containers, cloud platforms, data stores, databases, ML runtimes and more;
-- **DevOps or Developer Platform Resources**: all tools for defining and running a toolchain, plus tools to operate and observe workloads, data, APIs, event, AI models at runtime;
-- **Data, Events, APIs Resources**: data is a critical asset for many organizations. It can be structured, unstructured, or semi-structured and can come from various sources. It can be at rest or in movement. It can be updated by policies and emit events;
-- **ML and AI Resources**: machine learning models are algorithms that can learn from data and make predictions. You can define, training, deploy and improve your models;
-- **Composable Resources**: items can be orchestrated or choreographed. Depending on the type of the item you may use different patterns like Sagas or Micro Frontend composition; Composable Items are tools that allow you to compose;
-- **DevX Resources**: DevX as a Product Resources (internal marketplace and software catalog): each item of the Internal Platform can be a valuable asset for other people. Provide a marketplace for that items and a way to manage the marketplace lifecycle: create, publish, curate, consume, review is relevant for creating a software circular economy;
-- **Team Collaboration Resources**: teams work together within internal platforms, utilizing various items to facilitate communication and organize workflows. These items include issues, backlogs, documentation, and more. Understanding the Platform itself is essential for effective collaboration.
+- **インフラストラクチャリソース**：アプリケーションやサービスを支える基盤となるハードウェア・ソフトウェアコンポーネントを指します。物理サーバー、仮想マシン、コンテナ、クラウドプラットフォーム、データストア、データベース、機械学習ランタイムなどが含まれます
+- **DevOpsまたは開発者プラットフォームリソース**：ツールチェーンを定義・実行するための全ツールに加え、ワークロード、データ、API、イベント、実行時AIモデルの運用・監視ツール
+- **データ、イベント、APIリソース**：データは多くの組織にとって重要な資産です。構造化、非構造化、半構造化データが存在し、様々なソースから取得されます。静止状態または移動中のデータが存在します。ポリシーによって更新され、イベントを発行する場合もあります
+- **機械学習（ML）およびAIリソース**：機械学習モデルは、データから学習し予測を行うアルゴリズムです。モデルの定義、トレーニング、デプロイ、改善が可能です
+- **コンポーザブルリソース**：アイテムはオーケストレーションまたはコレオグラフィーが可能です。アイテムの種類に応じて、SagasやMicro Frontend構成など異なるパターンを使用できます；コンポーザブルアイテムは、コンポジションを可能にするツールです
+- **DevXリソース**: DevXをプロダクトリソースとして（内部マーケットプレイスとソフトウェアカタログ）: 内部プラットフォームの各アイテムは他者にとって貴重な資産となり得ます。それらのアイテム向けマーケットプレイスと、そのライフサイクル管理手段（作成、公開、キュレーション、消費、レビュー）を提供することは、ソフトウェア循環経済の構築に関連します
+- **チームコラボレーションリソース**: チームは内部プラットフォーム内で連携し、コミュニケーション促進やワークフロー整理のために様々なアイテムを活用します。これには課題管理、バックログ、ドキュメントなどが含まれます。効果的なコラボレーションにはプラットフォーム自体の理解が不可欠です。
 
-We can explode the diagram with different Platforms of the Internal Platform.
-
+内部プラットフォームの構成要素を分解して図解できます。
 ![Platform Full Diagram](/images/2024-06-20-platform-full.png)
 
-The **Internal Platform** obtains "raw" assets such as virtual machines (VMs), Kubernetes as a Service clusters, and Function Platform as a Service tools as runtime resources.
+**内部プラットフォーム**は、仮想マシン（VM）、Kubernetes as a Serviceクラスター、Function Platform as a Serviceツールなどの「生の」資産をランタイムリソースとして取得します。
 
-DevOps tools are essential for managing resources and code lifecycle, forming a fundamental pillar alongside observability, security, and identity management services. Data stores such as NoSQL and SQL databases, data streams and object storage are commonly utilized in application development.
+DevOpsツールは、リソースとコードライフサイクルの管理に不可欠であり、可観測性、セキュリティ、ID管理サービスと並んで基盤となる柱を形成します。NoSQLやSQLデータベース、データストリーム、オブジェクトストレージなどのデータストアは、アプリケーション開発で一般的に利用されます。
 
-Additionally, LLMs models are frequently employed as a service via APIs or embedded within the runtime to enhance applications created by teams. SaaS applications, such as Salesforce, Dynamics 365, and SAP, serve as central hubs for various customer and product information, playing a significant role in the development of cloud-native applications.
+さらに、LLMモデルはAPI経由でサービスとして、あるいはランタイムに組み込まれる形で頻繁に活用され、チームが開発するアプリケーションの機能強化に寄与します。Salesforce、Dynamics 365、SAPなどのSaaSアプリケーションは、多様な顧客情報や製品情報の中心ハブとして機能し、クラウドネイティブアプリケーション開発において重要な役割を果たします。
 
-All capabilities are managed with an **Infrastructure as Code** approach and the IaC manifests are managed with the lifecycle: code, ship, run, operate and organize team collaboration.
+全ての機能は**Infrastructure as Code（IaC）**アプローチで管理され、IaCマニフェストはライフサイクル（コード化、デプロイ、実行、運用、チーム連携の組織化）に沿って管理されます。
 
-The same approach resource lifecycle is shared  among different kinds of platform items: developers, infrastructure, application orchestration (API, Events, Flows), machine learning and data. All of them are Platforms inside the **Internal Platform** that are interconnected and may share resources like a database cluster or a security policy. 
+このリソースライフサイクルのアプローチは、開発者、インフラストラクチャ、アプリケーションオーケストレーション（API、イベント、フロー）、機械学習、データといった異なる種類のプラットフォーム要素間で共有されます。これらは全て、相互接続されデータベースクラスターやセキュリティポリシーなどのリソースを共有し得る**内部プラットフォーム**内のプラットフォームです。
 
-The descriptor of that items are manifest that can be gathered in the concept of **Application as Code** (AaC): with the same approach of describing the desired state of the infrastructure you describe the desired state of the items of all platforms that compose the cloud native application.
+これらのアイテムの記述子はマニフェストであり、**アプリケーション・アズ・コード**（AaC）の概念に集約されます：インフラストラクチャの望ましい状態を記述するのと同じアプローチで、クラウドネイティブアプリケーションを構成する全プラットフォームのアイテムの望ましい状態を記述します。
 
-Inside the **Internal Marketplace** are defined: the reusable blueprint for all platform items, the software catalog that you can reuse and all other items that come from each team that can be a building block for other teams. Thanks to that Marketplace you can enable a **Platform Composability** strategy.
+**内部マーケットプレイス**内には以下が定義される：全プラットフォーム要素向けの再利用可能な設計図、再利用可能なソフトウェアカタログ、各チームが提供する他のチームの構築ブロックとなり得るあらゆる要素。このマーケットプレイスにより**プラットフォーム構成可能性**戦略を実現できます。
 
-The Internal Platform offers various interfaces, including a user interface (UI) and a command-line interface (CLI). Additionally, users can interact with the platform programmatically through an API. The **AI** serves as a **companion**. IaC and AaC manifests are provided as a context to the LLM and the AI simplify tasks for platform users. These tasks include resource discovery, troubleshooting microservices and resources, and creating new resources.
+内部プラットフォームはユーザーインターフェース（UI）やコマンドラインインターフェース（CLI）を含む多様なインターフェースを提供します。さらに、ユーザーはAPIを介してプログラム的にプラットフォームとやり取りできます。**AI**は**コンパニオン**として機能します。IaCおよびAaCマニフェストはLLMへのコンテキストとして提供され、AIはプラットフォームユーザーのタスクを簡素化します。これらのタスクには、リソースの発見、マイクロサービスおよびリソースのトラブルシューティング、新規リソースの作成が含まれます。
 
-**Platform Engineering++** is a software engineering discipline that focuses on the Internal Platforms with a holistic approach.
+**Platform Engineering++**は、包括的アプローチで内部プラットフォームに焦点を当てるソフトウェアエンジニアリング分野です。
 
-## Conclusions
+## 結論
 
-By adopting that **Platform Engineering++** paradigma, I believe that the **Platform Engineering initiative's return on investment (ROI)** will grow. This is because the platform becomes the foundation for business applications, eliminating obstacles between teams. As a result, all teams have a unified perspective of the end-to-end applications built on top of it.
+この**Platform Engineering++**パラダイムを採用することで、**Platform Engineeringイニシアチブの投資対効果（ROI）**が向上すると確信しています。プラットフォームがビジネスアプリケーションの基盤となり、チーム間の障壁が解消されるためです。その結果、すべてのチームがその上に構築されたエンドツーエンドアプリケーションを統一的な視点で把握できるようになります。
 
-For now I stop here and I ask for feedbacks :-). What do you think about it? Please leave a comment in the issue https://github.com/cncf/tag-app-delivery/issues/586 and join CNCF wg-platforms working group if you are interested.
+今回はここまでとし、フィードバックをお願いします :-)。ご意見をお聞かせください。興味のある方は、イシュー https://github.com/cncf/tag-app-delivery/issues/586 にコメントを残し、CNCF wg-platforms ワーキンググループにご参加ください。
 
-The journey is just at the beginning!
+この旅は始まったばかりです！
 
-## References
+## 参考文献
 
-In this blog post, when I mention "Platform," I specifically refer to "Internal Developer Platform" or, as I prefer, "**Internal Platform**," as these platforms are not exclusive to developers but also encompass Data, ML, Cloud, and other engineers. It's important to distinguish these Internal Platforms from Business Platforms such as Uber, Airbnb, or Netflix. Internal Platforms assist organizations in building and operating their Business Platforms. For example, Spotify created Backstage as an Internal Developer Portal and has incorporated additional tools to develop its Internal Platform to operate Spotify consumer platform.
+本ブログ記事において「プラットフォーム」と表記する場合、特に「内部開発者プラットフォーム」、あるいは私が好んで用いる「**内部プラットフォーム**」を指します。これらのプラットフォームは開発者専用ではなく、データ、機械学習、クラウド、その他のエンジニアも包含するからです。これらの内部プラットフォームは、Uber、Airbnb、Netflixなどのビジネスプラットフォームとは区別することが重要です。内部プラットフォームは、組織がビジネスプラットフォームを構築・運用するのを支援します。例えば、Spotifyは内部開発者ポータルとしてBackstageを構築し、Spotifyの消費者向けプラットフォームを運用するための内部プラットフォームを開発するために追加ツールを組み込んでいます。
 
-Please note that there are already papers that are defining some aspects that I’m going to discuss in this blog post: 
+なお、本ブログ記事で議論する内容の一部は既に以下の論文で定義されています：
 
-- the CNCF Platform White Paper (https://github.com/Cloud-Native-Platform-Engineering/cnpe-community/blob/main/platforms-whitepaper/v1/index.md)
-- the Platform Glossary (https://github.com/Cloud-Native-Platform-Engineering/cnpe-community/blob/main/platforms-wg/glossary/_index.md)
-- the Platform Engineering Maturity Model (https://github.com/Cloud-Native-Platform-Engineering/cnpe-community/blob/main/platforms-maturity-model/v1/index.md)
-- the Platform of Platform initiative (https://github.com/cncf/tag-app-delivery/issues/542).
+- CNCFプラットフォーム白書 (https://github.com/Cloud-Native-Platform-Engineering/cnpe-community/blob/main/platforms-whitepaper/v1/index.md)
+- プラットフォーム用語集（https://github.com/Cloud-Native-Platform-Engineering/cnpe-community/blob/main/platforms-wg/glossary/_index.md）
+- プラットフォームエンジニアリング成熟度モデル (https://github.com/Cloud-Native-Platform-Engineering/cnpe-community/blob/main/platforms-maturity-model/v1/index.md)
+- プラットフォーム・オブ・プラットフォーム構想 (https://github.com/cncf/tag-app-delivery/issues/542)
 
-I hope that this blog will contribute to brainstorming.
+このブログがブレインストーミングの一助となれば幸いです。
 
-## Thanks
+## 謝辞
 
-This is an original blog post written for the CNCF TAG App Delivery community. I hope you enjoy it!
+本記事はCNCF TAG App Deliveryコミュニティ向けに執筆したオリジナルブログ記事です。お楽しみいただければ幸いです。
 
-I express my sincere gratitude to the CNCF TAG App Delivery community for establishing a virtual place that fosters open-minded discussions and inclusivity.
+オープンな議論と包括性を育む仮想の場を提供してくださったCNCF TAG App Deliveryコミュニティに心から感謝します。
 
-_Special thanks to who has reviewed this post! Atulpriya Sharma, Lou Bichard, Tyler Pate, Abby Bangser,  Stefan Daugaard Poulsen, Chris Plank, Marsh Gardiner, Rob White and David Stenglein for their insightful reviews._
+_本稿をレビューしてくださった皆様に特に感謝申し上げます！ Atulpriya Sharma、Lou Bichard、Tyler Pate、Abby Bangser、Stefan Daugaard Poulsen、Chris Plank、Marsh Gardiner、Rob White、David Stengleinの各氏による洞察に富んだレビューに深く感謝いたします。_

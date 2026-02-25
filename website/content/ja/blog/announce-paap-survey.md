@@ -1,5 +1,5 @@
 ---
-title: Platform as a Product Research - Now with a Survey!
+title: Platform as a Product 調査 - アンケート実施中！
 slug:  call-participation-paap-survey 
 date:   2024-11-25 12:00:00 +0000
 author: Dominik Kress
@@ -10,17 +10,18 @@ tags:
 - Platform As A Product
 ---
 
-### Expanding Our Platform as a Product Research: [Share Your Insights Through Our New Survey!](https://forms.gle/PDjnQSvruXwRrZvk7)
+### Platform as a Product研究の拡大：[新アンケートで知見を共有しよう！](https://forms.gle/PDjnQSvruXwRrZvk7)
 
-The CNCF Platforms Working Group is continuing its research to learn how companies build their internal platforms. After sharing our [**Platform Engineering Maturity Model**](https://tag-app-delivery.cncf.io/whitepapers/platform-eng-maturity-model/), we are now focusing on [**Platform As A Product**](https://tag-app-delivery.cncf.io/blog/product-thinking-for-platforms/). This means treating platform users like customers, making sure the platform meets their needs. Even though many talks and articles discuss this topic, we don't know exactly how many companies use this approach.
+CNCFプラットフォームワーキンググループは、企業が内部プラットフォームを構築する方法を学ぶための研究を継続しています。[**プラットフォームエンジニアリング成熟度モデル**](https://tag-app-delivery.cncf.io/whitepapers/platform-eng-maturity-model/)の共有に続き、現在は[**Platform as a Product**](https://tag-app-delivery.cncf.io/blog/product-thinking-for-platforms/)に焦点を当てています。これはプラットフォーム利用者を顧客と同様に扱い、プラットフォームが彼らのニーズを満たすことを保証することを意味します。多くの講演や記事がこのテーマを扱っているにもかかわらず、実際にこのアプローチを採用している企業の正確な数は分かっていません。
 
-At first, we started talking to platform builders from different industries through interviews. If you haven't joined yet, you can still sign up by following our [Invitation To Participate in Platform As A Product Research](https://tag-app-delivery.cncf.io/blog/call-participation-paap-research/). 
- blog post.
+当初、私たちは様々な業界のプラットフォーム構築者へのインタビューを通じて対話を始めました。まだ参加されていない方は、[Platform as a Product研究への参加招待](https://tag-app-delivery.cncf.io/blog/call-participation-paap-research/)に従って登録いただけます。
 
-The qualitative insights gained from these interviews are invaluable. However, we found that interviews take a lot of time to plan and conduct. To be more inclusive for people with less time at their hands and collect more data quickly, we created a [**survey**](https://forms.gle/PDjnQSvruXwRrZvk7) based on our interview questions. The survey helps us gather **quantitative data** to go along with the detailed stories from interviews. This combination will give us a better understanding of how teams decide what to build for their users.
+ブログ記事
 
-And like with the interviews we want to hear from **everyone involved in building platforms**, not just product managers. Whether your team uses product management or another method, your answers are important to our research.
+これらのインタビューから得られた定性的な知見は非常に貴重です。しかし、インタビューの計画と実施には多くの時間を要することがわかりました。より多くの時間的制約のある方々にも参加いただき、迅速にデータを収集するため、インタビュー質問を基にした[**アンケート調査**](https://forms.gle/PDjnQSvruXwRrZvk7)を作成しました。この調査により、インタビューの詳細な事例と併せて**定量データ**を収集できます。この組み合わせにより、チームがユーザーのために何を構築すべきかを決定するプロセスをより深く理解できるでしょう。
 
-So, if you want to help us with this study, please fill out our [survey here](https://forms.gle/PDjnQSvruXwRrZvk7)! Thank you!
+また、インタビューと同様に、私たちは**プラットフォーム構築に関わる全ての方**の声を聞きたいと考えています。プロダクトマネージャーだけでなく、プロダクトマネジメント手法を用いているか否かを問わず、皆様の回答は私たちの研究にとって重要です。
 
-We also invite you to [join the CNCF Slack](https://communityinviter.com/apps/cloud-native/cncf) and find us in the [#platform-engineering](https://cloud-native.slack.com/archives/C020RHD43BP) channel. Working group meetings are every two weeks and participation is open to all, you can find the [schedule here](https://tag-app-delivery.cncf.io/wgs/platforms/#meetings)!
+この調査にご協力いただける方は、ぜひこちらの[アンケート](https://forms.gle/PDjnQSvruXwRrZvk7)にご回答ください！よろしくお願いします！
+
+また、[CNCF Slack](https://communityinviter.com/apps/cloud-native/cncf) への参加と、[#platform-engineering](https://cloud-native.slack.com/archives/C020RHD43BP) チャンネルでの交流も歓迎します。ワーキンググループ会議は隔週開催で、どなたでも参加可能です。スケジュールは[こちら](https://tag-app-delivery.cncf.io/wgs/platforms/#meetings)でご確認いただけます！

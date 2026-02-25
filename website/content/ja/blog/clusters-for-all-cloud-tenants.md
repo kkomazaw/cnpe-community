@@ -1,5 +1,5 @@
 ---
-title:  "Clusters for all cloud tenants"
+title:  "すべてのクラウドテナント向けクラスター"
 date:   2022-06-02 13:04:00 +0200
 author: Josh Gavant
 categories:
@@ -8,54 +8,54 @@ tags:
 - WG Multi-tenancy
 ---
 
-A decision which faces many large organizations as they adopt cloud architecture is how to provide isolated spaces within the same environments and clusters for various teams and purposes. For example, marketing and sales applications may need to be isolated from an organization's customer-facing applications; and development teams building any app usually require extra spaces for tests and verification.
+多くの大企業がクラウドアーキテクチャを採用する際に直面する課題は、同一環境・クラスター内で各チームや目的に応じた分離空間をどう提供するかです。例えば、マーケティングや営業向けアプリケーションは顧客向けアプリケーションから分離する必要があります。また、あらゆるアプリを開発するチームは通常、テストや検証用の追加スペースを必要とします。
 
-## Namespace as unit of tenancy
+## テナント単位としてのネームスペース
 
-To address this need, many organizations have started to use namespaces as units of isolation and tenancy, a pattern previously described by [Google](https://cloud.google.com/kubernetes-engine/docs/concepts/multitenancy-overview) and [Kubernetes contributors](https://kubernetes.io/blog/2021/04/15/three-tenancy-models-for-kubernetes/). But namespace-scoped isolation is often insufficient because some concerns are managed at cluster scope. In particular, installing new resource types (CRDs) is a cluster-scoped activity; and today independent teams often want to install custom resource types and operators. Also, more developers are themselves writing software operators and custom resource types and find themselves requiring cluster-scoped access for research and tests.
+このニーズに対応するため、多くの組織が分離とテナント単位としてネームスペースの利用を開始しています。これは以前[Google](https://cloud.google.com/kubernetes-engine/docs/concepts/multitenancy-overview)や[Kubernetesコントリビューター](https://kubernetes.io/blog/2021/04/15/three-tenancy-models-for-kubernetes/)によって以前に説明されたパターンです。しかし、名前空間スコープの分離では不十分な場合が多くあります。なぜなら、一部の課題はクラスタースコープで管理されるからです。特に、新しいリソースタイプ（CRD）のインストールはクラスタースコープの活動であり、今日では独立したチームがカスタムリソースタイプやオペレータをインストールしたいと考えることがよくあります。また、より多くの開発者が自らソフトウェアオペレーターやカスタムリソースタイプを記述するようになり、研究やテストのためにクラスタースコープのアクセスが必要になるケースが増えています。
 
-## Cluster as unit of tenancy
+## テナント単位としてのクラスター
 
-For these reasons and others, tenants often require their own isolated clusters with unconstrained access rights. In an isolated cluster, a tenant gets its own Kubernetes API server and persistence store and fully manages all namespaces and custom resource types in its cluster.
+こうした理由から、テナントはしばしば制約のないアクセス権を持つ独自の分離されたクラスターを必要とします。分離されたクラスターでは、テナントは独自のKubernetes APIサーバーと永続化ストアを取得し、クラスター内のすべてのネームスペースとカスタムリソースタイプを完全に管理します。
 
-But deploying physical or even virtual machines for many clusters is inefficient and difficult to manage, so organizations have struggled to provide clusters to tenant teams. Happily :smile:, to meet these organizations' and users' needs, leading Kubernetes vendors have been researching and developing lighter weight mechanisms to provide isolated clusters for an organization's tenants. In this post we'll compare and contrast several of these emergent efforts.
+しかし、多数のクラスター向けに物理マシンや仮想マシンをデプロイすることは非効率的で管理が困難なため、組織はテナントチームへのクラスター提供に苦労してきました。幸いなことに :smile:、こうした組織やユーザーのニーズに応えるため、主要なKubernetesベンダーは、組織のテナント向けに分離されたクラスターを提供する軽量なメカニズムの研究開発を進めています。本記事では、こうした新興の取り組みのいくつかを比較対照します。
 
-Do you have other projects and ideas to enhance multitenancy for cloud architecture? Then please join CNCF's App Delivery advisory group in discussing these [here](https://github.com/cncf/tag-app-delivery/issues/193); thank you!
+クラウドアーキテクチャのマルチテナント性を強化する他のプロジェクトやアイデアをお持ちですか？ ぜひCNCFのApp Deliveryアドバイザリーグループに参加し、[こちら](https://github.com/cncf/tag-app-delivery/issues/193)で議論しましょう。よろしくお願いします！
 
 ### vcluster
 
-[vcluster](https://www.vcluster.com/) is [a prominent project](https://www.google.com/search?q=vcluster&tbm=nws) and CLI tool maintained by [loft.sh](https://loft.sh/) that provisions a virtual cluster as a StatefulSet within a tenant namespace. Access rights from the hosting namespace are propogated to the hosted virtual cluster such that the namespace tenant becomes the cluster's only tenant. As cluster admins, tenant members can create cluster-scoped resources like CRDs and ClusterRoles.
+[vcluster](https://www.vcluster.com/)は、[主要プロジェクト](https://www.google.com/search?q=vcluster&tbm=nws)であり、[loft.sh](https://loft.sh/)が管理するCLIツールです。テナントネームスペース内にStatefulSetとして仮想クラスターをプロビジョニングします。ホストネームスペースからのアクセス権限はホストされた仮想クラスターに継承され、当該ネームスペーステナントがクラスターの唯一のテナントとなります。クラスター管理者として、テナントメンバーはCRDやClusterRoleなどのクラスタースコープリソースを作成できます。
 
-The virtual cluster runs its own Kubernetes API service and persistence store independent of those of the hosting cluster. It can be published by the hosting cluster as a LoadBalancer-type service and accessed directly with kubectl and other Kubernetes API-compliant tools. This enables users of the tenant cluster to work with it directly with little or no knowledge of its host.
+仮想クラスターは、ホストクラスターとは独立した独自のKubernetes APIサービスと永続化ストアを運用します。ホストクラスターからLoadBalancer型サービスとして公開され、kubectlやその他のKubernetes API準拠ツールで直接アクセス可能です。これにより、テナントクラスターの利用者はホストに関する知識がほとんど、あるいは全くなくても直接操作できます。
 
-In vcluster and the following solutions, the virtual cluster is a "metadata-only" cluster, in that resources in it are persisted to a backing store like etcd, but no schedulers act to reify the persisted resources - ultimately as pods. Instead, a "syncer" synchronization service copies and transforms reifiable resources - podspecs - from the virtual cluster to the hosting namespace of the hosting cluster. Schedulers in the hosting cluster then detect and reify these resources in the same underlying tenant namespace where the virtual cluster's control plane runs.
+vclusterおよび以下のソリューションでは、仮想クラスターは「メタデータ専用」クラスターです。つまり、そのリソースはetcdのようなバックストアに永続化されますが、永続化されたリソース（最終的にはポッドとして）を具現化するスケジューラは動作しません。代わりに、「syncer」同期サービスが、仮想クラスターからホストクラスターのホストネームスペースへ、具現化可能なリソース（podspec）をコピーおよび変換します。ホストクラスタ内のスケジューラは、仮想クラスタのコントロールプレーンが動作する基盤となるテナントネームスペース内で、これらのリソースを検出し具現化します。
 
-An advantage of vcluster's approach of scheduling pods in the hosting namespace is that the hosting cluster ultimately handles all workloads and applies namespace quotas - all work happens within the namespace allocated to the tenant by the hosting cluster administrator. A disadvantage is that schedulers cannot be configured in the virtual cluster since pods aren't actually run there.
+ホスティングネームスペースでのポッドスケジューリングというvclusterのアプローチの利点は、ホスティングクラスターが最終的に全てのワークロードを処理し、ネームスペースクォータを適用することです。全ての処理は、ホスティングクラスター管理者がテナントに割り当てたネームスペース内で発生します。欠点は、ポッドが実際に仮想クラスター上で実行されないため、スケジューラーを仮想クラスター内で設定できないことです。
 
 - [vcluster on GitHub](https://github.com/loft-sh/vcluster)
 
 ### Cluster API Provider Nested (CAPN)
 
-In vcluster, bespoke support for control plane implementations is required; as of this writing, vcluster supports k3s, k0s and vanilla k8s distributions.
+vclusterでは、コントロールプレーン実装に対する特注のサポートが必要です。執筆時点では、vclusterはk3s、k0s、およびvanilla k8sディストリビューションをサポートしています。
 
-To support _any_ control plane implementation, the [Cluster API Provider Nested](https://github.com/kubernetes-sigs/cluster-api-provider-nested) project implements an architecture similar to that of vcluster, including a metadata-only cluster and a syncer, but provisions the control plane using a Cluster API provider rather than a bespoke distribution.
+_あらゆる_制御プレーン実装をサポートするため、[Cluster API Provider Nested](https://github.com/kubernetes-sigs/cluster-api-provider-nested)プロジェクトはvclusterと同様のアーキテクチャ（メタデータ専用クラスターとシンカーを含む）を実装しつつ、専用ディストリビューションではなくCluster APIプロバイダーを用いて制御プレーンをプロビジョニングします。
 
-CAPN promises to enable control planes implementable via Cluster API to serve virtual clusters.
+CAPNは、Cluster API経由で実装可能なコントロールプレーンが仮想クラスターを提供することを可能にすると約束しています。
 
 ### HyperShift
 
-Similar to the previous two, [Red Hat](https://www.redhat.com/)'s [HyperShift](https://github.com/openshift/hypershift) project provisions an OpenShift (Red Hat's Kubernetes distro) control plane as a collection of pods in a host namespace. But rather than running workloads within the hosting cluster and namespace like vcluster, HyperShift control planes are connected to a pool of dedicated worker nodes where pods are synced and scheduled.
+前述の2つと同様に、[Red Hat](https://www.redhat.com/)の[HyperShift](https://github.com/openshift/hypershift)プロジェクトは、OpenShift（Red HatのKubernetesディストリビューション）のコントロールプレーンを、ホストネームスペース内のポッドの集合としてプロビジョニングします。しかしvclusterのようにホスティングクラスターとネームスペース内でワークロードを実行するのではなく、HyperShiftのコントロールプレーンは専用のワーカーノードプールに接続され、そこでポッドの同期とスケジューリングが行われます。
 
-HyperShift's model may be most appropriate for a hosting provider like Red Hat which desires to abstract control plane management from their customers and allow them to just manage worker nodes.
+HyperShiftのモデルは、顧客からコントロールプレーン管理を抽象化し、ワーカーノードのみの管理を可能にしたいRed Hatのようなホスティングプロバイダーに最も適しているかもしれません。
 
 ### kcp
 
-Finally, [kcp](https://github.com/kcp-dev/kcp) is another proposal and project from [Red Hat](https://www.redhat.com/) inspired by and reimagined from all of the previous ideas. Whereas the above virtual clusters run _within_ a host cluster and turn to the host cluster to run pods, manage networks and provision volumes, kcp reverses this paradigm and makes the _hosting_ cluster a metadata-only cluster. _Child_ clusters - _workspaces_ in the kcp project - are registered with the hub metadata-only cluster and work is delegated to these children based on labels on resources in the hub.
+最後に、[kcp](https://github.com/kcp-dev/kcp)は[Red Hat](https://www.redhat.com/)による別の提案およびプロジェクトであり、これまでの全てのアイデアに触発され、再考されたものです。前述の仮想クラスターがホストクラスター_内部_で動作し、ポッドの実行・ネットワーク管理・ボリュームプロビジョニングをホストクラスターに依存するのに対し、kcpはこのパラダイムを逆転させ、_ホスティング_クラスターをメタデータ専用クラスターとします。_子_クラスター（kcpプロジェクトでは_ワークスペース_）はハブのメタデータ専用クラスターに登録され、ハブ内のリソースに付与されたラベルに基づいて作業がこれらの子クラスターに委譲されます。
 
-As opposed to hosted virtual clusters, child clusters in kcp _could_ manage their own schedulers. Another advantage of kcp's paradigm inversion is centralized awareness and management of child clusters. In particular, this enables simpler centralized policies and standards for custom resource types to be propogated to all children.
+ホスト型仮想クラスターとは異なり、kcpの子クラスターは_独自のスケジューラを管理できる可能性があります_。kcpのパラダイム反転によるもう一つの利点は、子クラスターの集中管理と可視化です。特にこれにより、カスタムリソースタイプ向けの簡素化された集中ポリシーや標準を全子クラスターに展開することが可能となります。
 
-## Conclusion
+## 結論
 
-vcluster, CAPN, HyperShift, and kcp are emerging projects and ideas to meet cloud users' needs for multitenancy with _clusters_ as the unit of tenancy. Early adopters are already providing feedback on good and better parts of these approaches and new ideas emerge daily.
+vcluster、CAPN、HyperShift、kcpは、_クラスタ_をテナント単位とするマルチテナンシーに対するクラウドユーザーのニーズに応える新興プロジェクトおよび概念です。早期導入者からは既にこれらのアプローチの長所・改善点に関するフィードバックが寄せられており、新たなアイデアが日々生まれています。
 
-Want to help drive new ideas for cloud multitenancy? Want to help cloud users understand and give feedback on emerging paradigms in this domain? Then join [the discussion](https://github.com/cncf/tag-app-delivery/issues/193) in CNCF's TAG App Delivery. Thank you!
+クラウドマルチテナンシーの新たなアイデア推進にご協力いただけませんか？この分野で台頭するパラダイムについてクラウドユーザーが理解しフィードバックする手助けをしませんか？ぜひCNCFのTAG App Deliveryにおける[ディスカッション](https://github.com/cncf/tag-app-delivery/issues/193)にご参加ください。よろしくお願いします！

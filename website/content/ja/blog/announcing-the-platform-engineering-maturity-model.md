@@ -1,5 +1,5 @@
 ---
-title: 'Announcing the Platform Engineering Maturity Model'
+title: 'プラットフォームエンジニアリング成熟度モデルの発表'
 date:   2023-11-01 00:00:00 +0000
 author: Abby Bangser, Josh Gavant
 categories:
@@ -8,27 +8,27 @@ tags:
 - WG Platforms
 ---
 
-The CNCF Platforms Working Group (WG) is excited to present the first release of a platform engineering maturity model which provides a more concrete application of the extremely well received white paper from this past April.
+CNCFプラットフォームワーキンググループ（WG）は、今年4月に大変好評を博したホワイトペーパーをより具体的に適用したプラットフォームエンジニアリング成熟度モデルの初版を発表できることを嬉しく思います。
 
-Download now as a [PDF](https://github.com/Cloud-Native-Platform-Engineering/cnpe-community/raw/main/platforms-maturity-model/v1/assets/platform-eng-maturity-model-v1.0.pdf) or view it on our [website](https://tag-app-delivery.cncf.io/whitepapers/platform-eng-maturity-model/).
+[PDF](https://github.com/Cloud-Native-Platform-Engineering/cnpe-community/raw/main/platforms-maturity-model/v1/assets/platform-eng-maturity-model-v1.0.pdf)で今すぐダウンロードするか、[当ウェブサイト](https://tag-app-delivery.cncf.io/whitepapers/platform-eng-maturity-model/)でご覧ください。
 
-We want to thank the almost 50 people who have contributed their time and ideas to make this model reflect the state of companies both small and large and across both fast moving and highly regulated industries; all of them are listed below.
+本モデルが大小さまざまな企業、そして急速に変化する業界から厳格な規制が課される業界までを反映したものとなるよう、時間とアイデアを提供してくださった約50名の方々に感謝申し上げます。ご協力いただいた皆様は下記の通りです。
 
-The [platforms white paper](https://tag-app-delivery.cncf.io/whitepapers/platforms/) released in April 2023 was always aimed at providing an executive summary on the what and why behind platforms. This paper successfully defined a north star for many organizations but left questions about how they can progress. This new model presents platform engineering as the practice used to offer an internal platform as a product through investment in all parts of building platforms and their capabilities - the people, processes, policy, and technology which in turn drive business outcomes.
+2023年4月に公開された[プラットフォーム白書](https://tag-app-delivery.cncf.io/whitepapers/platforms/)は、プラットフォームの「何」と「なぜ」に関するエグゼクティブサマリーを提供することを目的としていました。この文書は多くの組織にとって指針となる北極星を定義することに成功しましたが、具体的な進め方については疑問が残されていました。この新たなモデルは、プラットフォームエンジニアリングを「内部プラットフォームを製品として提供するための実践」と位置付けます。具体的には、プラットフォーム構築とその能力（人材・プロセス・ポリシー・技術）の全領域への投資を通じて、ビジネス成果を推進する手法です。
 
 <img src="../assets/platforms-mm-v1-table.png" width=600px /><br/>
 
-While presented as a single model with 5 aspects and 4 levels of maturity, the accompanying paper extends well beyond the black and white tick box exercise sometimes associated with maturity models.
+5つの側面と4段階の成熟度レベルからなる単一モデルとして提示されていますが、付随する論文は成熟度モデルにありがちな単純なチェックリスト作業をはるかに超えた内容となっています。
 
-Clear explanations of each aspect and each level within an aspect are provided and  characteristics and scenarios are provided for each model item. These details have been collected from diverse working group members' experiences to provide readers a chance to see real world applications hand in hand with the theory behind each progression. In addition, we want _your_ stories to help decorate this model by including examples that you are happy to share. To introduce a new example, please [follow the contribution guide](https://tag-app-delivery.cncf.io/contribute/platform-maturity-model-examples/) and share your story.
+各側面および各側面内のレベルについて明確な説明が提供され、モデル項目ごとに特性とシナリオが示されています。これらの詳細は多様なワーキンググループメンバーの経験から収集され、読者が各進歩の背景にある理論と並行して実世界の応用例を把握できる機会を提供しています。さらに、皆様が共有してくださる事例を通じて、このモデルを充実させる_皆様の_ストーリーを求めています。新たな事例を追加される際は、[投稿ガイドライン](https://tag-app-delivery.cncf.io/contribute/platform-maturity-model-examples/)に従い、ぜひご自身のストーリーをお寄せください。
 
-As readers, we encourage you to remember that it is not only costly, but sometimes actively detrimental to blindly follow any model to the highest level of maturity. Instead, we hope you will use this model to identify both your current and desired characteristics, enabling you to target your investment in the areas you will most benefit from.
+読者の皆様には、いかなるモデルも最高成熟度レベルまで盲目的に追従することは、コストがかかるだけでなく時に有害になり得ると認識されることをお勧めします。代わりに、このモデルを用いて現状と理想の特性を特定し、最大の利益が得られる領域への投資を集中させることを願っています。
 
-Finally, we want to take this opportunity to reintroduce the working group as a welcoming community of companies building platforms, consulting on platforms, and creating tools to support platform builders. We have a number of exciting initiatives in flight and would love to see you get involved including fortnightly meetings to share platform building stories and a deep dive paper on Platform as a Product. For more information please see our [website](https://appdelivery.cncf.io) or join the #platform-engineering channel in the [CNCF slack](https://slack.cncf.io/).
+最後に、本ワーキンググループを改めてご紹介します。プラットフォーム構築企業、プラットフォームコンサルティング企業、プラットフォーム構築支援ツール開発企業が集う、歓迎のコミュニティです。現在進行中の数多くの刺激的な取り組み（隔週のプラットフォーム構築事例共有会や「Platform as a Product」に関する詳細論文など）に、ぜひご参加ください。詳細は[ウェブサイト](https://appdelivery.cncf.io)をご覧いただくか、[CNCF Slack](https://slack.cncf.io/)の#platform-engineeringチャンネルへご参加ください。
 
-## Thank you to our contributors!
+## 貢献者の皆様へ感謝を込めて！
 
-As we reach this milestone we want to thank all the reviewers for all their contributions and feedback:
+この節目を迎えるにあたり、すべてのレビュアーの皆様からの貢献とフィードバックに心より感謝申し上げます：
 
 * Abby Bangser (Project lead)
 * Abby Kearns
@@ -81,7 +81,7 @@ As we reach this milestone we want to thank all the reviewers for all their cont
 * Viktor “Bika” Nagy
 * Vishal Biyani
 
-## Resources
+## リソース
 
 Slack: https://cloud-native.slack.com/archives/C020RHD43BP
 

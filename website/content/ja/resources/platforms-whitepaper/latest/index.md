@@ -1,508 +1,281 @@
 ---
-title:  "CNCF Platforms White Paper"
+title: "CNCF Platforms ホワイトペーパー"
 pdf: https://github.com/Cloud-Native-Platform-Engineering/cnpe-community/raw/main/platforms-whitepaper/v1/assets/platforms-def-v1.0.pdf
 version_info: https://github.com/Cloud-Native-Platform-Engineering/cnpe-community/tree/main/platforms-whitepaper/README.md
-description: "This paper intends to support enterprise leaders, enterprise architects and platform team leaders to advocate for, investigate and plan internal platforms for cloud computing. We believe platforms significantly impact enterprises' actual value streams, but only indirectly, so leadership consensus and support is vital to the long-term sustainability and success of platform teams. In this paper we'll enable that support by discussing what the value of platforms is, how to measure it, and how to implement platform teams that maximize it."
+description: "本ホワイトペーパーは、企業のリーダー、エンタープライズアーキテクト、およびプラットフォームチームのリーダーが、クラウドコンピューティングのための社内プラットフォームを提唱、調査、計画することを支援することを目的としています。プラットフォームは企業の実際のバリューストリームに大きな影響を与えると私たちは考えていますが、その影響は間接的なものであるため、プラットフォームチームの長期的な持続可能性と成功には、リーダーシップによる合意形成と支援が不可欠です。本稿では、プラットフォームの価値とは何か、それをどのように測定するか、そしてその価値を最大化するプラットフォームチームをどのように構築するかについて論じることで、そうした支援を実現します。"
+
 type: whitepapers
+
 url: whitepapers/platforms
 ---
 
-## Introduction
+## はじめに
 
-Inspired by the cross-functional cooperation promised by DevOps, platform 
-engineering has begun to emerge in enterprises as an explicit form of that 
-cooperation. Platforms curate and present foundational capabilities, frameworks 
-and experiences to facilitate and accelerate the work of internal customers such
-as application developers, data scientists and information workers. Particularly
-in cloud computing, platforms have helped enterprises realize values long
-promised by the cloud like fast product releases, portability across 
-infrastructures, more secure and resilient products, and greater developer 
-productivity.
+DevOpsが約束する部門横断的な協力にインスピレーションを得て、プラットフォームエンジニアリングは、その協力を具現化した形として企業内で台頭し始めています。
+プラットフォームは、アプリケーション開発者、データサイエンティスト、インフォメーションワーカーといった内部顧客の業務を促進・加速させるために、基盤となる機能、フレームワーク、およびエクスペリエンスをキュレーションし、提供します。特にクラウドコンピューティングにおいて、プラットフォームは、迅速な製品リリース、インフラ間での移植性、より安全で耐障害性の高い製品、そして開発者の生産性向上といった、クラウドが長年約束してきた価値を企業が実現するのを支援してきました。
+本稿は、企業のリーダー、エンタープライズアーキテクト、およびプラットフォームチームのリーダーが、クラウドコンピューティング向けの社内プラットフォームを提唱、調査、計画するのを支援することを目的としています。  
+プラットフォームは企業の実際のバリューストリームに大きな影響を与えると私たちは考えていますが、その影響は間接的なものであるため、プラットフォームチームの長期的な持続可能性と成功には、リーダーシップによる合意形成と支援が不可欠です。
+本論文では、プラットフォームの価値とは何か、その価値をどのように測定するか、そしてその価値を最大化するプラットフォームチームをどのように構築するかについて論じることで、そうした支援を実現します。
 
-This paper intends to support enterprise leaders, enterprise architects and 
-platform team leaders to advocate for, investigate and plan internal platforms 
-for cloud computing.  We believe platforms significantly impact enterprises' 
-actual value streams, but only indirectly, so leadership consensus and support 
-is vital to the long-term sustainability and success of platform teams. In this 
-paper we'll enable that support by discussing what the value of platforms is, how 
-to measure that value, and how to implement platform teams that maximize it.
+## 目次
 
-## Table of Contents
+1. なぜプラットフォームなのか？
+1. プラットフォームとは何か
+1. 成功するプラットフォームの特性
+1. 成功するプラットフォームチームの特性
+1. プラットフォーム導入時の課題
+1. プラットフォームの成功を測定する方法
+1. プラットフォームの機能
 
-1. Why platforms?
-1. What is a platform
-1. Attributes of successful platforms
-1. Attributes of successful platform teams
-1. Challenges when implementing platforms
-1. How to measure the success of platforms
-1. Capabilities of platforms
+## なぜプラットフォームなのか？
 
-## Why platforms?
+プラットフォームとプラットフォームエンジニアリングは、今日のクラウドコンピューティングの世界において注目のトピックです。
+プラットフォーム構築に関する定義、手法、測定方法に深く入る前に、まず、この正当な注目を集めているプラットフォームが提供する価値を探ることが重要です。
+過去20～30年にわたるプロセスの改善により、ソフトウェアアプリケーションおよびプロダクトチームの俊敏性は大幅に向上し、コンピューティング、ネットワーク、ストレージといったインフラストラクチャだけでなく、ビルド、テスト、デリバリー、可観測性といった開発者向けサービスについても、柔軟なサービスが提供されるようになりました。
+この自律性とプロセスの改善は、サポートサービスの責任を徐々にプロダクトチームに移行させる効果ももたらしました。その結果、チームはインフラに関する課題にますます多くの時間と認知的エネルギーを費やすことを余儀なくされ、組織にとって価値のある成果を生み出すための時間が削られてしまいました。
 
-Platforms and platform engineering are a popular topic in today's cloud computing world. 
-Before diving into definitions, techniques, and measurements for platform building, it 
-is important to first explore the value platforms provide that's driving this 
-well-deserved attention.
+デリバリーチームを本来の業務に集中させ、組織全体での作業の重複を削減したいという要望が、企業にクラウドネイティブコンピューティングのためのプラットフォーム導入を促しています。プラットフォームへの投資により、企業は以下のことが可能になります：
 
-Process improvements over the past 2-3 decades have significantly increased the 
-agility of software application and product teams, offering them flexible services 
-for both infrastructure like compute, network and storage as well as developer 
-services like builds, tests, delivery and observability. This autonomy and process 
-improvement has also had the effect of gradually shifting more and more responsibility 
-for supporting services to product teams, forcing them to spend more and more time 
-and cognitive energy on infrastructure concerns and reducing their time to produce 
-value relevant to their organization.
+1. プロダクトチームの認知的負荷を軽減し、それによって製品開発とデリバリーを加速させる
+1. プラットフォーム機能の設定と管理に専門家を専任させることで、それらに依存する製品の信頼性と回復力を向上させる
+1. 企業内の多くのチーム間でプラットフォームツールとナレッジを再利用・共有することで、製品開発とデリバリーを加速させる
+1. プラットフォーム機能およびそれを取り巻くユーザー、ツール、プロセスをガバナンスすることで、製品やサービスにおけるセキュリティ、規制、機能上の問題のリスクを低減する
+1. ユーザーエクスペリエンスの管理を維持しつつ、実装をプロバイダーに委任できるようにすることで、パブリッククラウドやその他のマネージドサービスの費用対効果の高い生産的な利用を可能にする
 
-The desire to refocus delivery teams on their core focus and reduce duplication of
-effort across the organisation has motivated enterprises to implement platforms for 
-cloud-native computing. By investing in platforms, enterprises can:
+これらのメリットが得られるのは、少数のプラットフォームチームが多くのプロダクトチームをサポートすることでその影響力を倍増させていること、プラットフォームチームが共通機能の管理を統合してガバナンスを促進していること、そしてプラットフォームチームが何よりもユーザーインターフェースとユーザーエクスペリエンスを重視していることによるものです。
+プラットフォームの専門家からなるチームは、プロダクトチームに求められる共通の作業を軽減するだけでなく、それらの製品で使用されるプラットフォーム機能を最適化します。
+また、プラットフォームチームは、企業全体で広く使用される一連の標準的なパターン、知識、ツールを維持します。これにより、開発者は同じ基盤上に構築された他のチームや製品に迅速に貢献できるようになります。共有されたプラットフォームパターンにより、ガバナンスや制御をテンプレート、パターン、機能に組み込むことも可能になります。
 
-1. Reduce the cognitive load on product teams and thereby accelerate product 
-   development and delivery
-1. Improve reliability and resiliency of products relying on platform 
-   capabilities by dedicating experts to configure and manage them
-1. Accelerate product development and delivery by reusing and sharing platform 
-   tools and knowledge across many teams in an enterprise
-1. Reduce risk of security, regulatory and functional issues in products and 
-   services by governing platform capabilities and the users, tools and processes 
-   surrounding them
-1. Enable cost-effective and productive use of services from public clouds 
-   and other managed offerings by enabling delegation of implementations to those 
-   providers while maintaining control over user experience
+最後に、プラットフォームチームはプロバイダーを統括し、その提供サービス全体で一貫した体験を提供するため、データベース、IDアクセス、インフラ運用、アプリケーションライフサイクルといった、基盤的ではあるが差別化要素のない機能において、パブリッククラウドやサービスプロバイダーを効率的に活用できるようになります。
 
-These benefits accrue in part because just a few platform teams serve many 
-product teams, multiplying their impact; in part because platform teams 
-consolidate management of common functionality, facilitating governance; and in 
-part because platform teams emphasize user interfaces and experiences above all 
-else.
+## プラットフォームとは何か
 
-A team of platform experts not only reduces common work demanded of product
-teams but also optimizes platform capabilities used in those products. A
-platform team also maintains a set of conventional patterns, knowledge and tools
-used broadly across the enterprise; enabling developers to quickly contribute to
-other teams and products built on the same foundations. The shared platform
-patterns also allow embedding governance and controls in templates, patterns and
-capabilities. Finally, because platform teams corral providers and provide
-consistent experiences over their offerings, they enable efficient use of public
-clouds and service providers for foundational but undifferentiated capabilities
-such as databases, identity access, infrastructure operations, and app
-lifecycle.
+クラウドネイティブコンピューティングのためのプラットフォームとは、プラットフォームのユーザーのニーズに応じて定義され、提供される機能の統合された集合体です。
+これは、幅広いアプリケーションやユースケース向けに、一般的な機能やサービスを取得・統合する際の一貫した体験を保証する、横断的なレイヤーです。優れたプラットフォームは、Webポータル、プロジェクトテンプレート、セルフサービスAPIなど、その機能やサービスの利用および管理において一貫したユーザー体験を提供します。
 
-## What is a platform
+Atlassian [[1]]によると、「プラットフォームチームは、多くのストリームに整合した[プロダクト]チームが、わずかなオーバーヘッドで利用できる機能を作成します。...プラットフォームチームは、ストリームに沿った[プロダクト]チームのリソースと認知的負荷を最小限に抑えます... プラットフォームチームは、異なるユーザー体験や製品にまたがる一貫性のある体験を構築することができます。」と述べています。
 
-A platform for cloud-native computing is an integrated collection of
-capabilities defined and presented according to the needs of the platform's
-users. It is a cross-cutting layer that ensures a consistent experience for
-acquiring and integrating typical capabilities and services for a broad set of
-applications and use cases. A good platform provides consistent user experiences
-for using and managing its capabilities and services, such as Web portals,
-project templates, and self-service APIs.
+Martin FowlerとEvan Bottcher [[2]] によれば、「デジタルプラットフォームとは、魅力的な内部製品として構成された、セルフサービスAPI、ツール、サービス、ナレッジ、およびサポートの基盤です。自律的なデリバリーチームは、このプラットフォームを活用することで、調整の手間を減らしつつ、より速いペースで製品機能を提供できます。」
 
-According to Atlassian [[1]], "platform teams create capabilities that can be 
-used by numerous stream-aligned [product] teams with little overhead....
-platform teams minimize resources and cognitive load of the stream-aligned
-[product] team... platform teams can create a cohesive experience that spans
-across different user experiences or products."
+プラットフォームがサポートする具体的な機能セットやシナリオは、ステークホルダーやユーザーのニーズによって決定されるべきです。
+また、プラットフォームはこれらの必要な機能を_提供する_ものですが、プラットフォームチームが常にそれらを自ら_実装_すべきではないという点に留意することが極めて重要です。
 
-According to Martin Fowler and Evan Bottcher [[2]], "a digital platform is a 
-foundation of self-service APIs, tools, services, knowledge and support which 
-are arranged as a compelling internal product. Autonomous delivery teams can 
-make use of the platform to deliver product features at a higher pace, with 
-reduced coordination."
+マネージドサービスプロバイダーや専任の社内チームがバックエンドの実装を維持管理し、プラットフォームは提供される実装全体に一貫性をもたらす合理的な最小限のレイヤーとして機能し組織の要件を満たすものです。
 
-The specific set of capabilities and scenarios supported by a platform should be
-determined by the needs of stakeholders and users. And while platforms _provide_
-these required capabilities, it's critical to note that platform teams should
-not always _implement_ them themselves. Managed service providers or dedicated
-internal teams can maintain backing implementations while platforms are the
-thinnest reasonable layer that provides consistency across provided implementations
-and meets an organization's requirements. For example, a very simple
-"platform" could be a wiki page with links to standard operating procedures to
-provision capabilities from providers, as described in [[3]].
+例えば、[[3]]で説明されているように、プロバイダーから機能をプロビジョニングするための標準運用手順へのリンクを掲載したWikiページも、非常にシンプルな「プラットフォーム」となり得ます。
+これらのプラットフォームは、企業の内部ユーザーをターゲットとしており、それ以上でもそれ以下でもないため、私たちはしばしばそれらを_内部_プラットフォームと呼んでいます。
 
-Because these platforms target no more and no less than an enterprise's internal
-users we often refer to them as _internal_ platforms.
+プラットフォームは、従来のパラダイムよりもサポート機能とアプリケーション固有のロジックを分離するため、クラウドネイティブアーキテクチャにおいて特に重要です。
+クラウドのような環境では、リソースや機能はしばしば独立して管理され、カスタムビジネスコンポーネントと統合されます。こうしたリソースには、データベースやオブジェクトストア、メッセージキューやブローカー、可観測性コレクターやダッシュボード、ユーザーディレクトリや認証システム、タスクランナーやレコンサイラーなどが含まれます。
+内部プラットフォームは、エンタープライズチームがアプリケーションやシステムにこれらを容易に統合できるよう、それらを提供します。
 
-Platforms are particularly relevant for cloud-native architectures because they
-separate supporting capabilities from application-specific logic more than
-previous paradigms. In cloud-like environments resources and capabilities are
-often managed independently and integrated with custom business components; such
-resources may include databases and object stores, message queues and brokers,
-observability collectors and dashboards, user directories and authentication
-systems, task runners and reconcilers and more. An internal platform provides
-these to enterprise teams in ways that make them easy to integrate in their
-applications and systems.
+### プラットフォームの成熟度
 
-### Platform maturity
+最も基本的なレベルでは、内部プラットフォームは、パイプラインランナー、データベースシステム、シークレットストアといった個々のサービスを取得・利用するための一貫した体験を提供します。成熟するにつれ、内部プラットフォームは、Webアプリケーション開発やデータ分析（いわゆるMLOps）といった主要なシナリオ向けのセルフサービス可能なテンプレートとして、こうしたサービスの_組み合わせ_も提供するようになります。
 
-At their most basic, internal platforms provide consistent experiences for
-acquiring and using individual services such as a pipeline runner, a database
-system or a secret store. As they mature internal platforms also offer
-_compositions_ of such services as self-serviceable templates for key scenarios
-like web application development or data analysis, aka MLOps.
+企業がプラットフォームを活用して実現できるユースケースは、次のように展開される可能性があります：
 
-Use cases an enterprise could meet with platforms might progress through the
-following:
-
-1. Product developers can provision capabilities on demand and immediately use
-   them to run systems, such as compute, storage, databases or identities.
-1. Product developers can provision service spaces on demand and use them to run
-   pipelines and tasks, to store artifacts and configuration, and/or to collect
-   telemetry.
-1. Administrators of third-party software can provision required dependencies
-   like databases on demand and easily install and run that software.
-1. Product developers can provision complete environments from templates
-   combining run-time and development-time services required for specific
-   scenarios, such as web development or MLOps.
-1. Product developers and managers can observe functionality, performance, and
-   cost of deployed services through automatic instrumentation and standard
-   dashboards.
+1. 製品開発者は、コンピュート、ストレージ、データベース、ID管理などの機能をオンデマンドでプロビジョニングし、直ちにシステムの実行に利用できます。
+1. 製品開発者は、サービススペースをオンデマンドでプロビジョニングし、パイプラインやタスクの実行、成果物や設定の保存、および／またはテレメトリの収集に利用できます。
+1. サードパーティ製ソフトウェアの管理者は、データベースなどの必要な依存関係をオンデマンドでプロビジョニングし、そのソフトウェアを簡単にインストールして実行できます。
+1. プロダクト開発者は、Web開発やMLOpsなどの特定のシナリオに必要な実行時および開発時のサービスを組み合わせたテンプレートから、完全な環境をプロビジョニングできます。
+1. 製品開発者やマネージャーは、自動計測機能や標準ダッシュボードを通じて、デプロイされたサービスの機能、パフォーマンス、およびコストを監視できます。
 
 {{% pageinfo color="info" %}}
-Please refer to the [Platform Engineering Maturity Model](/whitepapers/platform-eng-maturity-model/) created after this paper was originally published.
+本論文の初版公開後に作成された[Platform Engineering Maturity Model](/whitepapers/platform-eng-maturity-model/)をご参照ください。
 {{% /pageinfo %}}
 
-By offering consistent, compliant experiences for individual capabilities or
-sets of them, internal platforms ultimately make it easier and more efficient
-for their users to deliver valuable products.
+個々の機能や機能群に対して一貫性があり、コンプライアンスに準拠した体験を提供することで、内部プラットフォームは最終的に、ユーザーが価値ある製品を容易かつ効率的に提供できるようにします。
 
-## Attributes of platforms
+## プラットフォームの属性
 
-After defining what a platform is and why an organization might want to build one,
-let's identify some key attributes that affect the success of a platform.
+プラットフォームとは何か、そして組織がなぜプラットフォームを構築したいのかについて定義したところで、プラットフォームの成功に影響を与えるいくつかの重要な属性を特定してみましょう。
 
-1. **Platform as a product**. A platform exists to serve the requirements of its users
-   and it should be designed and evolved based on those requirements, similar to any
-   other software products. Platforms should provide the necessary capabilities to
-   support the most common use cases across product teams, and prioritize those
-   over more specific capabilities that are only used by a single team to maximize
-   the value delivered.
-1. **User experience**. A platform should offer its capabilities through consistent
-   interfaces and focus on the user experience. Platforms should endeavor to meet their
-   users where they are, which may mean a combination of GUIs, APIs, command-line tools,
-   IDEs, and portals. For example, a platform typically offers the capability of deploying
-   an application. Developers might consume such a capability via the IDE, testers might
-   use a command-line tool, whereas a product owner might use a GUI-based web portal.
-1. **Documentation and onboarding**. Documentation is a key aspect of a successful software
-   product. To be able to use a platform's offerings, users require documentation and
-   examples. A platform should be delivered with proper documentation addressing the
-   needs of its users. It should also provide tools to accelerate the onboarding of new projects
-   that can help users consume the necessary platform services in a quick and simple way.
-   For example, the platform could offer a reusable supply chain workflow for building, scanning,
-   testing, deploying, and observing a web application on Kubernetes. Such a workflow could be
-   offered with an initial project template and documentation, a bundle often described
-   as a _golden path_.
-1. **Self-service**. A platform should be self-serviceable. Users must be able to request and
-   receive capabilities autonomously and automatically. This property is key to allowing a platform
-   team to enable multiple product teams and scale as needed. The platform capabilities should be
-   available on demand and with minimal manual intervention via the interfaces described above.
-   For example, it should be possible for a user to request a database and receive its locator
-   and credentials by running a command-line tool or filling out a form on a web portal.
-1. **Reduced cognitive load for users**. An essential goal of a platform is to reduce the cognitive
-   load on product teams. A platform should encapsulate implementation details and hide
-   any complexity that might arise from its architecture. For example, a platform might delegate
-   certain services to a cloud provider, but users should not be exposed to such details.
-   At the same time, the platform should allow users to configure and observe certain services
-   as needed. Users must not be responsible for operating the services offered by the platform.
-   For example, users may often require a database, but they shouldn't have to manage the database
-   server.
-1. **Optional and composable**. Platforms are intended to make product development more efficient, so they
-   must not be an impediment. A platform should be composable and enable product teams to use only
-   parts of its offerings. It should also enable product teams to provide and manage their own
-   capabilities outside of the platform's offerings when necessary. For example, if a platform doesn't
-   provide a graph database and it's required for a product, it should be possible for the product
-   team to provision and operate a graph database themselves.
-1. **Secure by default**. A platform should be secure by default and offer capabilities
-   to ensure compliance and validation based on rules and standards defined by the organization.
+1. **製品としてのプラットフォーム** プラットフォームはユーザーの要件を満たすために存在し、他のソフトウェア製品と同様に、それらの要件に基づいて設計・進化させる必要があります。プラットフォームは、製品チーム全体で最も一般的なユースケースをサポートするために必要な機能を提供し、提供される価値を最大化するために、単一のチームでしか使用されないより特定の機能よりも、それらを優先すべきです。
+1. **ユーザーエクスペリエンス**　プラットフォームは、一貫性のあるインターフェースを通じて機能を提供し、ユーザーエクスペリエンスに重点を置くべきです。プラットフォームは、ユーザーの利用環境に合わせて機能を提供するよう努める必要があり、そのためにはGUI、API、コマンドラインツール、IDE、ポータルなどを組み合わせることも考えられます。例えば、プラットフォームは通常、アプリケーションをデプロイする機能を提供します。開発者はIDEを通じてこの機能を利用し、テスターはコマンドラインツールを使用し、プロダクトオーナーはGUIベースのWebポータルを使用するかもしれません。
+1. **ドキュメントとオンボーディング**　ドキュメントは、ソフトウェア製品を成功させるための重要な要素です。プラットフォームの機能を利用するためには、ユーザーはドキュメントやサンプルを必要とします。プラットフォームは、ユーザーのニーズに応える適切なドキュメントと共に提供されるべきです。また、ユーザーが迅速かつ簡単に必要なプラットフォームサービスを利用できるよう、新規プロジェクトのオンボーディングを加速するツールも提供すべきです。例えば、プラットフォームは、Kubernetes上でWebアプリケーションをビルド、スキャン、テスト、デプロイ、監視するための再利用可能なサプライチェーンワークフローを提供できます。このようなワークフローは、初期プロジェクトテンプレートとドキュメントと共に提供され、しばしば_ゴールデンパス_と呼ばれるバンドルとして提供されます。
+1. **セルフサービス**　プラットフォームはセルフサービス対応であるべきです。ユーザーは自律的かつ自動的に機能をリクエストし、受け取ることができなければなりません。この特性は、プラットフォームチームが複数のプロダクトチームを支援し、必要に応じてスケールできるようにするための鍵となります。プラットフォームの機能は、前述のインターフェースを通じて、オンデマンドで、かつ最小限の手動介入で利用可能であるべきです。例えば、ユーザーがコマンドラインツールを実行するか、Webポータル上のフォームに入力するだけで、データベースをリクエストし、そのロケーターと認証情報を受け取れるようにすべきです。
+1. **ユーザーの認知的負荷の軽減**　プラットフォームの重要な目標は、プロダクトチームの認知的負荷を軽減することです。プラットフォームは実装の詳細をカプセル化し、そのアーキテクチャから生じうる複雑さを隠蔽すべきです。例えば、プラットフォームが特定のサービスをクラウドプロバイダーに委譲する場合でも、ユーザーはそのような詳細にさらされるべきではありません。同時に、プラットフォームはユーザーが必要に応じて特定のサービスを設定・監視できるようにすべきです。ユーザーがプラットフォームが提供するサービスの運用を担当してはなりません。例えば、ユーザーは頻繁にデータベースを必要とすることがありますが、データベースサーバーを管理する必要はないはずです。
+1. **オプションかつ構成可能**　プラットフォームは製品開発の効率化を目的としているため、障害となってはなりません。プラットフォームは構成可能であり、製品チームがその提供機能の一部のみを利用できるようにすべきです。また、必要に応じて、製品チームがプラットフォームの提供機能とは別に、独自の機能を提供・管理できるようにすべきです。例えば、プラットフォームがグラフデータベースを提供していないにもかかわらず、製品でそれが必要とされる場合、製品チームが自らグラフデータベースをプロビジョニングし、運用できるようにすべきです。
+1. **デフォルトでセキュア**　プラットフォームはデフォルトでセキュアであるべきであり、組織が定義したルールや基準に基づいたコンプライアンスと検証を確保する機能を提供する必要があります。
 
-## Attributes of platform teams
+## プラットフォームチームの役割
 
-Platform teams are responsible for the interfaces to and experiences with
-platform capabilities - like Web portals, custom APIs, and golden path
-templates. On one hand, platform teams work with those teams implementing
-infrastructure and supporting services to define consistent experiences; on
-the other, they work with product and user teams to gather feedback and ensure
-those experiences meet requirements.
+プラットフォームチームは、Webポータル、カスタムAPI、ゴールデンパス・テンプレートなど、プラットフォーム機能へのインターフェースおよびユーザー体験の責任を負います。一方で、プラットフォームチームは、インフラストラクチャやサポートサービスを実装するチームと連携して一貫性のある体験を定義し、他方で、プロダクトチームやユーザーチームと連携してフィードバックを収集し、それらの体験が要件を満たしていることを確認します。
 
-Following are jobs a platform team should be responsible for:
+プラットフォームチームが担当すべき業務は以下の通りです：
 
-1. Research platform user requirements and plan feature roadmap
-1. Market, evangelize and advocate for the platform's proposed values
-1. Manage and develop interfaces for using and observing capabilities and
-   services, including portals, APIs, documentation and templates, and CLI tools
+1. プラットフォームユーザーの要件を調査し、機能ロードマップを策定する
+1. プラットフォームが提案する価値を市場に発信し、普及・啓発活動を行う
+1. ポータル、API、ドキュメント、テンプレート、CLIツールなど、機能やサービスを利用・監視するためのインターフェースを管理・開発する
 
-Most importantly, platform teams must learn about the requirements of platform
-users to inform and continuously improve capabilities and interfaces offered by
-their platform. Ways to learn about user requirements include user interviews,
-interactive hackathons, issue trackers and surveys, and direct observation of
-usage through observability tools. For example, a platform team could publish a
-form for users to submit feature requests, lead roadmap meetings
-to share upcoming features and review users' usage patterns to set priorities.
+最も重要なのは、プラットフォームチームがプラットフォームユーザーの要件を把握し、それに基づいてプラットフォームが提供する機能やインターフェースを継続的に改善することです。ユーザー要件を把握する方法には、ユーザーインタビュー、インタラクティブなハッカソン、課題管理ツールやアンケート、そして可観測性ツールを通じた利用状況の直接観察などがあります。例えば、プラットフォームチームは、ユーザーが機能リクエストを送信できるフォームを公開したり、今後の機能について共有するためのロードマップ会議を主導したり、ユーザーの利用パターンを分析して優先順位を設定したりすることができます。
 
-Inbound feedback and thoughtful design is one side of product delivery; the
-other side is outbound marketing and advocacy. If the platform is truly built to
-user requirements those users will be excited to use the provided capabilities.
-Some ways a platform team can enable user adoption is through internal marketing
-activities including broad announcements, engaging demos, and regular feedback
-and communication sessions.  The key here is to meet users where they are and
-bring them on a journey to engage with and benefit from the platform.
+インバウンドのフィードバックと入念な設計は、プロダクト提供の一面であり、もう一方はアウトバウンドのマーケティングとアドボカシーです。プラットフォームが真にユーザーの要件に基づいて構築されていれば、ユーザーは提供された機能を利用することに喜びを感じるでしょう。
+プラットフォームチームがユーザーの採用を促進する方法の一つは、広範な告知、魅力的なデモ、定期的なフィードバックやコミュニケーションセッションといった社内マーケティング活動を通じて行うことです。ここでの鍵は、ユーザーの現状に合わせて接し、プラットフォームに関与し、その恩恵を受けるための旅へと導くことです。
 
-A platform team doesn't necessarily run compute, network, storage or other
-services. In fact an internal platform should rely on _externally_-provided
-services and capabilities as much as possible; platform teams should build and
-maintain their own capabilities only when they're not available elsewhere from
-managed providers or internal infrastructure teams. Instead, platform teams are
-most responsible for the _interfaces_ (i.e., GUI, CLI, and API) and user
-experiences for the services and capabilities their platform makes available.
+プラットフォームチームが必ずしもコンピューティング、ネットワーク、ストレージ、その他のサービスを運用するわけではありません。実際、社内プラットフォームは可能な限り_外部_から提供されるサービスや機能に依存すべきです。プラットフォームチームが独自の機能を構築・維持すべきなのは、マネージドプロバイダーや社内インフラチームから他の場所で利用できない場合に限られます。その代わり、プラットフォームチームが最も責任を負うべきなのは、プラットフォームが提供するサービスや機能に対する_インターフェース_（つまり、GUI、CLI、およびAPI）とユーザー体験です。
 
-For example, a Web page in a platform might describe and even offer a button to
-provision an identity for an app; while the implementation of that capability
-might be via a cloud-hosted identity service. An internal platform team may
-manage the web page and an API, but not the actual service implementation.
-Platform teams should usually consider creating and maintaining their own
-capabilities only when a required capability is not available elsewhere.
+例えば、プラットフォーム内のWebページでは、アプリ用のIDをプロビジョニングするための説明やボタンが提供されているかもしれませんが、その機能の実装はクラウドホスト型のIDサービスを通じて行われている可能性があります。
+社内プラットフォームチームは、WebページやAPIを管理することはあっても、実際のサービス実装を管理することはありません。
+プラットフォームチームは通常、必要な機能が他の場所では利用できない場合にのみ、独自の機能の構築と維持を検討すべきです。
 
-## Challenges with platforms
+## プラットフォームに関する課題
 
-While platforms promise lots of value, they also bring challenges like the
-following which implementers should keep in mind.
+プラットフォームは多くの価値を約束する一方で、実装担当者が留意すべき以下のような課題ももたらします。
 
-1. Platform teams must treat their platforms like products and develop them
-   together with users
-1. Platform teams must carefully choose their priorities and initial partner
-   application teams
-1. Platform teams must seek support of enterprise leadership and show impact on
-   value streams
+1. プラットフォームチームは、プラットフォームを製品として扱い、ユーザーと共に開発しなければならない
+1. プラットフォームチームは、優先順位と初期のパートナーとなるアプリケーションチームを慎重に選定しなければならない
+1. プラットフォームチームは、経営陣の支持を得るとともに、バリューストリームへの影響を示す必要がある
 
-Perhaps most important is to treat the platform as a customer-facing product and
-recognize that its success is directly dependent on the success of its users and
-products; and as such it's vital that platform teams partner with app teams and
-other users to prioritize, plan, implement and iterate on the platform's
-capabilities and user experiences. Platform teams that release features and
-experiences without feedback or that rely on top-down mandates to achieve adoption
-are almost certain to find resistance and resentment from their users and miss a
-lot of the promised value. To counter this, platform teams should include product
-managers from the start to share roadmaps, gather feedback and generally understand
-and represent the needs of platform users.
+おそらく最も重要なのは、プラットフォームを顧客向けの製品として扱い、その成功がユーザーや製品の成功に直接依存していることを認識することです。そのため、プラットフォームチームはアプリチームやその他のユーザーと連携し、プラットフォームの機能やユーザーエクスペリエンスの優先順位付け、計画、実装、反復改善を行うことが不可欠です。フィードバックを得ずに機能や体験をリリースしたり、トップダウンの指示に頼って普及を図ろうとするプラットフォームチームは、ほぼ間違いなくユーザーからの抵抗や反発に直面し、約束された価値の多くを逃すことになります。これを防ぐため、プラットフォームチームは最初からプロダクトマネージャーを巻き込み、ロードマップを共有し、フィードバックを収集し、プラットフォームユーザーのニーズを全般的に理解し、代弁すべきです。
 
-When adopting platforms, choosing the right capabilities and experiences to
-enable first, can be crucial. Capabilities that are frequently required and
-undifferentiated, like pipelines, databases and observability, may be a good
-place to start. Platform teams may also choose to focus first on a limited number
-of engaged and skillful app teams. Detailed feedback from such teams improves the
-first platform experiences; and people from those teams help champion and
-evangelize the platform to later adopters.
+プラットフォームを導入する際、最初に実装すべき適切な機能や体験を選択することは極めて重要です。パイプライン、データベース、可観測性など、頻繁に必要とされ、差別化が図りにくい機能は、導入の第一歩として適しているでしょう。また、プラットフォームチームは、熱心で熟練した少数のアプリチームにまず焦点を当てることも選択できます。こうしたチームからの詳細なフィードバックは、初期のプラットフォーム体験を向上させます。さらに、それらのチームのメンバーは、後の導入者に対してプラットフォームを推進し、普及させる役割を果たしてくれます。
 
-Finally, it's vital in large enterprises to quickly gain leadership support for
-platform teams. Many enterprise leaders perceive IT infrastructure as an expense
-quite disconnected from their primary value streams and may try to constrain
-costs and resources allocated to IT platforms, leading to a poor implementation,
-unrealized promises and frustration. To mitigate this, platform teams need to
-demonstrate their direct impact on and relationships with product and value
-stream teams (see the previous two paragraphs), presenting the platform team as
-a strategic partner of product teams in delivering value to customers.
+最後に、大企業においては、プラットフォームチームに対する経営陣の支持を早期に獲得することが不可欠です。多くの企業リーダーは、ITインフラを主要なバリューストリームとは切り離された経費と捉えており、ITプラットフォームに割り当てられるコストやリソースを抑制しようとする可能性があります。その結果、実装の不備、約束の未達成、そして不満が生じかねません。これを緩和するためには、プラットフォームチームは、製品チームやバリューストリームチームに対する直接的な影響力と関係性を示す必要があります（前の2つの段落を参照）。つまり、顧客に価値を提供する上で、プラットフォームチームが製品チームの戦略的パートナーであることを提示するのです。
 
-### Enabling platform teams
+### プラットフォームチームの支援
 
-It is clear from these challenges that platform teams are faced with a number of
-diverse responsibilities which lead to cognitive load. Just as with their
-application team counterparts, this challenge grows with the number and diversity
-of users and teams they need to support.
+これらの課題から明らかなように、プラットフォームチームは多様な責任を負っており、それが認知的負荷につながっています。アプリケーションチームと同様に、この課題は、サポートすべきユーザーやチームの数や多様性が増すにつれて大きくなります。
+プラットフォームチームのエネルギーを、その特定のビジネスに固有の体験と機能に集中させることが重要です。プラットフォームチームの負荷を軽減する方法には、次のようなものがあります：
 
-It is important to focus the platform team's energy on the experience and
-capabilities that are unique to their specific business. Ways to reduce load on
-the platform team include the following:
+1. マネージドプロバイダーによる実装の上に、必要最小限の実行可能なプラットフォーム層を構築するよう努める
+1. アプリケーションチームが使用するドキュメント、テンプレート、コンポジションを作成するために、オープンソースのフレームワークやツールキットを活用する
+1. プラットフォームチームが、担当領域や顧客数に見合った適切な人員配置を確保する
 
-1. Seek to build the thinnest viable platform layer over implementations from
-   managed providers
-1. Leverage open source frameworks and toolkits for creating docs, templates and
-   compositions for application team use
-1. Ensure platform teams are staffed appropriately for their domain and number
-   of customers
+## プラットフォームの成功を測定する方法
 
-## How to measure the success of platforms
+企業は、自社のプラットフォームイニシアチブが前述の価値や特性を提供できているかどうかを測定したいと考えるでしょう。また、本稿を通じて、社内プラットフォームを製品として扱うことの重要性を強調してきましたが、優れたプロダクトマネジメントには、製品のパフォーマンスに関する定量的および定性的な測定が不可欠です。これらの要件を満たすため、社内プラットフォームチームは継続的にユーザーフィードバックを収集し、ユーザー活動を測定すべきです。
 
-Enterprises will want to measure whether their platform initiatives are
-delivering the values and attributes discussed above. Also, throughout this paper we've
-emphasized the importance of treating internal platforms as products, and good
-product management depends on quantitative and qualitative measurement of a
-product's performance. To meet these requirements, internal platform teams
-should continuously gather user feedback and measure user activities.
+ただし、内部プラットフォームの他の側面と同様に、プラットフォームチームは必要なフィードバックを収集するために、最小限の労力（最小限の実現可能な取り組み）を費やすべきです。ここでは指標を提案しますが、初期段階では、単純なアンケート調査やユーザー行動の分析が最も価値があるかもしれません。
+企業やプラットフォームチームがプラットフォームの影響を理解するのに役立つ指標のカテゴリーには、以下のものがあります：
 
-As with other aspects of internal platforms, though, platform teams should use
-the smallest viable effort to gather the feedback they need. We'll suggest
-metrics here but simple surveys and analysis of user behavior may be most
-valuable initially.
+### ユーザー満足度と生産性
 
-Categories of metrics that will help enterprises and platform teams understand
-the impact of their platforms include the following:
+多くのプラットフォームが最初に目指す品質は、生産性を高めるためのユーザー体験の向上です。ユーザーの満足度と生産性を反映する指標には、次のようなものがあります：
 
-### User satisfaction and productivity
+- アクティブユーザーと定着率：プロビジョニングされた機能の数、ユーザー数の増加／離脱率を含む
+- ネットプロモータースコア（NPS）や、製品に対するユーザーの満足度を測定するその他のアンケート
+- SPACEフレームワーク[[4]]で議論されているような、開発者の生産性に関する指標
 
-The first quality sought by many platforms is to improve user experience in order
-to increase productivity. Metrics that reflect user satisfaction and
-productivity include the following:
+### 組織の効率性
 
-- Active users and retention: includes number of capabilities provisioned and user growth/churn
-- "Net Promoter Score" (NPS) or other surveys that measure user satisfaction with a product
-- Metrics for developer productivity such as those discussed in the SPACE framework [[4]]
+多くのプラットフォームに求められるもう一つの利点は、大規模なユーザーベースに対して共通のニーズを効率的に提供することです。これは、安全性とコンプライアンスを保証するポリシーを実施しつつ、ユーザーのセルフサービスを可能にし、手動のステップや必要な人的介入を削減することで達成されることがよくあります。共通の作業を削減するプラットフォームの効率性を測定するには、次のような指標を検討してください：
 
-### Organizational efficiency
+- データベースやテスト環境などのサービスや機能の要求から提供までの遅延
+- まったく新しいサービスを構築し、本番環境にデプロイするまでの遅延
+- 新規ユーザーが自身のプロダクトに対して初めてコード変更を送信するまでの時間
 
-Another benefit sought from many platforms is to efficiently provide common
-needs to a large user base. This is often achieved by enabling user self-service
-and reducing manual steps and required human intervention while implementing
-policies to guarantee safety and compliance. To measure the efficiency of a
-platform in reducing common work, consider measures such as these:
+### プロダクトおよび機能の提供
 
-- Latency from request to fulfillment of a service or capability, such as a database or test environment
-- Latency to build and deploy a brand new service into production
-- Time for a new user to submit their first code changes to their product
+内部プラットフォームの究極の目的は、顧客にビジネス価値をより迅速に提供することです。したがって、自社プロダクトや機能のリリースに対する影響を測定することは、プラットフォームの目的が達成されていることを示すことになります。GoogleのDevOps Research and Assessment (DORA) 研究所は、[[5]] 以下の指標を追跡することを推奨しています：
 
-### Product and feature delivery
+- デプロイ頻度
+- 変更のリードタイム
+- 障害発生後のサービス復旧時間
+- 変更失敗率
 
-The ultimate objective of internal platforms is to deliver business value to
-customers faster, so measuring impact on a business's own product and feature
-releases demonstrates that the objectives of the platform are being met. The
-DevOps Research and Assessment (DORA) institute at Google suggests [[5]]
-tracking the following metrics:
+一般的に、プラットフォームチームの主要な目的は、インフラストラクチャやその他のIT機能を、企業のバリューストリーム（つまり製品）と整合させることです。したがって、最終的には、組織の製品やアプリケーションの成功こそが、プラットフォームの成功を測る真の尺度となります。
 
-- Deployment frequency
-- Lead time for changes
-- Time to restore services after failure
-- Change failure rate
+## プラットフォームの機能
 
-Generally, a key objective of platform teams is to align infrastructure and
-other IT capabilities with an enterprise's value streams - its products. And so
-ultimately the success of an organization's products and applications are the
-true measure of the success of a platform.
-
-## Capabilities of platforms
-
-As we've described, a platform for cloud-native computing offers and composes
-capabilities and services from many supporting providers. These providers may be
-other teams within the same enterprise or third parties like cloud service
-providers. In a nutshell, platforms bridge from underlying _capability
-providers_ to platform users like application developers; and in the process
-implement and enforce desired practices for security, performance, cost
-governance and consistent experience. The following graphic illustrates the
-relationships between products, platforms, and capability providers.
+前述したように、クラウドネイティブコンピューティングのためのプラットフォームは、多くのサポートプロバイダーから機能やサービスを提供・統合します。これらのプロバイダーは、同一企業内の他のチームである場合もあれば、クラウドサービスプロバイダーのようなサードパーティである場合もあります。要するに、プラットフォームは基盤となる_機能プロバイダー_と、アプリケーション開発者のようなプラットフォームユーザーとの架け橋となり、その過程でセキュリティ、パフォーマンス、コストガバナンス、一貫した体験に関する望ましいプラクティスを実装・徹底します。以下の図は、製品、プラットフォーム、および機能プロバイダー間の関係を示しています。
 
 <img src="assets/platforms-def.drawio.png" width=600px />
 
-We've focused in this paper on how to construct a good platform and platform
-team; now in this last section we'll describe the capabilities a platform may
-actually offer. This list is intended to guide platform builders and includes
-capabilities typically required by cloud-native applications. As we've noted
-throughout though, a good platform reflects its users' needs, so ultimately
-platform teams should choose and prioritize the capabilities their platform
-offers together with its users.
+本稿では、優れたプラットフォームとプラットフォームチームの構築方法に焦点を当ててきましたが、この最後のセクションでは、プラットフォームが実際に提供し得る機能について説明します。このリストはプラットフォーム構築者の指針となることを意図しており、クラウドネイティブアプリケーションに一般的に求められる機能が含まれています。ただし、これまで繰り返し述べてきたように、優れたプラットフォームはユーザーのニーズを反映するものであるため、最終的にはプラットフォームチームがユーザーと協力して、プラットフォームが提供する機能を決定し、優先順位を付ける必要があります。
 
-Capabilities may comprise several _features_, meaning aspects or attributes of
-the parent capability's domain. For example, observability may include features
-for gathering and publishing metrics, traces and logs as well as for observing
-costs and energy consumption. Consider the need and priority for each feature or
-aspect in your organization. Later CNCF publications may expand on each
-domain further.
+機能は、親機能のドメインにおける側面や属性である複数の_機能要素_で構成される場合があります。例えば、可観測性には、メトリクス、トレース、ログの収集および公開に加え、コストやエネルギー消費量の監視のための機能要素が含まれる可能性があります。組織における各機能要素や側面の必要性と優先順位を検討してください。今後のCNCFの出版物では、各ドメインについてさらに詳しく解説する可能性があります。
 
-Here are capability domains to consider when building platforms for cloud-native
-computing:
+クラウドネイティブコンピューティング向けのプラットフォームを構築する際に検討すべき機能ドメインは以下の通りです：
 
-1. **Web portals** for observing and provisioning products and capabilities
-1. **APIs** (and CLIs) for automatically provisioning products and capabilities
-1. **"Golden path" templates and docs** enabling optimal use of capabilities in products
-1. **Automation for building and testing** services and products
-1. **Automation for delivering and verifying** services and products
-1. **Development environments** such as hosted IDEs and remote connection tools
-1. **Observability** for services and products using instrumentation and
-   dashboards, including observation of functionality, performance and costs
-1. **Infrastructure** services including compute runtimes, programmable
-   networks, and block and volume storage
-1. **Data** services including databases, caches, and object stores
-1. **Messaging** and event services including brokers, queues, and event fabrics
-1. **Identity and secret** management services such as service and user identity
-   and authorization, certificate and key issuance, and static secret storage
-1. **Security** services including static analysis of code and artifacts,
-   runtime analysis, and policy enforcement
-1. **Artifact storage** including storage of container image and
-   language-specific packages, custom binaries and libraries, and source code
+1. **Webポータル**：製品や機能を監視・プロビジョニングするためのもの
+1. **API**（およびCLI）：製品や機能を自動的にプロビジョニングするためのもの
+1. **「ゴールデンパス」テンプレートとドキュメント**：製品内の機能を最適に活用できるようにするもの
+1. **サービスおよび製品の構築とテストのための自動化**
+1. **サービスおよび製品の提供と検証のための自動化**
+1. **開発環境**（ホスト型IDEやリモート接続ツールなど）
+1. **可観測性**（機能、パフォーマンス、コストの監視を含む、計測機能やダッシュボードを用いたサービスおよび製品の可観測性）
+1. **インフラストラクチャ**サービス（コンピュートランタイム、プログラマブルネットワーク、ブロックおよびボリュームストレージなど）
+1. **データ** サービス（データベース、キャッシュ、オブジェクトストアなど）
+1. **メッセージング** およびイベントサービス（ブローカー、キュー、イベントファブリックなど）
+1. **IDおよびシークレット** 管理サービス（サービスおよびユーザーのIDと認証、証明書と鍵の発行、静的シークレットの保存など）
+1. **セキュリティ** サービス（コードおよびアーティファクトの静的解析、ランタイム解析、ポリシーの適用など）
+1. **アーティファクトストレージ**：コンテナイメージや言語固有のパッケージ、カスタムバイナリやライブラリ、ソースコードの保存など
 
-The following table is intended to help readers grasp each capability by loosely
-relating it to existing CNCF or CDF projects.
-
+以下の表は、各機能を既存のCNCFまたはCDFプロジェクトと大まかに関連付けることで、読者が各機能を把握しやすくするためのものです。
 <table>
   <thead>
-    <tr><td>Capability</td><td>Description</td><td>Example CNCF/CDF Projects</td></tr>
+    <tr><td>機能</td><td>説明</td><td>CNCF/CDFプロジェクトの例</td></tr>
   </thead>
   <tr>
-    <td>Web portals for provisioning and observing capabilities</td>
-    <td>Publish documentation, service catalogs, and project templates. Publish telemetry about systems and capabilities.</td>
+    <td>機能のプロビジョニングおよび監視のためのWebポータル</td>
+    <td>ドキュメント、サービスカタログ、プロジェクトテンプレートを公開する。システムおよび機能に関するテレメトリを公開する。</td>
     <td>Backstage, Skooner, Ortelius</td>
   </tr>
   <tr>
-    <td>APIs for automatically provisioning capabilities</td>
-    <td>Structured formats for automatically creating, updating, deleting and observing capabilities.</td>
+    <td>機能を自動的にプロビジョニングするためのAPI</td>
+    <td>機能を自動的に作成、更新、削除、および監視するための構造化されたフォーマット。</td>
     <td>Kubernetes, Crossplane, Operator Framework, Helm, KubeVela</td>
   </tr>
   <tr>
-    <td>Golden path templates and docs</td>
-    <td>Templated compositions of well-integrated code and capabilities for rapid project development.</td>
+    <td>ゴールデンパス・テンプレートとドキュメント</td>
+    <td>プロジェクトを迅速に開発するための、コードと機能が適切に統合されたテンプレート化された構成。</td>
     <td>ArtifactHub</td>
   </tr>
   <tr>
-    <td>Automation for building and testing products</td>
-    <td>Automate build and test of digital products and services.</td>
+    <td>製品のビルドおよびテストの自動化</td>
+    <td>デジタル製品およびサービスのビルドとテストを自動化します。</td>
     <td>Tekton, Jenkins, Buildpacks, ko, Carvel</td>
   </tr>
   <tr>
-    <td>Automation for delivering and verifying services</td>
-    <td>Automate and observe delivery of services.</td>
+    <td>サービスのデリバリーと検証の自動化</td>
+    <td>サービスのデリバリーを自動化し、監視します。</td>
     <td>Argo, Flux, Keptn, Flagger, OpenFeature</td>
   </tr>
   <tr>
-    <td>Development environments</td>
-    <td>Enable research and development of applications and systems.</td>
+    <td>開発環境</td>
+    <td>アプリケーションやシステムの研究開発を可能にします。</td>
     <td>Devfile, Nocalhost, Telepresence, DevSpace</td>
   </tr>
   <tr>
-    <td>Application observability</td>
-    <td>Instrument applications, gather and analyze telemetry and publish info to stakeholders.</td>
+    <td>アプリケーションの可観測性</td>
+    <td>アプリケーションに計測機能を組み込み、テレメトリデータを収集・分析し、関係者に情報を公開します。</td>
     <td>OpenTelemetry, Jaeger, Prometheus, Thanos, Fluentd, Grafana, OpenCost</td>
   </tr>
   <tr>
-    <td>Infrastructure services</td>
-    <td>Run application code, connect application components and persist data for applications</td>
+    <td>インフラストラクチャサービス</td>
+    <td>アプリケーションコードを実行し、アプリケーションコンポーネントを接続し、アプリケーションのデータを永続化します。</td>
     <td>Kubernetes, Kubevirt, Knative, WasmEdge, KEDA<br />CNI, Istio, Cilium, Envoy, Linkerd, CoreDNS<br />Rook, Longhorn, Etcd</td>
   </tr>
   <tr>
-    <td>Data services</td>
-    <td>Persist structured data for applications</td>
+    <td>データサービス</td>
+    <td>アプリケーション用の構造化データを永続化する</td>
     <td>TiKV, Vitess, SchemaHero</td>
   </tr>
   <tr>
-    <td>Messaging and event services</td>
-    <td>Enable applications to communicate with each other asynchronously</td>
+    <td>メッセージングおよびイベントサービス</td>
+    <td>アプリケーション同士が非同期で通信できるようにします</td>
     <td>Strimzi, NATS, gRPC, Knative, Dapr</td>
   </tr>
   <tr>
-    <td>Identity and secret services</td>
-    <td>Ensure workloads have locators and secrets to use resources and capabilities. Enable services to identify themselves to other services</td>
+    <td>IDおよびシークレットサービス</td>
+    <td>ワークロードがリソースや機能を利用するためのロケーターとシークレットを確保します。サービスが他のサービスに対して自身を識別できるようにします。</td>
     <td>Keycloak, Dex, External Secrets, SPIFFE/SPIRE, Teller, cert-manager</td>
   </tr>
   <tr>
-    <td>Security services</td>
-    <td>Observe runtime behavior and report/remediate anomalies. Verify builds and artifacts don't contain vulnerabilities. Constrain activities on the platform per enterprise requirements; notify and/or remediate aberrations</td>
+    <td>セキュリティサービス</td>
+    <td>実行時の動作を監視し、異常を報告・是正します。ビルドおよびアーティファクトに脆弱性が含まれていないことを検証します。企業の要件に従ってプラットフォーム上の活動を制限し、異常を通知および／または是正します。</td>
     <td>Falco, In-toto, KubeArmor, OPA, Kyverno, Cloud Custodian</td>
   </tr>
   <tr>
-    <td>Artifact storage </td>
-    <td>Store, publish and secure built artifacts for use in production. Cache and analyze third-party artifacts. Store source code.</td>
+    <td>アーティファクトストレージ</td>
+    <td>本番環境で使用するためのビルド済みアーティファクトを保存、公開、保護する。サードパーティ製アーティファクトをキャッシュおよび分析する。ソースコードを保存する。</td>
     <td>ArtifactHub, Harbor, Distribution, Porter</td>
   </tr>
 </table>
 
 <!-- ## Footnotes -->
-
 [1]: https://www.atlassian.com/devops/frameworks/team-topologies
 [2]: https://martinfowler.com/articles/talk-about-platforms.html
 [3]: https://teamtopologies.com/key-concepts-content/what-is-a-thinnest-viable-platform-tvp
